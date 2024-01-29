@@ -1,0 +1,761 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/Bootstrap%205/bootstrap.min.css" rel="stylesheet">
+    <script src="../static/js/Bootstrap%205/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/JQuery/jquery-3.7.1.js"></script>
+    <link href="../static/css/select2/select2.css" rel="stylesheet" />
+    <script src="../static/js/select2/select2.min.js"></script>
+    <link href="../static/css/DataTable/jquery.dataTables.css" rel="stylesheet">
+    <script src="../static/js/DataTable/jquery.dataTables.js"></script>
+    <title>Document</title>
+    <style>
+        #filter-option-dialog {
+            width: 70%;
+            border-radius: 10px;
+            border: none;
+        }
+
+        #add-user-dialog {
+            width: 30%;
+            min-width: 500px;
+            border-radius: 10px;
+            border: none;
+            overflow-x: hidden;
+        }
+
+        #filter-option-dialog::backdrop,
+        #add-user-dialog::backdrop {
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
+        }
+
+        .select2-container--default .select2-selection--multiple {
+            display: block;
+            min-width: 40px;
+            height: 100%;
+            padding-top: 0;
+            padding-left: 0;
+            padding-bottom: 0.375rem;
+            padding-right: 50px;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--bs-body-color);
+            appearance: none;
+            background-color: var(--bs-body-bg);
+            background-clip: padding-box;
+            border: var(--bs-border-width) solid var(--bs-border-color);
+            border-radius: var(--bs-border-radius);
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            overflow-y: scroll;
+        }
+
+        /* width */
+        .select2-container--default .select2-selection--multiple::-webkit-scrollbar,
+        .select2-results__options::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        /* Track */
+        .select2-container--default .select2-selection--multiple::-webkit-scrollbar-track,
+        .select2-results__options::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 2px white;
+            border-radius: 5px;
+        }
+
+        /* Handle */
+        .select2-container--default .select2-selection--multiple::-webkit-scrollbar-thumb,
+        .select2-results__options::-webkit-scrollbar-thumb {
+            background: #4f6181;
+            border-radius: 2px;
+        }
+
+        span.selection {
+            display: block;
+            height: 40px;
+        }
+
+        .form-check {
+            display: flex;
+            align-items: baseline;
+        }
+
+        .checkbox-lg .form-check-input {
+            top: .8rem;
+            scale: 1.4;
+            margin-right: 0.7rem;
+        }
+
+        .checkbox-lg .form-check-label {
+            padding-top: 13px;
+        }
+        #user-information-table{
+            border: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>User management</h1>
+    <div class="row">
+        <input type="text" class="form-control" id="text-input-search-value" name="searchValue" placeholder="Search by">
+        <button class="btn btn-dark" id="open-filter-dialog-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_487_2415)">
+                    <path d="M10 18H14V16H10V18ZM3 6V8H21V6H3ZM6 13H18V11H6V13Z" fill="#DFDEDE" />
+                </g>
+                <defs>
+                    <clipPath id="clip0_487_2415">
+                        <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                </defs>
+            </svg>
+            Filter
+        </button>
+        <button class="btn btn-dark" id="open-add-user-dialog-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_487_2486)">
+                    <path
+                        d="M13 7H11V11H7V13H11V17H13V13H17V11H13V7ZM12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
+                        fill="#DFDEDE" />
+                </g>
+                <defs>
+                    <clipPath id="clip0_487_2486">
+                        <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                </defs>
+            </svg>
+            Add user
+        </button>
+    </div>
+    <div class="table-container">
+        <table id="user-information-table" class="table">
+            <thead class="table-dark">
+                <th>ID</th>
+                <th>Full name</th>
+                <th>Email</th>
+                <th>Date of birth</th>
+                <th>Gender</th>
+                <th>Type</th>
+            </thead>
+            <tbody>
+                <tr></tr>
+            </tbody>
+        </table>
+    </div>
+    <dialog id="filter-option-dialog">
+        <form id="filter-form">
+            <div class="row">
+                <div class="col-xl-6 col-md-12 mb-3">
+                    <fieldset>
+                        <legend>
+                            <h5>
+                                Class location
+                            </h5>
+                        </legend>
+                        <div class="d-flex flex-row">
+                            <select style="width: 100%;" name="classLocationList" id="filter-class-location"
+                                multiple="multiple">
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="4">Option 4</option>
+                                <option value="5">Option 5</option>
+                                <option value="6">Option 6</option>
+                                <option value="7">Option 7</option>
+                                <option value="8">Option 8</option>
+                                <option value="9">Option 9</option>
+                                <option value="10">Option 10</option>
+                                <option value="11">Option 11</option>
+                                <option value="12">Option 12</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-xl-6 col-md-12 mb-3">
+                    <fieldset>
+                        <legend>
+                            <h5>
+                                Class time frame
+                            </h5>
+                        </legend>
+                        <div class="d-flex flex-row align-middle">
+                            <label for="filter-start-date" class="form-label fs-5 m-auto px-1">from</label>
+                            <input type="date" id="filter-start-date" class="form-control" name="startDate">
+                            <label for="filter-end-date" class="form-label fs-5 m-auto px-1">to</label>
+                            <input type="date" name="endDate" id="filter-end-date" class="form-control">
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-xl-4 col-md-6 mb-3 d-flex flex-row">
+                    <div class="me-4 my-3">
+                        <h5>Class time</h5>
+                    </div>
+                    <div>
+                        <div class="form-check checkbox-lg">
+                            <input class="form-check-input" type="checkbox" value="Morning"
+                                id="check-class-time-morning" name="classTimeList">
+                            <label class="form-check-label fs-5" for="check-class-time-morning">
+                                Morning
+                            </label>
+                        </div>
+                        <div class="form-check checkbox-lg">
+                            <input class="form-check-input" type="checkbox" value="Noon" id="check-class-time-noon"
+                                name="classTimeList">
+                            <label class="form-check-label fs-5" for="check-class-time-noon">
+                                Noon
+                            </label>
+                        </div>
+                        <div class="form-check checkbox-lg">
+                            <input class="form-check-input" type="checkbox" value="Night" id="check-class-time-night"
+                                name="classTimeList">
+                            <label class="form-check-label fs-5" for="check-class-time-night">
+                                Night
+                            </label>
+                        </div>
+                        <div class="form-check checkbox-lg">
+                            <input class="form-check-input" type="checkbox" value="Online" id="check-class-time-online"
+                                name="classTimeList">
+                            <label class="form-check-label fs-5" for="check-class-time-online">
+                                Online
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3 d-flex flex-row">
+                    <div class="me-4 my-3">
+                        <h5>Status</h5>
+                    </div>
+                    <div>
+                        <div class="form-check checkbox-lg">
+                            <input class="form-check-input" type="checkbox" value="Planning" id="check-status-planning"
+                                name="statusList">
+                            <label class="form-check-label fs-5" for="check-status-planning">
+                                Planning
+                            </label>
+                        </div>
+                        <div class="form-check checkbox-lg">
+                            <input class="form-check-input" type="checkbox" value="Opening" id="check-status-opening"
+                                name="statusList">
+                            <label class="form-check-label fs-5" for="check-status-opening">
+                                Opening
+                            </label>
+                        </div>
+                        <div class="form-check checkbox-lg">
+                            <input class="form-check-input" type="checkbox" value="Closed" id="check-status-closed"
+                                name="statusList">
+                            <label class="form-check-label fs-5" for="check-status-closed">
+                                Closed
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-md-12 mb-3 d-flex flex-row">
+                    <div class="me-4 my-3">
+                        <h5>Attendee</h5>
+                    </div>
+                    <div>
+                        <div class="form-check checkbox-lg">
+                            <input class="form-check-input" type="checkbox" value="Intern" id="check-attendee-intern"
+                                name="attendeeList">
+                            <label class="form-check-label fs-5" for="check-attendee-intern">
+                                Intern
+                            </label>
+                        </div>
+                        <div class=" form-check checkbox-lg">
+                            <input class="form-check-input " type="checkbox" value="Fresher" id="check-attendee-fresher"
+                                name="attendeeList">
+                            <label class="form-check-label fs-5" for="check-attendee-fresher">
+                                Fresher
+                            </label>
+                        </div>
+                        <div class="form-check checkbox-lg">
+                            <input class="form-check-input " type="checkbox" value="Online fee-fresher"
+                                id="check-attendee-offline-ff" name="attendeeList">
+                            <label class="form-check-label fs-5" for="check-attendee-offline-ff">
+                                Online fee-fresher
+                            </label>
+                        </div>
+                        <div class="form-check checkbox-lg">
+                            <input class="form-check-input" type="checkbox" value="Offline fee-fresher"
+                                id="check-attendee-online-ff" name="attendeeList">
+                            <label class="form-check-label fs-5" for="check-attendee-online-ff">
+                                Offline fee-fresher
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-12 mb-3">
+                    <label class="form-label fs-5 fw-medium" for="select-fsu">FSU</label>
+                    <select class="form-control form-select" style="width: 100%;" name="fsu" id="select-fsu">
+                        <option value="F1">F1</option>
+                        <option value="F2">F2</option>
+                        <option value="F3">F3</option>
+                        <option value="F4">F4</option>
+                        <option value="F5">F5</option>
+                    </select>
+                </div>
+                <div class="col-xl-6 col-md-12 mb-3">
+                    <label class="form-label fs-5 fw-medium" for="select-trainer">Trainer</label>
+                    <select class="form-control form-select" style="width: 100%;" name="trainer" id="select-trainer">
+                        <option value="T1">T1</option>
+                        <option value="T2">T2</option>
+                        <option value="T3">T3</option>
+                        <option value="T4">T4</option>
+                        <option value="T5">T5</option>
+                    </select>
+                </div>
+                <div class="col-12 d-flex justify-content-end">
+                    <input class="btn btn-danger mx-1 me-auto" type="reset" id="cancel-filter-option-dialog-button"
+                        value="Cancel">
+                    <input class="btn btn-secondary mx-1" type="reset" id="reset-filter-option-dialog-button">
+                    <input class="btn btn-primary mx-1" type="submit" name="btAction"
+                        id="submit-filter-option-dialog-button">
+                </div>
+            </div>
+        </form>
+    </dialog>
+    <dialog id="add-user-dialog" class="p-0">
+        <table class="table m-0">
+            <thead class="table-dark">
+                <th class="text-center">
+                    <div class="d-flex flex-row align-items-center">
+                        <span class="flex-grow-1">
+                            Add a new user
+                        </span>
+                        <button class="btn close-add-user-dialog-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_46_6114)">
+                                    <path
+                                        d="M12 2C6.47 2 2 6.47 2 12C2 17.53 6.47 22 12 22C17.53 22 22 17.53 22 12C22 6.47 17.53 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM15.59 7L12 10.59L8.41 7L7 8.41L10.59 12L7 15.59L8.41 17L12 13.41L15.59 17L17 15.59L13.41 12L17 8.41L15.59 7Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_46_6114">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                    </div>
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <form id="add-user-form">
+                            <div class="mb-3 mt-3 row align-items-center">
+                                <label for="select-user-type" class="form-label col-12 col-md-2 col-form-label">User
+                                    type</label>
+                                <div class="col-12 col-md-10">
+                                    <select name="userType" class="form-control form-select" id="select-user-type"
+                                        aria-placeholder="Select one">
+                                        <option value="Mentor">Mentor</option>
+                                        <option value="Admin">Admin</option>
+                                        <option value="Super Admin">Super Admin</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3 row align-items-center">
+                                <label for="input-user-name"
+                                    class="form-label col-12 col-md-2 col-form-label">Name</label>
+                                <div class="col-12 col-md-10">
+                                    <input type="text" class="form-control form-text" id="input-user-name"
+                                        name="username" placeholder="User name">
+                                    <div class="invalid-feedback" id="invalid-user-name"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row align-items-center">
+                                <label for="input-user-email-address"
+                                    class="form-label col-12 col-md-2 col-form-label">Email
+                                    address</label>
+                                <div class="col-12 col-md-10">
+                                    <input type="text" class="form-control form-text" id="input-user-email-address"
+                                        name="emailAddress" placeholder="Email address">
+                                    <div class="invalid-feedback" id="invalid-email-address"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row align-items-center">
+                                <label for="input-user-phone" class="form-label col-12 col-md-2 col-form-label">Phone
+                                    number</label>
+                                <div class="col-12 col-md-10">
+                                    <input type="text" class="form-control form-text" id="input-user-phone"
+                                        name="phoneNumber" placeholder="Phone number">
+                                    <div class="invalid-feedback" id="invalid-phone-number"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row align-items-center">
+                                <label for="pick-date-of-birth" class="form-label col-12 col-md-2 col-form-label">Date
+                                    of
+                                    birth</label>
+                                <div class="col-12 col-md-10">
+                                    <input type="date" class="form-control" id="pick-date-of-birth" name="dateOfBirth"
+                                        placeholder="">
+                                    <div class="invalid-feedback" id="invalid-date-of-birth"></div>
+                                </div>
+                            </div>
+                            <fieldset class="row mb-3 align-items-baseline">
+                                <legend class="col-12 col-md-2 col-form-label">Gender</legend>
+                                <div class="col-12 col-md-10">
+                                    <div class="form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender"
+                                            id="gender-radio-male" value="Male" checked>
+                                        <label for="gender-radio-male" class="form-check-label">Male</label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender"
+                                            id="gender-radio-female" value="Female">
+                                        <label for="gender-radio-female" class="form-check-label">Female</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div class="mb-3 row align-items-end">
+                                <p class="form-label col-12 col-md-2 col-form-label">Status</p>
+                                <div class="col-12 col-md-10 form-check form-switch ps-3 m-auto">
+                                    <input type="checkbox" name="userStatus" id="toggle-user-status"
+                                        class="form-check-input m-0 align-self-center" value="active"
+                                        style="scale: 1.5;">
+                                    <label for="toggle-user-status" id="user-status-label"
+                                        class="form-check-label mx-3">Inactive</label>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center">
+                                <input type="reset" class="btn btn-danger close-add-user-dialog-button" value="Cancel">
+                                <input type="submit" name="btAction" id="submit-add-user-dialog-button"
+                                    class="btn btn-dark" value="Save">
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </dialog>
+    <script>
+        $("#open-filter-dialog-button").click(() => {
+            $("#filter-option-dialog")[0].showModal();
+        });
+        $(document).ready(function () {
+            $("#filter-class-location").select2({
+                dropdownParent: $($("#filter-option-dialog")),
+                closeOnSelect: false,
+                width: "resolve"
+            });
+            let tableData = [[
+                1,
+                "Sloan Trelevan",
+                "strelevan0@netscape.com",
+                "26/05/2023",
+                "Male",
+                "Trainer"
+            ], [
+                2,
+                "Pippo Ribbon",
+                "pribbon1@ed.gov",
+                "26/05/2023",
+                "Male",
+                "Trainer"
+            ], [
+                3,
+                "Stormy Wandrey",
+                "swandrey2@dot.gov",
+                "26/03/2023",
+                "Female",
+                "Admin"
+            ], [
+                4,
+                "Patti Swanwick",
+                "pswanwick3@japanpost.jp",
+                "25/07/2023",
+                "Female",
+                "Trainer"
+            ], [
+                5,
+                "Garfield Mundy",
+                "gmundy4@photobucket.com",
+                "13/11/2022",
+                "Male",
+                "Admin"
+            ], [
+                6,
+                "Bettine Devereu",
+                "bdevereu5@fastcompany.com",
+                "23/08/2023",
+                "Female",
+                "Super Admin"
+            ], [
+                7,
+                "Moe Hazeley",
+                "mhazeley6@multiply.com",
+                "14/01/2023",
+                "Male",
+                "Super Admin"
+            ], [
+                8,
+                "Andreana Winskill",
+                "awinskill7@webmd.com",
+                "16/08/2023",
+                "Female",
+                "Admin"
+            ], [
+                9,
+                "Gearalt Cowe",
+                "gcowe8@nytimes.com",
+                "13/09/2023",
+                "Male",
+                "Trainer"
+            ], [
+                10,
+                "Meris Tilbrook",
+                "mtilbrook9@msn.com",
+                "03/10/2022",
+                "Female",
+                "Admin"
+            ], [
+                11,
+                "Henri Sherme",
+                "hshermea@pagesperso-orange.fr",
+                "10/12/2022",
+                "Male",
+                "Super Admin"
+            ], [
+                12,
+                "Kalina Craighill",
+                "kcraighillb@ihg.com",
+                "12/11/2022",
+                "Female",
+                "Trainer"
+            ], [
+                13,
+                "Marielle Kingscote",
+                "mkingscotec@reference.com",
+                "09/05/2023",
+                "Female",
+                "Super Admin"
+            ], [
+                14,
+                "Ian Greenacre",
+                "igreenacred@europa.eu",
+                "02/04/2023",
+                "Male",
+                "Trainer"
+            ], [
+                15,
+                "Imojean Andress",
+                "iandresse@toplist.cz",
+                "11/07/2023",
+                "Female",
+                "Trainer"
+            ], [
+                16,
+                "Juliane Yedall",
+                "jyedallf@joomla.org",
+                "03/07/2023",
+                "Female",
+                "Trainer"
+            ], [
+                17,
+                "Chaim Whordley",
+                "cwhordleyg@unicef.org",
+                "05/03/2023",
+                "Male",
+                "Admin"
+            ], [
+                18,
+                "Cobb Savary",
+                "csavaryh@archive.org",
+                "22/02/2023",
+                "Male",
+                "Trainer"
+            ], [
+                19,
+                "Pietra Stolte",
+                "pstoltei@cdc.gov",
+                "13/10/2022",
+                "Female",
+                "Admin"
+            ], [
+                20,
+                "Reena Epinay",
+                "repinayj@tmall.com",
+                "13/01/2023",
+                "Female",
+                "Admin"
+            ], [
+                21,
+                "Antonie Kersaw",
+                "akersawk@clickbank.net",
+                "19/10/2022",
+                "Female",
+                "Admin"
+            ], [
+                22,
+                "Delmor Arondel",
+                "darondell@shutterfly.com",
+                "27/06/2023",
+                "Male",
+                "Trainer"
+            ], [
+                23,
+                "Bondon Bolesma",
+                "bbolesmam@oakley.com",
+                "09/03/2023",
+                "Male",
+                "Admin"
+            ], [
+                24,
+                "Tammi Busher",
+                "tbushern@washington.edu",
+                "03/09/2023",
+                "Female",
+                "Admin"
+            ], [
+                25,
+                "Adriane Bishop",
+                "abishopo@mashable.com",
+                "19/09/2023",
+                "Female",
+                "Trainer"
+            ], [
+                26,
+                "Sherry Yackiminie",
+                "syackiminiep@istockphoto.com",
+                "06/11/2022",
+                "Female",
+                "Trainer"
+            ], [
+                27,
+                "Nalani Payton",
+                "npaytonq@infoseek.co.jp",
+                "20/05/2023",
+                "Female",
+                "Super Admin"
+            ], [
+                28,
+                "Cherin Tippett",
+                "ctippettr@tinyurl.com",
+                "30/05/2023",
+                "Female",
+                "Admin"
+            ], [
+                29,
+                "Franny McKinnon",
+                "fmckinnons@gravatar.com",
+                "08/03/2023",
+                "Female",
+                "Admin"
+            ], [
+                30,
+                "Rosco Verry",
+                "rverryt@wikia.com",
+                "06/12/2022",
+                "Male",
+                "Super Admin"
+            ]];
+            $("#user-information-table").DataTable({
+                data: tableData,
+                searching: false, 
+                info: false
+            });
+        });
+        $("#filter-form").submit(function (event) {
+            event.preventDefault();
+            console.log($(this).serializeArray());
+            var arr1 = $(this).serializeArray();
+            var keyValues = {};
+            $.each(arr1, function (index, item) {
+                // Use the "name" as the key and "value" as the value
+                var key = item.name;
+                var value = item.value;
+                // Check if the key already exists, if so, create an array to store values
+                if (keyValues.hasOwnProperty(key)) {
+                    keyValues[key].push(value);
+                } else {
+                    if (key.endsWith("List")) {
+                        keyValues[key] = [];
+                        keyValues[key].push(value);
+                    } else {
+                        if (value !== "") {
+                            keyValues[key] = value;
+                        }
+                    }
+                }
+            });
+            console.log(JSON.stringify(keyValues));
+        });
+        $("#reset-filter-option-dialog-button").click(function (event) {
+            $("#filter-class-location").val(null).trigger("change");
+        });
+        $("#cancel-filter-option-dialog-button").click(function (event) {
+            $("#filter-class-location").val(null).trigger("change");
+            $("#filter-option-dialog")[0].close();
+        });
+        $("#open-add-user-dialog-button").click(() => {
+            $("#add-user-dialog")[0].showModal();
+        });
+        $("#toggle-user-status").click(function () {
+            $(this).prop("disabled", true);
+            if ($("#user-status-label")[0].textContent === "Active") {
+                $("#user-status-label")[0].textContent = "Inactive";
+            } else {
+                $("#user-status-label")[0].textContent = "Active";
+            }
+            setTimeout(() => {
+                $(this).prop("disabled", false);
+            }, 150);
+        });
+        $("#add-user-form").submit(function (event) {
+            event.preventDefault();
+            $(".is-invalid").removeClass("is-invalid")
+            $(".invalid-feedback").text("");
+            let arr1 = $(this).serializeArray();
+            let keyValues = {}
+            $.each(arr1, function (index, item) {
+                let key = item.name;
+                let value = item.value;
+                if (key === "username" && value.trim().length === 0) {
+                    $("#invalid-user-name").text("Invalid username");
+                    $("#input-user-name").addClass("is-invalid");
+                }
+                if (key === "emailAddress" && !value.trim().match(/^[a-z0-9]+@\w+\.\w+$/)) {
+                    $("#invalid-email-address").text("Invalid email address");
+                    $("#input-user-email-address").addClass("is-invalid");
+                }
+                if (key === "phoneNumber" && !value.trim().match(/d{10}/)) {
+                    $("#invalid-phone-number").text("Invalid phone number");
+                    $("#input-user-phone").addClass("is-invalid");
+                }
+                if (key === "dateOfBirth" && value.trim().length === 0) {
+                    $("#invalid-date-of-birth").text("Invalid date of birth");
+                    $("#pick-date-of-birth").addClass("is-invalid");
+                }
+                keyValues[key] = value;
+            });
+            console.log(JSON.stringify(keyValues));
+        });
+        $("#input-user-name").click(function () {
+            $(this).removeClass("is-invalid");
+        });
+        $("#input-user-email-address").click(function () {
+            $(this).removeClass("is-invalid");
+        });
+        $("#input-user-phone").click(function () {
+            $(this).removeClass("is-invalid");
+        });
+        $("#pick-date-of-birth").click(function () {
+            $(this).removeClass("is-invalid");
+        });
+        $(".close-add-user-dialog-button").click(function (event) {
+            event.preventDefault();
+            $(".is-invalid").removeClass("is-invalid")
+            $(".invalid-feedback").text("");
+            $("#add-user-form")[0].reset();
+            $("#add-user-dialog")[0].close();
+        });
+    </script>
+</body>
+
+</html>

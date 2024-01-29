@@ -1,0 +1,463 @@
+#syllabus_super_admin, #trainingProgram_super_admin, #clazz_super_admin, #learningMaterial_super_admin,
+#syllabus_class_admin, #trainingProgram_class_admin, #clazz_class_admin, #learningMaterial_class_admin,
+#syllabus_trainer, #trainingProgram_trainer, #clazz_trainer, #learningMaterial_trainer,
+#syllabus_student, #trainingProgram_student, #clazz_student, #learningMaterial_student{
+    width: 165px;
+    height: 30px;
+    padding: 0px 10px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+
+    border-radius: 5px;
+    background: #FFF;
+
+    /* M3/Elevation Light/3 */
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.30), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+
+}
+.col-form-label{
+    text-align: center;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+}
+
+.button-text {
+    font-size: 17px;
+    color: red;
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+
+}
+.type-role-title {
+    display: flex;
+    width: 120px;
+    height: 30px;
+    padding: 5px 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.type-role-superadmin {
+    display: flex;
+    height: 27px;
+    padding: 5px 15px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: #b02a37;
+    color: #FFF;
+
+    /* caption/1 */
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; /* 150% */
+}
+.type-role-admin {
+    display: flex;
+    height: 27px;
+    padding: 5px 15px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: #4DB848;
+    color: #FFF;
+
+    /* caption/1 */
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; /* 150% */
+}
+.type-role-other {
+    display: flex;
+    height: 27px;
+    padding: 5px 15px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: #0B2136;
+    color: #FFF;
+
+    /* caption/1 */
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; /* 150% */
+}
+
+.icon {
+    position: absolute;
+    top: 5px;
+    left: 2%;
+}
+:root {
+    --Sub-info: #474747;
+}
+.search-item {
+    border-radius: 8px;
+    border: 1px solid #FFF;
+    background: var(--Sub-info, #474747);
+    color: white;
+    height: 45px;
+    padding: 7px;
+}
+
+.search-item {
+    user-select: none;
+}
+
+.search-item>span {
+    cursor: pointer;
+}
+
+
+.bg-main {
+    background-color: #2d3748;
+}
+.collapsing {
+    transition-duration: 0.15s !important;
+}
+.btn-unigate {
+    background-color: #0b2136;
+    border-radius: 20%/50%;
+}
+
+.btn-nav.btn-active {
+    background-color: #2d3748 !important;
+    color: #ffffff !important;
+}
+
+.btn-nav.btn-active svg {
+    filter: brightness(500%);
+}
+
+.btn-nav-sub.btn-active {
+    background-color: #4f6181 !important;
+    color: #ffffff !important;
+}
+
+.btn-nav,
+.btn-nav-sub {
+    text-align: left;
+    white-space: nowrap;
+    margin-bottom: 0.2rem;
+}
+
+.btn-nav-sub {
+    width: 85%;
+    padding-left: 2rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-right: 0.2rem;
+    margin-left: 15%;
+    box-sizing: border-box;
+}
+
+.btn-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.btn-nav .nav-text {
+    margin-right: auto;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.btn-nav svg:first-child {
+    overflow: visible;
+}
+
+.hide {
+    display: none;
+    padding: 0px !important;
+    width: 0px !important;
+}
+
+.btn-nav .nav-dropdown {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.nav-dropdown-open {
+    transform: rotate(-90deg);
+}
+
+#main-navigation-menu {
+    overflow: hidden;
+    list-style-type: none;
+}
+
+#btn-nav-toggle {
+    width: initial;
+}
+#filter-option-dialog {
+    width: 70%;
+    border-radius: 10px;
+    border: none;
+}
+
+#add-user-dialog,#edit-user-dialog {
+    width: 30%;
+    min-width: 500px;
+    border-radius: 10px;
+    border: none;
+    overflow-x: hidden;
+}
+
+#filter-option-dialog::backdrop,
+#add-user-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+.select2-container--default .select2-selection--multiple {
+    display: block;
+    min-width: 40px;
+    height: 100%;
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 0.375rem;
+    padding-right: 50px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    overflow-y: scroll;
+}
+
+/* width */
+.select2-container--default .select2-selection--multiple::-webkit-scrollbar,
+.select2-results__options::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.select2-container--default .select2-selection--multiple::-webkit-scrollbar-track,
+.select2-results__options::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px white;
+    border-radius: 5px;
+}
+
+/* Handle */
+.select2-container--default .select2-selection--multiple::-webkit-scrollbar-thumb,
+.select2-results__options::-webkit-scrollbar-thumb {
+    background: #4f6181;
+    border-radius: 2px;
+}
+
+span.selection {
+    display: block;
+    height: 40px;
+}
+
+.form-check {
+    display: flex;
+    align-items: baseline;
+}
+
+.checkbox-lg .form-check-input {
+    top: .8rem;
+    scale: 1.4;
+    margin-right: 0.7rem;
+}
+
+.checkbox-lg .form-check-label {
+    padding-top: 13px;
+}
+#user-information-table{
+    border: 100px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+}
+.dropdown-content .changeRoleDropdown{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    overflow: auto;
+    background: #FFF;
+    box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.16);
+    z-index: 1;
+    left: -412%;
+    border-radius: 10px;
+    width: 229px;
+}
+
+.dropdown-content a,
+.changeRoleDropdown a{
+    color: #2C5282;
+    font-size: 16px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover,
+.dropdown-content a:focus,
+.changeRoleDropdown a:hover,
+.changeRoleDropdown a:focus{
+    background: rgba(201, 203, 208, 0.37);
+}
+
+.show {
+    display: block;
+}
+/*userSetting*/
+.dropbtn {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 25px;
+    white-space: normal;
+    text-align: center;
+    outline: none !important;
+    text-decoration: none !important;
+    color: #000 !important;
+    cursor: pointer;
+}
+
+.dropbtn:active,
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #f1f1f1 !important;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+}
+
+.dropdown-content, .changeRoleDropdown {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    overflow: auto;
+    background: #FFF;
+    box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.16);
+    z-index: 1;
+    left: -412%;
+    border-radius: 10px;
+    width: 229px;
+}
+
+.dropdown-content a ,
+.changeRoleDropdown a{
+    color: #2C5282;
+    font-size: 16px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover,
+.dropdown-content a:focus,
+.changeRoleDropdown a:hover,
+.changeRoleDropdown a:focus{
+    background: rgba(201, 203, 208, 0.37);
+}
+
+.show {
+    display: block;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+/* Chọn checkbox khi không được chọn */
+input[type="checkbox"]:not(:checked) {
+    background-color: whitesmoke;
+}
+
+/* Chọn checkbox khi được chọn */
+input[type="checkbox"]:checked {
+    background-color: #D45B13;
+}
+#user-information-table_length {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    margin: 50px;
+}
+.dataTables_paginate {
+    float: right;
+    text-align: center;
+    margin: 50px;
+
+}
+/*update user*/
+#edit-user-dialog {
+    position: fixed;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: none;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Màu đen mờ với độ trong suốt 0.5 /
+            backdrop-filter: blur(2px);
+            z-index: 999; / Đảm bảo rằng overlay nằm phía trên tất cả */
+    display: none;
+}
+
+.reportCreate{
+    height: 50px;
+    font-size: medium;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.gender-icon:hover:after {
+    content: attr(title);
+    padding: 4px 8px;
+    color: #333;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    white-space: nowrap;
+    background: rgba(255,255,255,0.8);
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.show-search {
+    margin-left: 15px;
+}
+
+

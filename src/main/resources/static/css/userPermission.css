@@ -1,0 +1,195 @@
+
+.titlePermission{
+    color: var(--Main, #2D3748);
+    /* Header/H4 */
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px; /* 150% */
+    letter-spacing: 4.8px;
+    padding-top: 28px;
+    padding-bottom: 50px;
+    padding-left: 28px;
+}
+
+#user-information-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: -4px 5px 9px 1px gray;
+}
+
+#user-information-table td {
+    text-align: center;
+    height: 56px;
+}
+
+#user-information-table>tbody tr {
+    border-bottom: 0.5px solid #2D3748;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    color: #000;
+    height: 60px;
+    text-align: center;
+}
+
+#user-information-table>thead th {
+    background: #2D3748;
+    color: white;
+    height: 40px;
+    text-align: center;
+}
+.namePermission{
+    color: #FFF;
+
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+#updateButton{
+    border-radius: 8px;
+    background: var(--Main, #2D3748);
+    /* M3/Elevation Light/1 */
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+
+    height: 36px;
+
+}
+
+#syllabus_SUPER_ADMIN, #trainingProgram_SUPER_ADMIN, #clazz_SUPER_ADMIN, #learningMaterial_SUPER_ADMIN,
+#syllabus_ADMIN, #trainingProgram_ADMIN, #clazz_ADMIN, #learningMaterial_ADMIN,
+#syllabus_TRAINER, #trainingProgram_TRAINER, #clazz_TRAINER, #learningMaterial_TRAINER,
+#syllabus_STUDENT, #trainingProgram_STUDENT, #clazz_STUDENT, #learningMaterial_STUDENT, select{
+    width: 165px;
+    height: 30px;
+    padding: 0px 10px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+
+    border-radius: 5px;
+    background: black;
+
+    /* M3/Elevation Light/3 */
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.30), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+
+}
+#saveButton{
+    width: 84px;
+    height: 32px;
+    padding: 2px 25px;
+    border-radius: 8px;
+    gap: 5px;
+    background: #2D3748;
+    box-shadow: 0px 1px 3px 1px #00000026, 0px 1px 2px 0px #0000004D;
+    margin-left: 5px; margin-right: 20px;
+}
+.button {
+    background-color: transparent;
+    border: none;
+}
+
+.button-text {
+    font-size: 17px;
+    color: red;
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+    position: relative;
+    top: 5px;
+}
+/*select {*/
+/*    appearance: none; !* Ẩn giao diện mặc định của <select> *!*/
+/*    background-image: url('../img/arrow_back_ios.svg'); !* Đường dẫn đến hình ảnh mũi tên tùy chỉnh *!*/
+/*    background-repeat: no-repeat; !* Ngăn lặp lại hình ảnh *!*/
+/*    background-position: right center; !* Vị trí của mũi tên (bên phải giữa) *!*/
+/*    padding-right: 20px; !* Để tạo khoảng trống cho mũi tên *!*/
+/*}*/
+
+.select2-dropdown {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.30), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+    margin: -16px auto;
+    margin-left: 8px;
+}
+.select2-selection__choice {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.select2-container {
+    background-color: #f0f0f0;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: white;
+    border: none;
+}
+
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    width: 165px;
+    height: 30px;
+    padding: 0px 10px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+
+    border-radius: 5px;
+    background: #FFF;
+
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.30), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+}
+
+/*/ Tùy chỉnh icon trước ô trước khi dropdown /*/
+.select2-container--default .select2-dropdown {
+    width: 165px;
+}
+/*/ Ẩn hình tam giác khi focus *!*/
+    .select2-container--default .select2-selection__arrow b {
+        display: none;
+    }
+    .select2-container .select2-dropdown .select2-search {
+        display: none;
+    }
+.updatedContent tr:nth-child(even) {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.updatedContent {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: -4px 5px 9px 1px gray;
+}
+
+.updatedContent td {
+    text-align: center;
+    height: 60px;
+}
+
+.updatedContent>tbody tr {
+    border-bottom: 0.5px solid #2D3748;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    color: #000;
+    height: 60px;
+    text-align: center;
+}
+
+.updatedContent>thead th {
+    background: #2D3748;
+    color: white;
+    height: 40px;
+    text-align: center;
+}

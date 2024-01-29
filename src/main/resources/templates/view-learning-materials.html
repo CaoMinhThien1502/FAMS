@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Bootstrap%205/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/component.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/icon_gam.png">
+    <script src="/js/Bootstrap%205/bootstrap.bundle.min.js"></script>
+    <script src="/js/JQuery/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="/css/DataTable/jquery.dataTables.css">
+    <script src="/js/DataTable/jquery.dataTables.js"></script>
+    <script src="/js/materials/materials.js"></script>
+    <script src="/js/menu.js"></script>
+    <title>Learning Materials</title>
+
+</head>
+<body>
+<div class="d-flex flex-column" style="height: 100vh;">
+    <div id="header">
+    </div>
+    <div class="d-flex flex-grow-1 flex-row">
+        <div id="navbar" class="" style="background-color: #edf2f7;"></div>
+
+        <div class="flex-grow-1">
+            <h1 style="padding: 10px">Learning Materials</h1>
+            <div style="padding-left: 10px" class="row mb-3">
+                <div  class="col">
+                    <input  type="text" class="form-control" id="text-input-search-value" name="text"
+                           placeholder="Search by">
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="table-container">
+                <table id="class-information-table" class="table table-responsive">
+                    <thead class="table-dark">
+                    <th>Name</th>
+                    <th>Create By</th>
+                    <th>Create Date</th>
+                    <th></th>
+                    </thead>
+                    <tbody>
+                    <tr th:each="m:${materials}">
+                        <td>[[${m.name}]]</td>
+                        <td>[[${m.createBy}]]</td>
+                        <td>[[${m.createDate}]]</td>
+                        <td>
+                            <a th:href="${'/material/download?filename=' + m.name}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <g clip-path="url(#clip0_184_16023)">
+                                        <path d="M19 9H15V3H9V9H5L12 16L19 9ZM11 11V5H13V11H14.17L12 13.17L9.83 11H11ZM5 18H19V20H5V18Z" fill="#2D3748"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_184_16023">
+                                            <rect width="24" height="24" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <style>
+        #class-information-table_length {
+            position: absolute;
+            bottom: -20px;
+            left: 10px;
+            margin: 50px;
+        }
+        .dataTables_paginate {
+            float: right;
+            text-align: center;
+            margin: 25px;
+        }
+        #class-information-table_wrapper{
+            padding: 10px;
+        }
+    </style>
+    <div id="footer"></div>
+</div>
+<script src="/component/header.js"></script>
+<script src="/component/navbar.js"></script>
+<script src="/component/footer.js"></script>
+<script src="/js/component.js"></script>
+</body>
+</html>

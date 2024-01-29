@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Bootstrap%205/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/icon_gam.png">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script src="/js/Bootstrap%205/bootstrap.bundle.min.js"></script>
+    <script src="/js/JQuery/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="/css/select2/select2.css">
+    <script src="/js/select2/select2.min.js"></script>
+    <link rel="stylesheet" href="/css/DataTable/jquery.dataTables.css">
+    <script src="/js/DataTable/jquery.dataTables.js"></script>
+    <link rel="stylesheet" href="/css/create-class.css">
+    <script src="/js/create-class.js"></script>
+    <script src="/js/menu.js"></script>
+    <title>Class</title>
+</head>
+<body>
+<div class="d-flex flex-column" style="height: 100vh;">
+    <div id="header">
+    </div>
+    <script th:if="${message}">
+        swal({
+            title: "Create class successfully",
+            text: "",
+            icon: "success"
+        });
+    </script>
+    <div class="d-flex flex-grow-1 flex-row">
+        <div th:include="fragments/navbar" style="background-color: #edf2f7;"></div>
+
+        <div class="flex-grow-1" style="margin-bottom: 20px">
+            <h1 style="padding: 20px" id="head">Class Management</h1>
+            <div class="div-1">
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" class="form-control" id="text-input-search-value" name="text"
+                               placeholder="Search by">
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-dark" id="open-filter-dialog-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_487_2415)">
+                                    <path d="M10 18H14V16H10V18ZM3 6V8H21V6H3ZM6 13H18V11H6V13Z" fill="#DFDEDE"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_487_2415">
+                                        <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Filter
+                        </button>
+                        <script>
+                            $("#open-filter-dialog-button").click(() => {
+                                $("#filter-option-dialog")[0].showModal();
+                            })
+                        </script>
+                    </div>
+                    <div class="col text-end">
+                        <a sec:authorize="hasAnyAuthority('CLASS_FULL_ACCESS') or hasAnyAuthority('CLASS_CREATE')"
+                           th:href="@{'/class/class-name'}" class="btn btn-dark" id="open-add-user-dialog-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_487_2486)">
+                                    <path
+                                            d="M13 7H11V11H7V13H11V17H13V13H17V11H13V7ZM12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
+                                            fill="#DFDEDE"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_487_2486">
+                                        <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Add class
+                        </a>
+                    </div>
+                </div>
+                <div class="table-container w-100">
+                    <table id="class-information-table" class="table table-responsive w-100 shadow">
+                        <thead class="table-dark">
+                        <th>Class</th>
+                        <th>Class Code</th>
+                        <th>Created on</th>
+                        <th>Created by</th>
+                        <th>Duration</th>
+                        <th style="text-align: center">Status</th>
+                        <th>Location</th>
+                        <th>FSU</th>
+                        <th sec:authorize="hasAnyAuthority('CLASS_FULL_ACCESS') or hasAnyAuthority('CLASS_MODIFY')"></th>
+                        </thead>
+                        <tbody>
+                        <tr th:each="c:${classList}">
+                            <td>[[${c.className}]]</td>
+                            <td>[[${c.classCode}]]</td>
+                            <td>[[${c.createDate}]]</td>
+                            <td>[[${c.createBy}]]</td>
+                            <td class="duration-value">[[${c.duration}]]</td>
+                            <td th:if="${c.status.equals('Opening')}">
+                                <div class="class-status-opening">
+                                    [[${c.status}]]
+                                </div>
+                            </td>
+                            <td th:if="${c.status.equals('Scheduled')}">
+                                <div class="class-status-scheduled">
+                                    [[${c.status}]]
+                                </div>
+                            </td>
+                            <td th:if="${c.status.equals('Completed')}">
+                                <div class="class-status-completed">
+                                    [[${c.status}]]
+                                </div>
+
+                            </td>
+                            <td th:if="${c.status.equals('Planning')}">
+                                <div class="class-status-planning">
+                                    [[${c.status}]]
+                                </div>
+
+                            </td>
+                            <td>[[${c.location}]]</td>
+                            <td>[[${c.fsu}]]</td>
+                            <td sec:authorize="hasAnyAuthority('CLASS_FULL_ACCESS') or hasAnyAuthority('CLASS_MODIFY')">
+                                <div class="dropdown">
+                                    <a onclick="myFunction(this)" class="dropbtn">
+                                        <div class="svg">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                        d="M13 15C14.1046 15 15 14.1046 15 13C15 11.8954 14.1046 11 13 11C11.8954 11 11 11.8954 11 13C11 14.1046 11.8954 15 13 15Z"
+                                                        fill="#2D3748"/>
+                                                <path
+                                                        d="M20 15C21.1046 15 22 14.1046 22 13C22 11.8954 21.1046 11 20 11C18.8954 11 18 11.8954 18 13C18 14.1046 18.8954 15 20 15Z"
+                                                        fill="#2D3748"/>
+                                                <path
+                                                        d="M6 15C7.10457 15 8 14.1046 8 13C8 11.8954 7.10457 11 6 11C4.89543 11 4 11.8954 4 13C4 14.1046 4.89543 15 6 15Z"
+                                                        fill="#2D3748"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                    <div class="dropdown-content">
+                                        <a th:href="@{/class/{classCode}/edit(classCode=${c.classCode})}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_45_1811)">
+                                                    <path
+                                                            d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25ZM5.92 19H5V18.08L14.06 9.02L14.98 9.94L5.92 19ZM20.71 5.63L18.37 3.29C18.17 3.09 17.92 3 17.66 3C17.4 3 17.15 3.1 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04C21.1 6.65 21.1 6.02 20.71 5.63Z"
+                                                            fill="#285D9A"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_45_1811">
+                                                        <rect width="24" height="24" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            Edit class</a>
+                                        <a th:href="@{/class/delete/c.classCode}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24" fill="none">
+                                                <g clip-path="url(#clip0_45_1817)">
+                                                    <path
+                                                            d="M14.12 10.47L12 12.59L9.87 10.47L8.46 11.88L10.59 14L8.47 16.12L9.88 17.53L12 15.41L14.12 17.53L15.53 16.12L13.41 14L15.53 11.88L14.12 10.47ZM15.5 4L14.5 3H9.5L8.5 4H5V6H19V4H15.5ZM6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19ZM8 9H16V19H8V9Z"
+                                                            fill="#2C5282"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_45_1817">
+                                                        <rect width="24" height="24" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            Delete class</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <dialog id="filter-option-dialog">
+                <form th:action="@{/class/search/filter}" id="filter-form">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-12 mb-3">
+                            <fieldset>
+                                <legend>
+                                    <h5>
+                                        Class location
+                                    </h5>
+                                </legend>
+                                <div class="d-flex flex-row">
+                                    <select style="width: 100%;" name="location" id="filter-class-location"
+                                            multiple="multiple">
+                                        <div th:each="l :${listLocation}">
+                                            <option th:value="${l}">[[${l}]]</option>
+                                        </div>
+
+                                    </select>
+                                </div>
+                            </fieldset>
+                            <script>
+                                $(document).ready(function () {
+                                    $("#filter-class-location").select2({
+                                        dropdownParent: $($("#filter-option-dialog")),
+                                        closeOnSelect: false,
+                                        width: "resolve"
+                                    });
+                                });
+                            </script>
+                        </div>
+                        <div class="col-xl-6 col-md-12 mb-3">
+                            <fieldset>
+                                <legend>
+                                    <h5>
+                                        Class time frame
+                                    </h5>
+                                </legend>
+                                <div class="d-flex flex-row align-middle">
+                                    <label for="filter-start-date" class="form-label fs-5 m-auto px-1">from</label>
+                                    <input type="date" id="filter-start-date" class="form-control" name="startDate">
+                                    <label for="filter-end-date" class="form-label fs-5 m-auto px-1">to</label>
+                                    <input type="date" name="endDate" id="filter-end-date" class="form-control">
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-xl-4 col-md-6 mb-3 d-flex flex-row">
+                            <div class="me-4 my-3">
+                                <h5>Class time</h5>
+                            </div>
+                            <div>
+                                <div class="form-check checkbox-lg">
+                                    <input class="form-check-input" type="checkbox" value="Morning"
+                                           id="check-class-time-morning" name="classTime">
+                                    <label class="form-check-label fs-5" for="check-class-time-morning">
+                                        Morning
+                                    </label>
+                                </div>
+                                <div class="form-check checkbox-lg">
+                                    <input class="form-check-input" type="checkbox" value="Noon"
+                                           id="check-class-time-noon"
+                                           name="classTime">
+                                    <label class="form-check-label fs-5" for="check-class-time-noon">
+                                        Noon
+                                    </label>
+                                </div>
+                                <div class="form-check checkbox-lg">
+                                    <input class="form-check-input" type="checkbox" value="Night"
+                                           id="check-class-time-night"
+                                           name="classTime">
+                                    <label class="form-check-label fs-5" for="check-class-time-night">
+                                        Night
+                                    </label>
+                                </div>
+                                <div class="form-check checkbox-lg">
+                                    <input class="form-check-input" type="checkbox" value="Online"
+                                           id="check-class-time-online"
+                                           name="classTime">
+                                    <label class="form-check-label fs-5" for="check-class-time-online">
+                                        Online
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-3 d-flex flex-row">
+                            <div class="me-4 my-3">
+                                <h5>Status</h5>
+                            </div>
+                            <div>
+                                <div class="form-check checkbox-lg">
+                                    <input class="form-check-input" type="checkbox" value="Planning"
+                                           id="check-status-planning"
+                                           name="status">
+                                    <label class="form-check-label fs-5" for="check-status-planning">
+                                        Planning
+                                    </label>
+                                </div>
+                                <div class="form-check checkbox-lg">
+                                    <input class="form-check-input" type="checkbox" value="Scheduled"
+                                           id="check-status-scheduled"
+                                           name="status">
+                                    <label class="form-check-label fs-5" for="check-status-scheduled">
+                                        Scheduled
+                                    </label>
+                                </div>
+                                <div class="form-check checkbox-lg">
+                                    <input class="form-check-input" type="checkbox" value="Opening"
+                                           id="check-status-opening"
+                                           name="status">
+                                    <label class="form-check-label fs-5" for="check-status-opening">
+                                        Opening
+                                    </label>
+                                </div>
+                                <div class="form-check checkbox-lg">
+                                    <input class="form-check-input" type="checkbox" value="Closed"
+                                           id="check-status-closed"
+                                           name="status">
+                                    <label class="form-check-label fs-5" for="check-status-closed">
+                                        Closed
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-12 mb-3">
+                            <label class="form-label fs-5 fw-medium" for="select-fsu">FSU</label>
+                            <select class="form-control form-select" style="width: 100%;" name="fsu" id="select-fsu">
+                                <option selected disabled>---Select fsu---</option>
+                                <div th:each="f : ${listFSU}">
+                                    <option th:value="${f}">[[${f}]]</option>
+                                </div>
+                            </select>
+                        </div>
+                        <div class="col-xl-6 col-md-12 mb-3">
+                            <label class="form-label fs-5 fw-medium" for="select-trainer">Trainer</label>
+                            <select class="form-control form-select" style="width: 100%;" name="trainer"
+                                    id="select-trainer">
+                                <option selected disabled>---Select trainer---</option>
+                                <div th:each="t : ${listTrainer}">
+                                    <option th:value="${t}">[[${t}]]</option>
+                                </div>
+
+                            </select>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-end">
+                            <input class="btn btn-danger mx-1 me-auto" type="reset"
+                                   id="cancel-filter-option-dialog-button"
+                                   value="Cancel">
+                            <input class="btn btn-secondary mx-1" type="reset" id="reset-filter-option-dialog-button">
+                            <script>
+                                $("#cancel-filter-option-dialog-button").click(function (event) {
+                                    $("#filter-class-location").val(null).trigger("change");
+                                    $("#filter-option-dialog")[0].close();
+                                });
+                                $("#reset-filter-option-dialog-button").click(function (event) {
+                                    $("#filter-class-location").val(null).trigger("change");
+                                });
+                            </script>
+                            <input class="btn btn-primary mx-1" type="submit" name="btAction"
+                                   id="submit-filter-option-dialog-button">
+                        </div>
+                    </div>
+                </form>
+            </dialog>
+        </div>
+    </div>
+    <style>
+        #class-information-table_info{
+            display: none;
+        }
+    </style>
+    <div id="footer"></div>
+</div>
+<script src="/component/header.js"></script>
+<script src="/component/navbar.js"></script>
+<script src="/component/footer.js"></script>
+<script src="/js/component.js"></script>
+<script type="text/javascript" th:if="${filter != null}">
+    $('#class-information-table').DataTable({
+        searching: false
+    });
+</script>
+</body>
+
+</html>

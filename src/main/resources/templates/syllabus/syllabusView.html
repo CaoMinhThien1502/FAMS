@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+    <title>Syllabus</title>
+    <!-- included script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css"
+          integrity="sha512-34s5cpvaNG3BknEWSuOncX28vz97bRI59UnVtEEpFX536A7BtZSJHsDyFoCl8S7Dt2TPzcrCEoHBGeM4SUBDBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- --- -->
+    <link rel="stylesheet"  href="/css/component.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Inter'>
+    <link rel="stylesheet" href="/css/syllabus-view.css"/>
+    <script src="/js/menu.js"></script>
+    <STYLE>
+        .modal-backdrop {
+            z-index: -1;
+     }
+    </STYLE>
+
+</head>
+
+<body>
+    <div class="d-flex flex-column" style="height: 100vh;">
+        <div id="header"></div>
+        <div class="d-flex flex-grow-1 flex-row">
+            <div th:insert="fragments/navbar" style="background-color: #edf2f7; width: 260px"></div>
+<!-- '.............................................................................................................................................           -->
+            <div id="syllabusView" class="flex-grow-1">
+                <!-- content -->
+                <h1 id="title">Syllabus list</h1>
+                <div class="row form-group w-400">
+                    <div class="col-6" style="padding-left: 20px;">
+                        <div class="d-inline-block position-relative" style="width: 44%;">
+                            <i class="icon bi bi-search"></i>
+                            <input id="search-input" type="text" class="form-control d-inline-block ps-4"
+                                placeholder="Search by...">
+                        </div>
+
+                        <div class="d-inline-block position-relative"  style="width: 44%;" >
+                            <div class="input-group date" id="datepicker">
+                                <span class="input-group-append d-inline-block input-group-text bg-white">
+                                        <img src="/img/calendar-today.svg">
+                                </span>
+                                <input type="text" class="form-control ps-4" placeholder="Created date" id="date"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end gap-2" style="padding-right: 28px;" sec:authorize="hasAnyAuthority('SYLLABUS_FULL_ACCESS', 'SYLLABUS_CREATE')">
+                        <button id="import-btn" class="btn text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_469_623)">
+                                    <path d="M9 16H15V10H19L12 3L5 10H9V16ZM12 5.83L14.17 8H13V14H11V8H9.83L12 5.83ZM5 18H19V20H5V18Z"
+                                        fill="#DFDEDE" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_469_623">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Import file
+                        </button>
+                        <button id="add-btn" class="btn text-white"  onclick="redirectToCreateSyllabus()">
+                            <img src="/img/add.svg">
+                            Add New
+                        </button>
+                    </div>
+                </div>
+                <div id="search-keyword" class="search-keyword d-flex p-2 flex-wrap"></div>
+                <!--table-->
+                <div id="SyllabusDataList" class="container">
+                    <table id="table">
+                        <thead>
+                            <th>
+                                <span>Syllabus</span>
+                                <img src="/img/sort.svg" class="sort-btn" id="syllabus-name-sort">
+                            </th>
+                            <th>
+                                <span>Code</span>
+                                <img src="/img/sort.svg" class="sort-btn" id="code-sort">
+                            </th>
+                            <th>
+                                <span>Created on</span>
+                                <img src="/img/sort.svg" class="sort-btn" id="Created-on-sort">
+                            </th>
+                            <th>
+                                <span>Created by</span>
+                                <img src="/img/sort.svg" class="sort-btn" id="Created-by-sort">
+                            </th>
+                            <th>
+                                <span>Duration</span>
+                                <img src="/img/sort.svg" class="sort-btn" id="Duration-sort">
+                            </th>
+                            <th>
+                                <span>Output standard</span>
+                            </th>
+                            <th onclick="addRow()">
+                                <span>Status</span>
+                            </th>
+                            <th></th>
+                        </thead>
+                        <!--row data-->
+                        <tbody id="table-body" th:each="syllabus : ${syllabusList}">
+                            <tr>
+                                <td th:attr="onclick=|toView('${syllabus.syllabusId}')|" class="hyper-link-td"><a th:text="${syllabus.topicName}"></a></td>
+                                <td th:attr="onclick=|toView('${syllabus.syllabusId}')|" class="hyper-link-td"><a th:text="${syllabus.topicCode}"></a></td>
+                                <td><a th:text="${syllabus.createDate}"></a></td>
+                                <td><a th:text="${syllabus.createBy}"></a></td>
+                                <td><a th:text="${syllabus.duration}+' minutes'"></a></td>
+
+                                <td style="display: flex; min-width: 250px; padding-top: 13px;" >
+                                    <span class="rounded-pill text-white p-1 output-standard-wrapper" th:attr="onclick=|addToView(this, '${syllabus.syllabusId}')|"
+                                          th:each="standard : ${syllabus.outPutStandard}" th:text="${standard}"></span></td>
+                                <td >
+                                    <div class="p-1 text-white status-box" th:text="${syllabus.status}"></div></td>
+
+                                <td sec:authorize="hasAnyAuthority('SYLLABUS_FULL_ACCESS', 'SYLLABUS_MODIFY')">
+                                    <style>
+                                        .svg {
+                                            pointer-events: none;
+                                        }
+                                    </style>
+                                    <div class="dropdown">
+                                        <a onclick="ShowDropDownTab(this)" class="dropbtn">
+                                            <div class="svg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none">
+                                                    <path
+                                                        d="M13 15C14.1046 15 15 14.1046 15 13C15 11.8954 14.1046 11 13 11C11.8954 11 11 11.8954 11 13C11 14.1046 11.8954 15 13 15Z"
+                                                        fill="#2D3748" />
+                                                    <path
+                                                        d="M20 15C21.1046 15 22 14.1046 22 13C22 11.8954 21.1046 11 20 11C18.8954 11 18 11.8954 18 13C18 14.1046 18.8954 15 20 15Z"
+                                                        fill="#2D3748" />
+                                                    <path
+                                                        d="M6 15C7.10457 15 8 14.1046 8 13C8 11.8954 7.10457 11 6 11C4.89543 11 4 11.8954 4 13C4 14.1046 4.89543 15 6 15Z"
+                                                        fill="#2D3748" />
+                                                </svg>
+                                            </div>
+                                        </a>
+                                        <div class="dropdown-content" style="left:-200%">
+                                            <a href="#home">
+                                                <img src="/img/add3.svg">
+                                                Add training program</a>
+                                            <a th:href="@{'/syllabus/edit?syllabus='+${syllabus.syllabusId}}">
+                                                <img src="/img/edit-pen.svg">
+                                                Edit syllabus</a>
+                                            <a href="#contact" th:href="@{'/syllabus/duplicate?syllabus='+${syllabus.syllabusId}}">
+                                                <img src="/img/duplicate.svg">
+                                                Duplicate syllabus</a>
+                                            <a href="#contact" th:attr="onclick=|deleteSyllabus('${syllabus.syllabusId}')|">
+
+                                                <img src="/img/delete-forever-1.svg">
+                                                Delete syllabus</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+<!--                pagination nav bar-->
+                    <nav class="mt-5 list-body" aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center" id="pageBar">
+                        <!-- page bar-->
+                            <li class="rounded-circle page-item" id="previousPage">
+                                <a><img src="/img/arrow-previous-page.svg" class="page-shortcut"></a>
+                            </li>
+
+                            <div class="pagination justify-content-center" id="pageNumbers">
+                                <th:block>
+                                    <li class="rounded-circle page-item" id="total-page"><a class="page-link">[[${totalPage}]]</a></li>
+                                </th:block>
+                            </div>
+
+                            <li class="rounded-circle page-item" id="nextPage">
+                                <a><img src="/img/arrow-next-page.svg" class="page-shortcut"></a>
+                            </li>
+                            <li class="rounded-circle page-item" id="lastPage">
+                                <a><img src="/img/arrow-last-page.svg" class="page-shortcut"></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!--             import form-->
+        <dialog id="import-syllabus-dialog" class="p-0" >
+            <div class="popup-syllabus">
+                <div class="frame">
+                    <div class="text-wrapper">Import Syllabus</div>
+                </div>
+                <form id="import-syllabus-form" enctype="multipart/form-data">
+                    <div class="div">
+                        <div class="text-wrapper-2">Import setting</div>
+                        <div class="frame-2">
+                            <div class="frame-3">
+                                <div class="div-wrapper">
+                                    <p class="file-csv"><span class="span">File (csv)</span> <span class="text-wrapper-3">*</span></p>
+                                </div>
+                                <button class="frame-4" id="choose-file">
+                                    <div class="text-wrapper-4" id="select-file">Select</div>
+                                </button>
+                                <div id="file-info" style="display: none;">
+                                    <span id="selected-filename"></span>
+                                    <span id="change-file" class="close-button" style="color: red">X</span>
+                                </div>
+                                <input type="file" id="syllabusFileInput" style="display: none;" name="file" accept=".csv, .xlsx">
+                            </div>
+                            <div class="frame-5">
+                                <div class="div-wrapper">
+                                    <div class="text-wrapper-5">Encoding type</div>
+                                </div>
+                                <select class="frame-6" id="encoding-select">
+                                    <option class="text-wrapper-6" value="auto-detect">Auto detect</option>
+                                    <option class="text-wrapper-6" value="utf-8">UTF-8</option>
+                                    <div class="menu-icon-ant-menu"><img class="union" src="/img/union.svg" /></div>
+                                </select>
+                            </div>
+                            <div class="frame-3">
+                                <div class="div-wrapper">
+                                    <div class="text-wrapper-7">Column seperator</div>
+                                </div>
+                                <select class="frame-6" id="separator-select">
+                                    <option class="text-wrapper-8" value=",">Comma ,</option>
+                                    <option class="text-wrapper-8" value=".">Dot .</option>
+                                    <option class="text-wrapper-8" value=";">Semicolon ;</option>
+                                    <div class="menu-icon-ant-menu"><img class="union" src="/img/union.svg" /></div>
+                                </select>
+                            </div>
+                            <div class="frame-3">
+                                <div class="div-wrapper">
+                                    <div class="text-wrapper-7">Import template</div>
+                                </div>
+                                <a href="/public/UserTest.xlsx" download="UserTest.xlsx" class="frame-7">
+                                    <div class="text-wrapper-9">Download</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="line" src="/img/line-69.svg" />
+                    <div class="frame-8">
+                        <div class="text-wrapper-10">Duplicate control</div>
+                        <div class="frame-2">
+                            <div class="frame-9">
+                                <div class="frame-10">
+                                    <div class="text-wrapper-7">Scanning</div>
+                                </div>
+                                <div class="checkbox-group">
+                                    <div class="checkbox">
+                                        <input class="rectangle" type="checkbox" id="code-checkbox">
+                                        <label for="code-checkbox">
+                                            <span class="text-wrapper-11">Syllabus code</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input class="rectangle" type="checkbox" id="name-checkbox">
+                                        <label for="name-checkbox">
+                                            <span class="text-wrapper-11">Syllabus name</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="frame-9">
+                                <div class="frame-10">
+                                    <div class="text-wrapper-7">Duplicate handle</div>
+                                </div>
+                                <div class="radio-group">
+                                    <label class="element">
+                                        <input class="radio-2" type="radio" name="choice" value="allow" id="allowRadio" checked />
+                                        <span class="text-wrapper-11">Allow</span>
+                                    </label>
+                                    <label class="element">
+                                        <input class="radio-2" type="radio" name="choice" value="replace" id="replaceRadio" />
+                                        <span class="text-wrapper-11">Replace</span>
+                                    </label>
+                                    <label class="element">
+                                        <input class="radio-2" type="radio" name="choice" value="skip" id="skipRadio" />
+                                        <span class="text-wrapper-11">Skip</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="line" src="/img/line-69.svg" />
+                    <div class="frame-11">
+                        <div class="add-day-button" id="import-cancel-btn">
+                            <input type="reset" class="text-wrapper-12" value="Cancel">
+                        </div>
+                        <div>
+                            <input type="submit" name="btAction" class="frame-12" value="Import">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </dialog>
+
+<!--        <dialog id="importMessageModal" aria-labelledby="messageModalLabel" aria-hidden="true">-->
+<!--            <div class="modal-dialog" role="document">-->
+<!--                <div class="modal-content">-->
+<!--                    <div class="modal-header">-->
+<!--                        <h5 class="modal-title" id="messageModalLabel">Message</h5>-->
+<!--                    </div>-->
+<!--                    <div class="modal-body">-->
+<!--                        <p id="importMessage"></p>-->
+<!--                    </div>-->
+<!--                    <div class="modal-footer">-->
+<!--                        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </dialog>-->
+
+        <div id="footer"></div>
+    </div>
+
+    <script>
+        let jsonData = "[[${viewDetailJson}]]";
+        let currentSearchDetails = JSON.parse(jsonData.replace(/&quot;/g,'"'));
+        let sortColumn = currentSearchDetails.sortColumn;
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="/js/menu.js"></script>
+    <script src="/component/header.js"></script>
+<!--    <script src="/component/navbar.js"></script>-->
+    <script src="/js/SyllabusDetails/unitContentForm.js"></script>
+    <script src="/component/footer.js"></script>
+    <script src="/js/component.js"></script>
+    <script src="/js/SyllabusView/filter.js"></script>
+    <script src="/js/SyllabusView/drop-down.js"></script>
+    <script src="/js/SyllabusView/import-file.js"></script>
+    <script src="/js/SyllabusView/pagination.js"></script>
+    <!-- DatePicker and dependencies-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"
+            integrity="sha512-LsnSViqQyaXpD4mBBdRYeP6sRwJiJveh2ZIbW41EBrNmKxgr/LFZIiWT6yr+nycvhvauz8c2nYMhrP80YhG7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/SyllabusView/date-picker.js"></script>
+    <script>
+        function addToView(element, syllabusId){
+            if ($(element).text()=="..."){
+                $(element).on("click", toView(syllabusId));
+            }
+        }
+
+        function toView(syllabusId){
+            window.location.href = "/syllabus/view?syllabus="+syllabusId;
+        }
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Training Program</title>
+
+    <script src="/js/menu.js"></script>
+    <!-- included script -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+    ></script>
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+            crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/component.css"/>
+    <link rel="stylesheet" href="/css/trainingProgramDetail.css">
+    <link rel="stylesheet" href="/css/component.css"/>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script src="/js/JQuery/jquery-3.7.1.js"></script>
+    <link href="/css/select2/select2.css" rel="stylesheet"/>
+    <script src="/js/select2/select2.min.js"></script>
+    <link href="/css/DataTable/jquery.dataTables.css" rel="stylesheet">
+    <script src="/js/DataTable/jquery.dataTables.js"></script>
+    <script src="/js/materials/materials-add.js"></script>
+    <script type="text/javascript" th:src="@{/js/TrainingProgram/trainingprogramdetail.js}"></script>
+    <link href="/css/material/material.css" rel="stylesheet">
+
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <!-- --- -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Inter"
+            rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        :root {
+            --dark: #34495E;
+            --light: #ffffff;
+            --success: #0ABF30;
+            --error: #E24D4C;
+            --warning: #E9BD0C;
+            --info: #3498DB;
+        }
+        #over {
+            display: flex;
+            background: #000;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            z-index: 997;
+        }
+        
+        .notifications {
+            position: fixed;
+            top: 30px;
+            right: 20px;
+            z-index: 999;
+        }
+        
+        .notifications :where(.toast, .column) {
+            display: flex;
+            align-items: center;
+        }
+        .notifications .toast {
+            width: 400px;
+            position: relative;
+            overflow: hidden;
+            list-style: none;
+            border-radius: 4px;
+            padding: 16px 17px;
+            margin-bottom: 10px;
+            background: var(--light);
+            justify-content: space-between;
+            animation: show_toast 0.3s ease forwards;
+        }
+        
+        @keyframes show_toast {
+            0% {
+                transform: translateX(100%);
+            }
+            40% {
+                transform: translateX(-5%);
+            }
+            80% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-10px);
+            }
+        }
+        
+        .notifications .toast.hide {
+            animation: hide_toast 0.3s ease forwards;
+        }
+        
+        @keyframes hide_toast {
+            0% {
+                transform: translateX(-10px);
+            }
+            40% {
+                transform: translateX(0%);
+            }
+            80% {
+                transform: translateX(-5%);
+            }
+            100% {
+                transform: translateX(calc(100% + 20px));
+            }
+        }
+        
+        .toast::before {
+            position: absolute;
+            content: "";
+            height: 3px;
+            width: 100%;
+            bottom: 0px;
+            left: 0px;
+            animation: progress 5s linear forwards;
+        }
+        
+        @keyframes progress {
+            100% {
+                width: 0%;
+            }
+        }
+        
+        .toast.success::before, .btn#success {
+            background: var(--success);
+        }
+        .toast.error::before, .btn#error {
+            background: var(--error);
+        }
+        .toast.warning::before, .btn#warning {
+            background: var(--warning);
+        }
+        .toast .column i {
+            font-size: 1.75rem;
+        }
+        
+        .toast.success .column i {
+            color: var(--success);
+        }
+        .toast.error .column i {
+            color: var(--error);
+        }
+        .toast.warning .column i {
+            color: var(--warning);
+        }
+        .toast .column span {
+            font-size: 1.07rem;
+            margin-left: 12px;
+        }
+        
+        .toast i:last-child {
+            color: #aeb0d7;
+            cursor: pointer;
+        }
+        
+        .toast i:last-child:hover {
+            color: var(--dark);
+        }
+        
+        .buttons .btn {
+            border: none;
+            outline: none;
+            cursor: pointer;
+            margin: 0 5px;
+            color: var(--light);
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+        
+        @media screen and (max-width: 530px) {
+            .notifications {
+                width: 95%;
+            }
+            
+            .notifications .toast {
+                width: 100%;
+                font-size: 1rem;
+                margin-left: 20px;
+            }
+            
+            .buttons .btn {
+                margin: 0 1px;
+                font-size: 1.1rem;
+                padding: 8px 15px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="d-flex flex-column" style="height: 100vh">
+    <div id="header"></div>
+    <div class="d-flex flex-grow-1 flex-row">
+        <div th:include="fragments/navbar" style="background-color: #edf2f7"></div>
+        <!-- '.............................................................................................................................................           -->
+        <div id="trainingProgramDetail" class="flex-grow-1">
+            <ul class="notifications"></ul>
+            <!-- content -->
+            <div class="header-tittle">
+                <h1>Training program</h1>
+                <div class="header-content">
+                    <h1 th:text="${trainingProgramDetail.TrainingProgramDTO.name}"></h1>
+                    <p th:text="${trainingProgramDetail.TrainingProgramDTO.status}"></p>
+                    <div class="dot" onclick="toggleContent()"
+                         sec:authorize="hasAnyAuthority('TRAINING_PROGRAM_FULL_ACCESS') or hasAnyAuthority('TRAINING_PROGRAM_CREATE')">
+                        <i class="bi bi-three-dots"></i>
+                        <div class="dotcontent">
+                            <div class="dotcontent-items">
+                                <span>Manage</span>
+                                <div class="dotcontent-items-item">
+                                    <svg
+                                            style="margin-right: 10px"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                    >
+                                        <g clip-path="url(#clip0_55_7455)">
+                                            <path
+                                                    d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25ZM5.92 19H5V18.08L14.06 9.02L14.98 9.94L5.92 19ZM20.71 5.63L18.37 3.29C18.17 3.09 17.92 3 17.66 3C17.4 3 17.15 3.1 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04C21.1 6.65 21.1 6.02 20.71 5.63Z"
+                                                    fill="#285D9A"
+                                            />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_55_7455">
+                                                <rect width="24" height="24" fill="white"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <form th:action="@{/trainingprogram/update}" method="GET">
+                                        <input type="hidden" name="code"
+                                               th:value="${trainingProgramDetail.TrainingProgramDTO.trainingProgramCode}">
+                                        <input type="hidden" name="status"
+                                               th:value="${trainingProgramDetail.TrainingProgramDTO.status}">
+                                        <button type="submit">Edit program</button>
+                                    </form>
+                                </div>
+                                <div class="dotcontent-items-item" th:if="${trainingProgramDetail.TrainingProgramDTO.status} != 'DRAFT'">
+                                    <svg
+                                            style="margin-right: 10px"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                    >
+                                        <g clip-path="url(#clip0_55_7458)">
+                                            <path
+                                                    d="M15.7895 3H5.68421C4.75789 3 4 3.77727 4 4.72727V16.8182H5.68421V4.72727H15.7895V3ZM18.3158 6.45455H9.05263C8.12632 6.45455 7.36842 7.23182 7.36842 8.18182V20.2727C7.36842 21.2227 8.12632 22 9.05263 22H18.3158C19.2421 22 20 21.2227 20 20.2727V8.18182C20 7.23182 19.2421 6.45455 18.3158 6.45455ZM18.3158 20.2727H9.05263V8.18182H18.3158V20.2727Z"
+                                                    fill="#285D9A"
+                                            />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_55_7458">
+                                                <rect width="24" height="24" fill="white"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <form th:action="@{/trainingprogram/duplicate}" method="POST">
+                                        <input type="hidden" name="trainingProgramCode"
+                                               th:value="${trainingProgramDetail.TrainingProgramDTO.trainingProgramCode}">
+                                        <button type="submit">Duplicate program</button>
+                                    </form>
+                                    <!--                                    <a href="#" th:onclick="duplicateProgram([[${trainingProgramDetail.TrainingProgramDTO.trainingProgramCode}]])">Duplicate Program</a>-->
+                                </div>
+                                <div class="dotcontent-items-item">
+                                    <svg
+                                            style="margin-right: 10px"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                    >
+                                        <g clip-path="url(#clip0_55_7461)">
+                                            <path
+                                                    d="M12 5.99995C15.79 5.99995 19.17 8.12995 20.82 11.5C20.23 12.72 19.4 13.77 18.41 14.62L19.82 16.03C21.21 14.8 22.31 13.26 23 11.5C21.27 7.10995 17 3.99995 12 3.99995C10.73 3.99995 9.51 4.19995 8.36 4.56995L10.01 6.21995C10.66 6.08995 11.32 5.99995 12 5.99995ZM10.93 7.13995L13 9.20995C13.57 9.45995 14.03 9.91995 14.28 10.49L16.35 12.56C16.43 12.22 16.49 11.86 16.49 11.49C16.5 9.00995 14.48 6.99995 12 6.99995C11.63 6.99995 11.28 7.04995 10.93 7.13995ZM2.01 3.86995L4.69 6.54995C3.06 7.82995 1.77 9.52995 1 11.5C2.73 15.89 7 19 12 19C13.52 19 14.98 18.71 16.32 18.18L19.74 21.6L21.15 20.19L3.42 2.44995L2.01 3.86995ZM9.51 11.37L12.12 13.98C12.08 13.99 12.04 14 12 14C10.62 14 9.5 12.88 9.5 11.5C9.5 11.45 9.51 11.42 9.51 11.37ZM6.11 7.96995L7.86 9.71995C7.63 10.27 7.5 10.87 7.5 11.5C7.5 13.98 9.52 16 12 16C12.63 16 13.23 15.87 13.77 15.64L14.75 16.62C13.87 16.86 12.95 17 12 17C8.21 17 4.83 14.87 3.18 11.5C3.88 10.07 4.9 8.88995 6.11 7.96995Z"
+                                                    fill="#285D9A"
+                                            />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_55_7461">
+                                                <rect width="24" height="24" fill="white"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <form th:action="@{/trainingprogram/changestatus}" method="POST">
+                                        <input type="hidden" name="code"
+                                               th:value="${trainingProgramDetail.TrainingProgramDTO.trainingProgramCode}">
+                                        <input type="hidden" name="status"
+                                               th:value="${trainingProgramDetail.TrainingProgramDTO.status}">
+                                        <button type="submit"
+                                                th:text="${trainingProgramDetail.TrainingProgramDTO.status == 'ACTIVE' ? 'De-active program' : 'Active program'}"></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="program-info">
+                    <p class="duration" style="display: flex"><span class="label">Duration:</span>
+                        <span class="value" id="totalDurationContainer"></span>
+                    </p>
+                    <div class="modified-info">
+                        <p class="modified-date">Modified on
+                            <span class="date-value"
+                                  th:text="${trainingProgramDetail.TrainingProgramDTO.modifiedDate}"></span>
+                        </p>
+                        <p class="modified-by">by
+                            <span class="user-value"
+                                  th:text="${trainingProgramDetail.TrainingProgramDTO.modifiedBy}"></span>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Thêm thẻ div để chứa tổng giá trị -->
+                
+                <div>
+                    <p class="tittle-each-content">General Information</p>
+                    <p th:text="${trainingProgramDetail.TrainingProgramDTO.generalInf}"></p>
+                </div>
+
+                <div>
+                    <p class="tittle-each-content">Content</p>
+                    <div class="syllabus-container">
+                        <div class="syllabus-item" th:each="syllabus, index: ${trainingProgramDetail.syllabusListDTO}">
+                            <div id="item">
+                                <div id="name" th:text="${syllabus.SyllabusDetailDTO.topicName}" scope="row"></div>
+                                <div class="frame-1205" id="frame-1205-{{index}}">
+                                    <svg
+                                            class="east"
+                                            width="24"
+                                            height="25"
+                                            viewBox="0 0 24 25"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <g clip-path="url(#clip0_55_7032)">
+                                            <path
+                                                    d="M15 5.5L13.59 6.91L18.17 11.5H2V13.5H18.17L13.58 18.09L15 19.5L22 12.5L15 5.5Z"
+                                                    fill="#F1F1F1"
+                                            />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_55_7032">
+                                                <rect
+                                                        width="24"
+                                                        height="24"
+                                                        fill="white"
+                                                        transform="translate(0 0.5)"
+                                                />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div id="content">
+                                <p th:text="${syllabus.SyllabusDetailDTO.version}"></p>
+                                <p th:text="${syllabus.SyllabusDetailDTO.duration}" class="duration-minutes"></p>
+                                <p th:text="${syllabus.SyllabusDetailDTO.modifiedDate}"></p>
+                                <p th:text="${syllabus.SyllabusDetailDTO.modifiedBy}"></p>
+                            </div>
+                            <!--  detail of content-->
+                            <div class="content-container" id="content-container-{{index}}">
+                                <div class="trainingUnit-item"
+                                     th:if="${syllabus.trainingUnitDetailOfListDTOList != null}"
+                                     th:each="trainingunit: ${syllabus.trainingUnitDetailOfListDTOList}">
+                                    <div class="frame-1" id="frame-1-1">
+                                        <div class="frame-2">
+                                            <div class="day">
+                                                <p>Day</p>
+                                                <p th:text="${trainingunit.dayNumber}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="detail-items-header">
+                                        <div class="detail-items"
+                                             th:if="${trainingunit.trainingContentDetailOfListDTOList != null}"
+                                             th:each="trainingcontent: ${trainingunit.trainingContentDetailOfListDTOList}">
+                                            <div class="content-day">
+                                                <div>
+                                                    <div id="content-header">
+                                                    </div>
+                                                    <div class="frame-51">
+                                                        <div class="frame-512">
+                                                            <div class="unit-6"
+                                                                 th:text="${trainingcontent.unitCode}"></div>
+                                                            <div class="frame-47">
+                                                                <div class="mvc-architecture-in-asp-net"
+                                                                     th:text="${trainingcontent.unitName}"></div>
+                                                                <!--                                                            <div class="_6-hrs" th:text="${totalDuration}"></div>-->
+                                                                <div class="_6-hrs"><span
+                                                                        class="total-duration-for-content"
+                                                                        th:text="${totalDurationForContent}">hrs</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="frame-53">
+                                                            <svg
+                                                                    class="arrow-drop-down-circle"
+                                                                    width="24"
+                                                                    height="24"
+                                                                    viewBox="0 0 24 24"
+                                                                    fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                            >
+                                                                <g clip-path="url(#clip0_55_7060)">
+                                                                    <path
+                                                                            d="M12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 15L8 11H16L12 15Z"
+                                                                            fill="#285D9A"
+                                                                    />
+                                                                </g>
+                                                                <defs>
+                                                                    <clipPath id="clip0_55_7060">
+                                                                        <rect width="24" height="24" fill="white"/>
+                                                                    </clipPath>
+                                                                </defs>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="content-tc">
+                                                    <div id="content-content"
+                                                         th:if="${trainingcontent.trainingContentDetailOfListDTOS != null}"
+                                                         th:each="trainingcontentdetail: ${trainingcontent.trainingContentDetailOfListDTOS}">
+                                                        <div class="frame-81">
+                                                            <div class="frame-89">
+                                                                <div class="frame-43">
+                                                                    <div class="frame-49">
+                                                                        <div class="tc-name"
+                                                                             th:text="${trainingcontentdetail.content}">
+                                                                        </div>
+                                                                        <div class="frame-40">
+                                                                            <div class="frame-95">
+                                                                                <div class="tc-output"
+                                                                                     th:text="${trainingcontentdetail.outputStandard}"></div>
+                                                                            </div>
+                                                                            <div class="tc-time"
+                                                                                 th:text="${trainingcontentdetail.duration}"></div>
+                                                                            <div class="offline">
+                                                                                <div class="offline2"
+                                                                                     th:text="${trainingcontentdetail.trainingFormat}"></div>
+                                                                            </div>
+                                                                            <svg
+                                                                                    class="seminar-workshop"
+                                                                                    width="24"
+                                                                                    height="24"
+                                                                                    viewBox="0 0 24 24"
+                                                                                    fill="none"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                            >
+                                                                                <g clip-path="url(#clip0_55_7100)">
+                                                                                    <path
+                                                                                            d="M12 5C8.13 5 5 8.13 5 12H7C7 9.24 9.24 7 12 7C14.76 7 17 9.24 17 12H19C19 8.13 15.87 5 12 5ZM13 14.29C13.88 13.9 14.5 13.03 14.5 12C14.5 10.62 13.38 9.5 12 9.5C10.62 9.5 9.5 10.62 9.5 12C9.5 13.02 10.12 13.9 11 14.29V17.59L7.59 21L9 22.41L12 19.41L15 22.41L16.41 21L13 17.59V14.29ZM12 1C5.93 1 1 5.93 1 12H3C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12H23C23 5.93 18.07 1 12 1Z"
+                                                                                            fill="#285D9A"
+                                                                                    />
+                                                                                </g>
+                                                                                <defs>
+                                                                                    <clipPath id="clip0_55_7100">
+                                                                                        <rect width="24" height="24"
+                                                                                              fill="white"/>
+                                                                                    </clipPath>
+                                                                                </defs>
+                                                                            </svg>
+                                                                            <div class="folder"
+                                                                                 th:name="${trainingunit.dayNumber}+'_'+${trainingcontent.unitCode}+'_'+${trainingcontent.unitName}+'_'+${trainingProgramDetail.TrainingProgramDTO.trainingProgramCode}"
+                                                                                 th:id="${trainingcontentdetail.content}"
+                                                                                 onclick="uploadMaterial(this)">
+                                                                                <svg
+                                                                                        class="group4"
+                                                                                        width="24"
+                                                                                        height="24"
+                                                                                        viewBox="0 0 24 24"
+                                                                                        fill="none"
+                                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                                >
+                                                                                    <path
+                                                                                            d="M20 6H12L10 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V8C22 6.9 21.1 6 20 6ZM20 18H4V6H9.17L11.17 8H20V18ZM17.5 12.12V15.5H14.5V10.5H15.88L17.5 12.12ZM13 9V17H19V11.5L16.5 9H13Z"
+                                                                                            fill="#285D9A"
+                                                                                    />
+                                                                                </svg>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="tittle-each-content">List of class</p>
+                    <table class="table">
+                        <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Class</th>
+                            <th scope="col">Class code</th>
+                            <th scope="col">Created on</th>
+                            <th scope="col">Created by</th>
+                            <th scope="col">Duration</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">FSU</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="class: ${trainingProgramDetail.classListDTO}">
+                            <th th:text="${class.className}" scope="row"></th>
+                            <td th:text="${class.classCode}"></td>
+                            <td th:text="${class.createDate}"></td>
+                            <td th:text="${class.createBy}"></td>
+                            <td th:text="${class.duration}">days</td>
+                            <td>
+                                <p th:text="${class.status}" class="status-label ${class.status}" th:style="'background-color: ' + (${class.status} == 'Active' ? 'yellow' : (${class.status} == 'Completed' ? 'rgba(45, 55, 72, 1)' : (${class.status} == 'Opening' ? 'green' : (${class.status} == 'Scheduled' ? '#D45B13' : (${class.status} == 'Planning' ? 'red' : '#2D3748')))))"></p>
+                            </td>
+                            <td th:text="${class.location}"></td>
+                            <td th:text="${class.fsu}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="footer-button">
+                    <a id="a1" th:href="@{/trainingprogram}" class="btn btn-primary btn-sm">Back</a>
+                    <div class="ft-items"
+                         sec:authorize="hasAnyAuthority('TRAINING_PROGRAM_FULL_ACCESS') or hasAnyAuthority('TRAINING_PROGRAM_CREATE')">
+                        
+                        <form id="a2" th:action="@{/trainingprogram/update}" method="GET">
+                            <input type="hidden" name="code"
+                                   th:value="${trainingProgramDetail.TrainingProgramDTO.trainingProgramCode}">
+                            <input type="hidden" name="status"
+                                   th:value="${trainingProgramDetail.TrainingProgramDTO.status}">
+                            <button type="submit">Edit</button>
+                        </form>
+
+                        <form id="a3" th:if="${trainingProgramDetail.TrainingProgramDTO.status} != 'DRAFT'" th:action="@{/trainingprogram/duplicate}" method="POST">
+                            <input type="hidden" name="trainingProgramCode"
+                                   th:value="${trainingProgramDetail.TrainingProgramDTO.trainingProgramCode}">
+                            <button type="submit">Duplicate</button>
+                        </form>
+
+                        <form id="a4" th:action="@{/trainingprogram/changestatus}" method="POST">
+                            <input type="hidden" name="code"
+                                   th:value="${trainingProgramDetail.TrainingProgramDTO.trainingProgramCode}">
+                            <input type="hidden" name="status"
+                                   th:value="${trainingProgramDetail.TrainingProgramDTO.status}">
+                            <button type="submit"
+                                    th:text="${trainingProgramDetail.TrainingProgramDTO.status == 'ACTIVE' ? 'De-active program' : 'Active program'}"></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <dialog class="trainer-box" id="trainer-box" style="display: none;position: absolute;z-index: 998">
+    </dialog>
+    <input type="hidden" id="materials" th:value="${materials}">
+    <div id="footer"></div>
+</div>
+<script src="/component/header.js"></script>
+<script src="/component/footer.js"></script>
+<script src="/js/component.js"></script>
+<!-- Ract -->
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+
+<!-- DatePicker and dependencies-->
+<script src="https://cdn.jsdelivr.net/npm/date-object@latest/dist/umd/date-object.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-element-popper@latest/build/browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-multi-date-picker@latest/build/browser.min.js"></script>
+
+<!-- Optional Plugin -->
+<script src="https://cdn.jsdelivr.net/npm/react-multi-date-picker@latest/build/date_picker_header.browser.js"></script>
+</body>
+</html>

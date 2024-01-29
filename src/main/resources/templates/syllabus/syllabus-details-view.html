@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <link href="css/Bootstrap%205/bootstrap.min.css" rel="stylesheet">
+<!--    <link rel="stylesheet" href="css/general-view.css">-->
+    <link rel="stylesheet" href="css/view-general-syllabus.css">
+    <link rel="stylesheet" href="css/view-others-syllabus.css">
+    <link rel="stylesheet" href="css/view-outline-syllabus.css">
+    <link rel="stylesheet" href="css/create-syllabus-style-header.css">
+    <link rel="stylesheet" href="css/create-syllabus-style-footer.css">
+    <link rel="stylesheet" href="css/syllabus-details.css">
+    <script src="js/Bootstrap%205/bootstrap.bundle.min.js"></script>
+    <script src="js/JQuery/jquery-3.7.1.js"></script>
+    <script src="js/menu.js"></script>
+    <link rel="stylesheet" href="css/training-unit-form-style.css">
+    <link rel="stylesheet" href="css/mobiscroll.jquery.min.css">
+
+    <title>Syllabus Details View</title>
+
+</head>
+
+<body>
+    <div class="d-flex flex-column" style="height: 100vh;">
+        <div id="header"></div>
+        <div class="d-flex flex-grow-1 flex-row">
+            <div th:insert="fragments/navbar" style="background-color: #edf2f7; width: 260px"></div>
+            <div class="flex-grow-1">
+                <div id="syllabus-body" ></div>
+            </div>
+
+        </div>
+        <div id="footer"></div>
+    </div>
+<script>
+
+    let versionList = "[[${versionList}]]";
+    let action = "[[${action}]]";
+    let urlParam = new URLSearchParams(window.location.search);
+    var data;
+    $.ajax({
+          url:"/syllabus/details",
+          data:{"syllabus": String(urlParam.get("syllabus")),
+                "actionType": action},
+          dataType: 'json',
+          async: false,
+          success: function(response) {
+            data = response;
+          }
+        });
+</script>
+<!--<script src="js/syllabusDetailsEdit.js"></script>-->
+<script src="js/SyllabusDetails/objectiveFormTemplate.js"></script>
+<script src="js/SyllabusDetails/objectiveForm.js"></script>
+<script src="js/SyllabusDetails/trainingUnitForm.js"></script>
+<script src="js/SyllabusDetails/unitContentForm.js"></script>
+<script src="js/SyllabusDetails/trainContentForm.js"></script>
+<script src="js/SyllabusDetails/unitCreationForm.js"></script>
+<script src="js/SyllabusDetails/dayForm.js"></script>
+
+<script src="js/SyllabusDetails/ajaxRequest.js"></script>
+<!--<script src="component/navbar.js"></script>-->
+<script src="component/header.js"></script>
+<script src="component/footer.js"></script>
+<script src="js/component.js"></script>
+
+<script src="js/SyllabusView/syllabusGeneralViewBody.js"></script>
+<script src="js/SyllabusView/syllabusOutlineViewBody.js"></script>
+<script src="js/SyllabusView/syllabusOthersViewBody.js"></script>
+<script src="js/mobiscroll.jquery.min.js"></script>
+
+
+
+<script src="https://cdn.syncfusion.com/ej2/23.1.36/dist/ej2.min.js" ></script>
+<script src="https://cdn.syncfusion.com/ej2/syncfusion-helper.js" ></script>
+
+<script>
+    $( document).ready(function() {
+        loadGeneralViewBody();
+    });
+</script>
+
+
+</body>
+</html>

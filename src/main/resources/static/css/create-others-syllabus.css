@@ -1,0 +1,285 @@
+.title-text-white{
+    color: #FFF;
+    /* text */
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.title-text-black{
+    color: #000;
+    /* text */
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.normal-text{
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.doughnut-img{
+    display: block;
+    max-height: 135px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.syllabus-content-others{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 90%;
+            align-items: flex-start;
+            margin-top: 23px;
+            padding: 10px 5px 10px 30px;
+
+            border-top: 0.5px solid #000;
+}
+    .syllabus-content-1{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 35%;
+        border-radius: 3px;
+    }
+        .time-allocation-others{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: 100%;
+            align-items: center;
+            flex-shrink: 0;
+
+            margin-right: 5px;
+
+            border-radius: 0px 0px 10px 10px;
+            background: #FFF;
+            box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.16);
+
+            overflow: hidden;
+        }
+            .time-allocation-others-title{
+                display: flex;
+                padding: 5px 0px;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                align-self: stretch;
+                height: auto;
+                width: 100%;
+
+                border-radius: 10px 10px 0px 0px;
+                background: #2D3748;
+
+                overflow: hidden;
+            }
+            .time-allocation-others-content{
+                padding-left:30px;
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                height: 85%;
+                width: 100%;
+                gap: 150px;
+            }
+                .others-info{
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+                    height: auto;
+                    align-items: center;
+                    gap: 15px;
+                }
+        #assessment-scheme-others{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: 100%;
+            align-items: center;
+            flex-shrink: 0;
+
+            border-radius: 0px 0px 10px 10px;
+            background: #FFF;
+            box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.16);
+        }
+            .assessment-scheme-others-title{
+                display: flex;
+                padding: 5px 0px;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                align-self: stretch;
+                height: auto;
+                width: 100%;
+
+                border-radius: 10px 10px 0px 0px;
+                background: #2D3748;
+            }
+            .assessment-scheme-others-content{
+                display: flex;
+                width: 100%;
+                align-items: flex-start;
+                flex-direction: column;
+
+            }
+                .assessment-scheme-others-content-1{
+                    display: flex;
+                    width: 100%;
+                    gap: 65px;
+                    border-bottom: 1px solid var(--Sub-info, #474747);
+                }
+                    .assessment-scheme-others-content-1-left{
+                        display: flex;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        width: 40%;
+                        gap: 10px;
+                        padding: 5px 0px 5px 15px;
+                    }
+                    .assessment-scheme-others-content-1-right{
+                        display: flex;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        width: 40%;
+                        gap: 10px;
+                        padding: 5px 10px 5px 0px;
+                    }
+                        .assessment-scheme-others-content-1-req-text-box{
+                            display: flex;
+                            width: 100%;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                            .assessment-scheme-others-content-1-text-box{
+                                display: flex;
+                                padding: 5px 10px;
+                                align-items: flex-start;
+                                gap: 10px;
+
+                                border-radius: 10px;
+
+                                background: #FFF;
+                            }
+                .assessment-scheme-others-content-2{
+                    display: flex;
+                    width: 100%;
+                    flex-direction: row;
+
+                    padding: 18px 0px 0px 15px;
+                    gap: 10px;
+
+                    overflow: visible;
+                }
+                    .assessment-scheme-others-content-2-req-text-box{
+                        display: flex;
+                        width: 145px;
+                        padding: 0px 0px 0px 0px;
+                        margin-left: 170px;
+                        align-items: center;
+
+                        overflow: visible;
+                    }
+                        .assessment-scheme-others-content-2-text-box{
+                            display: flex;
+                            width: 50px;
+                            padding: 0px 10px 0px 14px;
+                            margin-left: 40px;
+                            align-items: flex-start;
+                            gap: 10px;
+                            flex-shrink: 0;
+
+                            border-radius: 10px;
+                            background: #FFF;
+                        }
+
+    .syllabus-content-2{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 65%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin-left: 5px;
+        margin-top: 10px;
+
+        border-radius: 0px 0px 10px 10px;
+        background: #FFF;
+        box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.16);
+
+        overflow: hidden;
+    }
+        .syllabus-content-2-title{
+                display: flex;
+                padding: 5px 0px;
+                align-items: flex-start;
+                padding: 5px 0px 5px 10px;
+                gap: 10px;
+                align-self: stretch;
+
+                border-radius: 10px 10px 0px 0px;
+                background: #2D3748;
+        }
+        #syllabus-content-2-content{
+            display: flex;
+            width: 100%;
+            max-height: 100%;
+            padding: 10px 10px 20px 30px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 30px;
+            padding-bottom: 50px;
+            overflow: hidden;
+
+        }
+            .syllabus-content-2-content-info{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                height: 100%;
+                justify-content: space-between;
+                align-items: flex-start;
+                align-self: stretch;
+                overflow-y: scroll;
+            }
+                .syllabus-content-2-content-info-training{
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 190px;
+                }
+                .syllabus-content-2-content-info-re-test{
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 198px;
+                }
+                .syllabus-content-2-content-info-marking{
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 192px;
+                }
+                .syllabus-content-2-content-info-waiver{
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 147px;
+                }
+                .syllabus-content-2-content-info-others{
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 200px;
+                }
+
+                    .syllabus-content-2-content-info-frame{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 3px;
+                    }

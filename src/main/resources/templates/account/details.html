@@ -1,0 +1,248 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Account Details</title>
+    <th:block th:replace="~{fragments/head.html :: #commons}"></th:block>
+    <style>
+        * {
+            font-size: 1rem;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .page_container {
+            width: 100%;
+            display: flex;
+            overflow: auto;
+        }
+
+        #navbar button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        #navbar .collapse button {
+            width: 172.75px;
+        }
+
+        #title {
+            color: #ffffff;
+            background-color: #2D3748;
+            font-weight: 600;
+            line-height: 36px;
+            letter-spacing: 4.8px;
+            padding: 20px;
+            margin-top: 1px;
+        }
+
+        main {
+            display: block;
+            width: 100%;
+        }
+
+        .div-1 {
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: start;
+        }
+
+        form {
+            width: 542px;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-head {
+            padding: 10px 16px;
+            text-align: center;
+            background-color: #2D3748;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .content {
+            padding: 10px 20px;
+        }
+
+        .nav-2 {
+            overflow: hidden;
+            width: max-content;
+            border-radius: 20px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px 20px;
+        }
+
+        a.disabled {
+            pointer-events: none;
+            cursor: default;
+            color: #6B7280;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div id="header"></div>
+
+<div class="page_container">
+    <div id="navbar" class="" style="background-color: #edf2f7;width: 283.225px;"></div>
+    <main>
+        <h1 id="title">Account Details</h1>
+        <div class="div-1">
+            <form th:action="@{/account/details}" method="post" id="update-user-form">
+                <p class="form-head">Update account</p>
+                <div class="content">
+                    <div class="mb-3 mt-2 row align-items-center">
+                        <label for="select-user-type" class="form-label col-12 col-md-3 col-form-label">
+                            User type</label>
+                        <div class="col-12 col-md-9">
+                            <select name="roleId" class="form-control form-select" id="select-user-type"
+                                    th:field="*{user.roleId}" disabled>
+                                <option value="" disabled>-- Select one --</option>
+                                <option value="3">Trainer</option>
+                                <option value="2">Admin</option>
+                                <option value="1">Super Admin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="input-user-name"
+                               class="form-label col-12 col-md-3 col-form-label">Name</label>
+                        <div class="col-12 col-md-9">
+                            <input type="text" class="form-control form-text" id="input-user-name"
+                                   th:field="*{user.name}" placeholder="User name">
+                            <div class="invalid-feedback" id="invalid-user-name"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="input-user-email-address"
+                               class="form-label col-12 col-md-3 col-form-label">Email
+                            address</label>
+                        <div class="col-12 col-md-9">
+                            <input type="text" class="form-control form-text" id="input-user-email-address"
+                                   th:field="*{user.email}" placeholder="Email address" disabled>
+                            <div class="invalid-feedback" id="invalid-email-address"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="input-user-phone" class="form-label col-12 col-md-3 col-form-label">Phone
+                            number</label>
+                        <div class="col-12 col-md-9">
+                            <input type="text" class="form-control form-text" id="input-user-phone"
+                                   th:field="*{user.phone}" placeholder="Phone number (10)" maxlength="10"
+                                   pattern="0[0-9]{9}">
+                            <div class="invalid-feedback" id="invalid-phone-number"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="pick-date-of-birth" class="form-label col-12 col-md-3 col-form-label">Date
+                            of
+                            birth</label>
+                        <div class="col-12 col-md-9">
+                            <input type="date" class="form-control" id="pick-date-of-birth"
+                                   placeholder="" onchange="addValue()" th:value="${user.dob}"/>
+                            <input type="hidden" id="date-of-birth" th:field="*{user.dob}">
+                            <div class="invalid-feedback" id="invalid-date-of-birth"></div>
+                        </div>
+                    </div>
+                    <script>
+                      function addValue() {
+                        var dob = $('#pick-date-of-birth').val();
+                        $('#date-of-birth').val(dob);
+                      }
+                    </script>
+                    <fieldset class="row mb-3 align-items-baseline">
+                        <legend class="col-12 col-md-3 col-form-label">Gender</legend>
+                        <div class="col-12 col-md-9  d-flex">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender"
+                                       id="gender-radio-male" value="Male"
+                                       th:checked="${#strings.toLowerCase(user.gender)} == 'male'"
+                                >
+                                <label for="gender-radio-male" class="form-check-label ms-2">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender"
+                                       th:checked="${#strings.toLowerCase(user.gender)} == 'female'"
+                                       id="gender-radio-female" value="Female">
+                                <label for="gender-radio-female" class="form-check-label ms-2">Female</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="mb-3 row align-items-end" hidden>
+                        <p class="form-label col-12 col-md-3 col-form-label">Status</p>
+                        <div class="col-12 col-md-9 form-check form-switch ps-3 m-auto ">
+                            <input type="checkbox" id="toggle-user-status"
+                                   class="form-check-input m-0 align-self-center"
+                                   th:field="*{user.status}"
+                                   style="scale: 1.5;">
+                            <label for="toggle-user-status" id="user-status-label"
+                                   class="form-check-label mx-3"
+                                   th:text="${user.status} ? 'Active' : 'Inactive'"
+                            ></label>
+                        </div>
+                    </div>
+                    <div class="col-12 text-end">
+                        <input type="reset" class="btn btn-danger close-add-user-dialog-button"
+                               value="Cancel">
+                        <input type="submit" name="btAction"
+                               class="btn btn-dark" value="Save">
+                    </div>
+                </div>
+            </form>
+            <div class="nav-2">
+                <p class="form-head">Navigation</p>
+                <div class="links">
+                    <a th:href="@{/account/details}" class="disabled">Details</a>
+                    <a th:href="@{/account/change-password}">Change Password</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<div id="footer"></div>
+<script src="/component/header.js"></script>
+<script src="/component/footer.js"></script>
+<script src="/component/navbar.js"></script>
+<script src="/js/component.js"></script>
+<script src="/js/Settings/account.js"></script>
+<script th:inline="javascript">
+  let s = [ [${success} ] ];
+  let e = [ [${error} ] ];
+
+  if (s) {
+    swal("Success", s, "success");
+  }
+  if (e) {
+    if (typeof e === 'string' || e instanceof String)
+      swal("Error", e, "error");
+    else {
+      // An object of errors
+      let message = "";
+      for (let key in e) {
+        message += e[key] + "\n";
+      }
+
+      swal("Error", message, "error");
+    }
+  }
+</script>
+</body>
+}
+</script>
+</body>
+</html>

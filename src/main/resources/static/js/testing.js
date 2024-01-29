@@ -1,0 +1,1 @@
+$(selector).text(varname.mmmm[0])

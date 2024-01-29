@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create class</title>
+    <link rel="stylesheet" href="/css/component.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/icon_gam.png">
+    <!-- included script -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js}"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    <script src="@{https://code.jquery.com/jquery-3.7.1.js}"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <!-- --- -->
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/Bootstrap%205/bootstrap.min.css" >
+    <script src="/js/Bootstrap%205/bootstrap.bundle.min.js"></script>
+    <script src="/js/JQuery/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="/css/DataTable/jquery.dataTables.css">
+    <script src="/js/DataTable/jquery.dataTables.js"></script>
+    <link href="/css/create-class.css" rel="stylesheet">
+    <link href="/css/CreateClass/calendar.css" rel="stylesheet">
+    <link href="/css/CreateClass/style.css" rel="stylesheet">
+    <script src="/js/create-class.js"></script>
+    <link rel="stylesheet" href="/css/select2/select2.css">
+    <script src="/js/select2/select2.min.js"></script>
+    <script src="/js/menu.js"></script>
+     <script src="/js/CreateClass/valid.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+</head>
+
+<body>
+<div class="d-flex flex-column" style="height: 100vh;">
+    <div id="header"></div>
+    <form th:action="@{/class/createClass/tooltip2}" method="post" th:object="${class}">
+        <input type="hidden" th:field="*{className}">
+        <div class="d-flex flex-grow-1 flex-row">
+            <div th:include="fragments/navbar" style="background-color: #edf2f7;"></div>
+            <div id="syllabus" class="flex-grow-1" style="max-width: 100%; margin-bottom: 10px">
+                <!-- content -->
+                <div id="title">
+                    <h1 style="color: white">Class</h1>
+                    <div id="class-name">
+                        <div class="text-wrapper"><span th:text="${class.className}"></span></div>
+                        <div class="activate">
+                            <div class="inactive"><span th:text="${class.status}"></span></div>
+
+                        </div>
+                    </div>
+                    <div class="day-hour">
+                        <div class="div">
+                            <div class="div-2">
+                                <div class="text-wrapper"><span th:text="${class.trainingProgram.duration}"></span>
+                                </div>
+                                <div class="text-wrapper-2">days</div>
+                            </div>
+                            <div class="div-wrapper">
+                                <div class="hours">(<span th:text="${class.trainingProgram.duration*24}"></span>hours)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="div-wrapper">
+                            <div class="text-wrapper-3">|</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row w-100" style="margin-top: 10px">
+                    <div class="row w-100" style="margin-top: 10px">
+                        <div id="info-basic" class="col-6"
+                             style="padding-left: 20px;display: inline-flex;height: 610px;">
+                            <div>
+                                <div class="general">
+                                    <div class="general-title" style="padding-top: 8px">
+                                        <svg style="color: white" id="btn-nav-toggle-close-icon" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="white"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_1221_17524)">
+                                                <path
+                                                        d="M20 3H19V1H17V3H7V1H5V3H4C2.9 3 2 3.9 2 5V21C2 22.1 2.9 23 4 23H20C21.1 23 22 22.1 22 21V5C22 3.9 21.1 3 20 3ZM20 21H4V8H20V21Z"/>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_1221_17524">
+                                                    <rect width="24" height="24" fill="white"/>
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <h6>General</h6>
+                                        <div style="width: 24px; height: 24px; position:relative; top:-5px;left: 210px">
+                                            <svg style="color: white" id="btn-nav-toggle-close-icon" width="24"
+                                                 height="24" viewBox="0 0 24 24" fill="white"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_1221_20149)">
+                                                    <path
+                                                            d="M12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 15L8 11H16L12 15Z"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1221_20149">
+                                                        <rect width="24" height="24" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="general-content" id="general-content">
+                                        <div class="frame">
+                                            <div class="div">
+                                                <div style="width: 24px; height: 24px;position:relative; top:-5px">
+                                                    <svg style="color: white" id="btn-nav-toggle-close-icon" width="24"
+                                                         height="24" viewBox="0 0 24 24" fill="#285D9A"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_1221_20161)">
+                                                            <path
+                                                                    d="M12.5 8.5H11V14.5L15.75 17.35L16.5 16.12L12.5 13.75V8.5ZM17.337 2.31L21.944 6.155L20.664 7.69L16.054 3.847L17.337 2.31ZM6.66301 2.31L7.94501 3.846L3.33701 7.69L2.05701 6.154L6.66301 2.31ZM12 4.5C7.03001 4.5 3.00001 8.53 3.00001 13.5C3.00001 18.47 7.03001 22.5 12 22.5C16.97 22.5 21 18.47 21 13.5C21 8.53 16.97 4.5 12 4.5ZM12 20.5C8.14001 20.5 5.00001 17.36 5.00001 13.5C5.00001 9.64 8.14001 6.5 12 6.5C15.86 6.5 19 9.64 19 13.5C19 17.36 15.86 20.5 12 20.5Z"/>
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="url(#clip0_1221_20161)">
+                                                                <rect width="24" height="24" fill="#285D9A"/>
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                                <div class="text-wrapper">Time</div>
+                                            </div>
+                                            <div class="frame-2">
+                                                <div class="frame-3">
+                                                    <div class="text-wrapper-2">from</div>
+                                                    <input  class="div-wrapper" type="time" th:value="${class.timeFrom}"
+                                                           th:field="*{timeFrom}">
+                                                </div>
+                                                <div class="frame-3">
+                                                    <div class="text-wrapper-2">to</div>
+                                                    <input class="div-wrapper" type="time" th:field="*{timeTo}"
+                                                           th:value="${class.timeTo}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="frame" style="margin-top: 10px">
+                                            <div class="div">
+                                                <div style="width: 24px; height: 24px;position:relative; top:-5px">
+                                                    <svg style="color: white" id="btn-nav-toggle-close-icon" width="24"
+                                                         height="24" viewBox="0 0 24 24" fill="#8B8B8B"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_1221_20174)">
+                                                            <path d="M17 15H19V17H17V15ZM17 11H19V13H17V11ZM17 7H19V9H17V7ZM13.74 7L15 7.84V7H13.74Z"/>
+                                                            <path d="M10 3V4.51L12 5.84V5H21V19H17V21H23V3H10Z"/>
+                                                            <path d="M8.17 5.70001L15 10.25V21H1V10.48L8.17 5.70001ZM10 19H13V11.16L8.17 8.09001L3 11.38V19H6V13H10V19Z"/>
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="url(#clip0_1221_20174)">
+                                                                <rect width="24" height="24" fill="#8B8B8B"/>
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                                <div class="text-wrapper-5">Location</div>
+                                            </div>
+                                        </div>
+                                        <div class="frame-wrapper" style="margin-top: 15px">
+                                            <div class="frame-4">
+                                                <div class="frame-5">
+                                                    <div class="div">
+                                                        <div style="width: 24px; height: 24px;position: relative;top: -5px">
+                                                            <svg style="color: white" id="btn-nav-toggle-close-icon"
+                                                                 width="24" height="24" viewBox="0 0 24 24"
+                                                                 fill="#8B8B8B"
+                                                                 xmlns="http://www.w3.org/2000/svg">
+                                                                <g clip-path="url(#clip0_1221_20184)">
+                                                                    <path d="M9 13C11.21 13 13 11.21 13 9C13 6.79 11.21 5 9 5C6.79 5 5 6.79 5 9C5 11.21 6.79 13 9 13ZM9 7C10.1 7 11 7.9 11 9C11 10.1 10.1 11 9 11C7.9 11 7 10.1 7 9C7 7.9 7.9 7 9 7ZM9 15C6.33 15 1 16.34 1 19V21H17V19C17 16.34 11.67 15 9 15ZM3 19C3.22 18.28 6.31 17 9 17C11.7 17 14.8 18.29 15 19H3ZM15.08 7.05C15.92 8.23 15.92 9.76 15.08 10.94L16.76 12.63C18.78 10.61 18.78 7.56 16.76 5.36L15.08 7.05ZM20.07 2L18.44 3.63C21.21 6.65 21.21 11.19 18.44 14.37L20.07 16C23.97 12.11 23.98 6.05 20.07 2Z"/>
+                                                                </g>
+                                                                <defs>
+                                                                    <clipPath id="url(#clip0_1221_20184)">
+                                                                        <rect width="24" height="24" fill="#8B8B8B"/>
+                                                                    </clipPath>
+                                                                </defs>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="text-wrapper-6">Trainer</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="frame-4" style="margin-top: 10px">
+                                            <div class="frame-5">
+                                                <div class="div">
+                                                    <div style="width: 24px; height: 24px; position:relative; top:-5px">
+                                                        <svg style="color: white" id="btn-nav-toggle-close-icon"
+                                                             width="24" height="24" viewBox="0 0 24 24" fill="#285D9A"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <g clip-path="url(#clip0_1221_20216)">
+                                                                <path
+                                                                        d="M12 7.13L12.97 9.42L13.44 10.53L14.64 10.63L17.11 10.84L15.23 12.47L14.32 13.26L14.59 14.44L15.15 16.85L13.03 15.57L12 14.93L10.97 15.55L8.85 16.83L9.41 14.42L9.68 13.24L8.77 12.45L6.89 10.82L9.36 10.61L10.56 10.51L11.03 9.4L12 7.13ZM12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2Z"/>
+                                                            </g>
+                                                            <defs>
+                                                                <clipPath id="clip0_1221_17524">
+                                                                    <rect width="24" height="24" fill="#285D9A"
+                                                                          transform="translate(0 0.5)"/>
+                                                                </clipPath>
+                                                            </defs>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="text-wrapper">Admin</div>
+                                                </div>
+                                                <select th:if="${adminChoice == null}" name="admin" id="admin"
+                                                        class="frame-6">
+                                                    <option value="" selected disabled>---Select Admin---</option>
+                                                    <option th:each="a :${listAdmin}" th:value="${a}"> [[${a}]]</option>
+                                                </select>
+                                                <select th:if="${adminChoice != null}" name="admin" class="frame-6">
+                                                    <option th:value="${adminChoice}" selected>[[${adminChoice}]]
+                                                    </option>
+                                                    <option th:each="a :${listAdmin}" th:value="${a}"> [[${a}]]</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="frame-7" style="margin-top: 10px">
+                                            <div class="frame">
+                                                <div class="div">
+                                                    <div style="width: 24px; height: 24px;position:relative; top:-5px">
+                                                        <svg style="color: white" id="btn-nav-toggle-close-icon"
+                                                             width="24" height="24" viewBox="0 0 24 24" fill="#285D9A"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <g clip-path="url(#clip0_1221_20153)">
+                                                                <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM19.47 9.16L14.46 8.73L12.46 4.02C15.67 4.21 18.37 6.29 19.47 9.16ZM14.4 15.42L12 13.98L9.61 15.42L10.24 12.7L8.13 10.87L10.91 10.63L12 8.06L13.09 10.62L15.87 10.86L13.76 12.69L14.4 15.42ZM11.54 4.02L9.54 8.74L4.52 9.17C5.62 6.29 8.32 4.2 11.54 4.02ZM4 12C4 11.36 4.08 10.74 4.23 10.14L8.02 13.42L6.91 18.17C5.13 16.7 4 14.48 4 12ZM7.84 18.82L12 16.31L16.16 18.81C14.94 19.56 13.52 20 11.99 20C10.47 20 9.05 19.56 7.84 18.82ZM17.09 18.17L15.98 13.42L19.77 10.14C19.91 10.73 20 11.36 20 12C20 14.48 18.86 16.7 17.09 18.17Z"/>
+                                                            </g>
+                                                            <defs>
+                                                                <clipPath id="url(#clip0_1221_20153)">
+                                                                    <rect width="24" height="24" fill="#285D9A"/>
+                                                                </clipPath>
+                                                            </defs>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="text-wrapper">FSU</div>
+                                                </div>
+                                                <select th:if="${class.fsu == null}" th:field="*{fsu}" class="frame-8">
+                                                    <option th:each="f : ${listFSU}" th:value="${f}">[[${f}]]</option>
+                                                </select>
+                                                <select th:if="${class.fsu != null}" th:field="*{fsu}" class="frame-8">
+                                                    <option th:if="${!class.fsu.equals('')}" selected th:value="${class.fsu}">[[${class.fsu}]]</option>
+                                                    <option th:each="f : ${listFSU}" th:value="${f}">[[${f}]]</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <div class="frame-9" style="margin-top: 15px">
+                                            <div class="frame-10">
+                                                <div class="text-wrapper-9">Created</div>
+                                            </div>
+                                            <div class="text-wrapper-10"></div>
+                                        </div>
+                                        <div class="frame-9" style="margin-top: 15px">
+                                            <div class="frame-10">
+                                                <div class="text-wrapper-9">Review</div>
+                                            </div>
+                                            <div class="text-wrapper-10"></div>
+                                        </div>
+                                        <div class="frame-9" style="margin-top: 15px">
+                                            <div class="frame-10">
+                                                <div class="text-wrapper-9">Approve</div>
+                                            </div>
+                                            <div class="text-wrapper-10"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="attendee">
+                                    <div class="frame">
+                                        <div class="div">
+                                            <div class="frame-2">
+                                                <div style="width: 24px; height: 24px; position:relative; top:-5px">
+                                                    <svg style="color: white" id="btn-nav-toggle-close-icon" width="24"
+                                                         height="24" viewBox="0 0 24 24" fill="white"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_1221_20216)">
+                                                            <path
+                                                                    d="M12 7.13L12.97 9.42L13.44 10.53L14.64 10.63L17.11 10.84L15.23 12.47L14.32 13.26L14.59 14.44L15.15 16.85L13.03 15.57L12 14.93L10.97 15.55L8.85 16.83L9.41 14.42L9.68 13.24L8.77 12.45L6.89 10.82L9.36 10.61L10.56 10.51L11.03 9.4L12 7.13ZM12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2Z"/>
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_1221_17524">
+                                                                <rect width="24" height="24" fill="white"/>
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                                <div class="div-wrapper">
+                                                    <div class="text-wrapper">Attendee</div>
+                                                </div>
+                                            </div>
+                                            <select th:field="*{attendee.attendeeType.attendeeType}" class="frame-3">
+                                                <option th:if="${!class.attendee.attendeeType.attendeeType.equals('')}"
+                                                        th:value="${class.attendee.attendeeType.attendeeType}">
+                                                    [[${class.attendee.attendeeType.attendeeType}]]
+                                                </option>
+                                                <option th:if="${class.attendee.attendeeType.attendeeType != at}"
+                                                        th:each="at: ${attendeeTypes}" th:value="${at}">[[${at}]]
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div style="width: 24px; height: 24px; position:relative; top:-5px;">
+                                            <svg style="color: white" id="btn-nav-toggle-close-icon" width="24"
+                                                 height="24" viewBox="0 0 24 24" fill="white"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_1221_20149)">
+                                                    <path
+                                                            d="M12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 15L8 11H16L12 15Z"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1221_20149">
+                                                        <rect width="24" height="24" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div id="attendee-content">
+                                        <div class="frame-4">
+                                            <div class="frame-5">
+                                                <div class="text-wrapper-3">Planned</div>
+                                                <input class="frame-6" type="text" th:field="*{attendee.planned}"
+                                                       th:value="${class.attendee.planned}">
+                                            </div>
+                                            <div class="frame-7" style="background-color: #285D9A;">
+                                                <div class="text-wrapper-3">Accepted</div>
+                                                <input class="frame-6" type="text" th:field="*{attendee.accepted}"
+                                                       th:value="${class.attendee.accepted}">
+                                            </div>
+                                            <div class="frame-9">
+                                                <div class="text-wrapper-6">Actual</div>
+                                                <input class="frame-6" type="text" th:field="*{attendee.actual}"
+                                                       th:value="${class.attendee.actual}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div style="margin-left: 20px;">
+                                <div class="time-frame">
+                                    <div class="time-frame-wrapper"
+                                         style="background-color: #2D3748;position: absolute;z-index:1">
+                                        <div class="div">
+                                            <div class="div-2">
+                                                <svg style="color: white" id="btn-nav-toggle-close-icon" width="24"
+                                                     height="24" viewBox="0 0 24 24" fill="white"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_1221_17524)">
+                                                        <path
+                                                                d="M20 3H19V1H17V3H7V1H5V3H4C2.9 3 2 3.9 2 5V21C2 22.1 2.9 23 4 23H20C21.1 23 22 22.1 22 21V5C22 3.9 21.1 3 20 3ZM20 21H4V8H20V21Z"/>
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_1221_17524">
+                                                            <rect width="24" height="24" fill="white"/>
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                                <div class="text-wrapper">Time frame</div>
+                                                <div class="div-3" id="date-start">
+                                                    <div class="text-wrapper-2" style="color: white">start date</div>
+                                                    <input onchange="updateFisrtCalender()" class="div-4" type="text" id="datepicker" name="start"
+                                                           th:value="${class.startDate}">
+                                                    <img id="warning" src="/img/vector.svg"></div>
+                                                
+                                                <div class="div-3" id="date-to" style="display: none">
+                                                    <div class="text-wrapper-2" style="color: white">to</div>
+                                                    <input onchange="updateSecondCalender()" class="div-4" type="text" id="datepicker-end" name="end"
+                                                           th:value="${class.endDate}">
+                                                </div>
+
+                                                <div class="div-3">
+                                                    <select onchange="selectDateLearning()" th:if="${class.dateLearning == ''}" th:field="*{dateLearning}" class="frame-6">
+                                                        <option  value="Mon-Wed-Fri">Mon-Wed-Fri</option>
+                                                        <option  value="Tue-Thr-Sat">Tue-Thr-Sat</option>
+                                                    </select>
+                                                    <select onchange="selectDate1Learning()" th:if="${class.dateLearning != ''}" th:field="*{dateLearning}" class="frame-6">
+                                                        <option th:value="${class.dateLearning}" >[[${class.dateLearning}]]</option>
+                                                        <option th:if="${class.dateLearning == 'Tue-Thr-Sat'}" value="Mon-Wed-Fri">Mon-Wed-Fri</option>
+                                                        <option th:if="${class.dateLearning == 'Mon-Wed-Fri'}" value="Tue-Thr-Sat">Tue-Thr-Sat</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div style="width: 24px; height: 24px; position:relative; top:-5px;">
+                                                <svg style="color: white" id="btn-nav-toggle-close-icon" width="24"
+                                                     height="24" viewBox="0 0 24 24" fill="white"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_1221_20149)">
+                                                        <path
+                                                                d="M12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 15L8 11H16L12 15Z"/>
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_1221_20149">
+                                                            <rect width="24" height="24" fill="white"/>
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="calender-content">
+                                        <div class="div-5" style="padding-bottom: 100px;margin-top: 40px">
+                                            <div class="div-6">
+                                                <section class="ftco-section"
+                                                         style="height: 200px;width: 355px; margin-top: -280px">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="calendar calendar-first"
+                                                                     id="calendar_first">
+                                                                    <div class="calendar_header"
+                                                                         style="position: relative;left: 50px">
+                                                                        <h2></h2>
+                                                                    </div>
+                                                                    <div class="calendar_weekdays"
+                                                                         style="height: 40px;position: relative;top: -25px"></div>
+                                                                    <div class="calendar_content"
+                                                                         style="height: 300px;position: relative;top: -25px"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                            <div class="div-6">
+                                                <section class="ftco-section"
+                                                         style="height: 277px;width: 355px;position: relative;top: -140px">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="calendar calendar-second"
+                                                                     id="calendar-second">
+                                                                    <div class="calendar_header-second"
+                                                                         style="position: relative;left: 50px">
+                                                                        <h2></h2>
+                                                                    </div>
+                                                                    <div class="calendar_weekdays-second"
+                                                                         style="height: 40px;position: relative;top: -25px"></div>
+                                                                    <div class="calendar_content-second"
+                                                                         style="height: 300px;position: relative;top: -25px"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script src="/js/CreateClass/main.js"></script>
+                                    <script src="/js/CreateClass/calender-second.js"></script>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 20px" class="training-programs">
+                            <div class="tab">
+                                <button class="first">Training Program</button>
+                                <button class="second">Attendee list</button>
+                                <button class="third">Budget</button>
+                                <button class="four">Others</button>
+                            </div>
+                            <div class="content">
+                                <div class="training-program" style="padding-bottom: 10px;margin-top: 2px;">
+                                    <div class="search-training-program">
+                                        <div class="in-search" style="display:none">
+                                            <h4>Training Program name</h4>
+                                            <input type="text" name="" id="textSearch">
+                                        </div>
+                                        <div class="training-program-child" style="margin-top: 2px;display: block;">
+                                            <div class="program-name">
+                                                <div class="frame">
+                                                    <div class="text-wrapper"><span
+                                                            th:text="${class.trainingProgram.name}"></span></div>
+                                                    <input type="hidden" name="training_program_name"
+                                                           th:value="${class.trainingProgram.name}">
+                                                </div>
+                                            </div>
+                                            <div class="syllabus-meta">
+                                                <p class="div"><span class="span"><span
+                                                        th:text="${class.trainingProgram.duration}"></span> days </span>
+                                                    <span class="text-wrapper-2">(<span
+                                                            th:text="${class.trainingProgram.duration*24}"></span> hours)</span>
+                                                </p>
+                                                <div class="text-wrapper-3">|</div>
+                                                <p class="div">
+                                                    <span class="span">Modified on </span>
+                                                    <span class="text-wrapper-2"><span
+                                                            th:text="${class.trainingProgram.modifiedDate}"></span></span>
+                                                    <span class="span"> by </span>
+                                                    <span class="text-wrapper-4"><span
+                                                            th:text="${class.trainingProgram.modifiedBy}"></span></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" th:field="*{status}">
+            <input type="hidden" th:field="*{duration}">
+            <input type="hidden" th:field="*{trainingProgram.name}">
+            <input type="hidden" th:field="*{trainingProgram.status}">
+            <input type="hidden" th:field="*{trainingProgram.duration}">
+            <input type="hidden" th:field="*{trainingProgram.modifiedDate}">
+            <input type="hidden" th:field="*{trainingProgram.modifiedBy}">
+            <input type="hidden" name="trainer" th:value="${trainer}">
+        </div>
+        <div class="saving-button" style="margin: 37px; right: 10px;">
+            <input class="frame" type="submit"
+                   style="color: white;padding: 1px 20px; position: relative;left: -880px;box-sizing: border-box"
+                   value="Back" name="action">
+            <div class="add-day-button"><a th:href="@{'/class'}" class="text-wrapper" style="text-decoration: none">Cancel</a>
+            </div>
+            <input class="frame" type="submit" style="color: white;padding: 1px 5px" value="Save as draft">
+            <input id="next-tooltip-2" class="frame" type="submit" style="color: white;padding: 1px 5px" value="Next"
+                   name="action">
+
+        </div>
+    </form>
+    <div id="footer"></div>
+</div>
+<script src="/component/header.js"></script>
+<script src="/component/footer.js"></script>
+<script src="/component/navbar.js"></script>
+<script src="/js/component.js"></script>
+<script src="/js/CreateClass/main.js"></script>
+<script src="/js/CreateClass/calender-second.js"></script>
+<script src="/js/CreateClass/update-calender.js"></script>
+<script src="/js/CreateClass/date-learning.js"></script>
+<!-- Ract -->
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+<!-- DatePicker and dependencies-->
+<script src="https://cdn.jsdelivr.net/npm/date-object@latest/dist/umd/date-object.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-element-popper@latest/build/browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-multi-date-picker@latest/build/browser.min.js"></script>
+
+<!-- Optional Plugin -->
+<script src="https://cdn.jsdelivr.net/npm/react-multi-date-picker@latest/build/date_picker_header.browser.js"></script>
+</body>
+
+</html>

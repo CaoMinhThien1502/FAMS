@@ -1,0 +1,105 @@
+.syllabus-creation-footer{
+    width: 100%;
+    height: 10%;
+
+    display:flex;
+    justify-content: flex-end;
+
+    padding-top: 20px;
+}
+
+.syllabus-creation-footer-previous{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.previous-box{
+    display: flex;
+    height: 38px;
+    padding: 30px 20px 20px 20px;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+
+.saving-button{
+    display: flex;
+    height: 38px;
+    padding: 30px 20px 20px 20px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+    .cancel{
+        display: flex;
+        padding: 7px 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        color: var(--alert, #E74A3B);
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-decoration-line: underline;
+    }
+    .save-as-draft{
+        display: flex;
+        padding: 7px 25px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        border-radius: 10px;
+        background: var(--Sub-info, #474747);
+
+        color: #FFF;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .next, .previous-button{
+        display: flex;
+        padding: 7px 25px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        border-radius: 10px;
+        background: #2D3748;
+
+        color: #FFF;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+        .cancel:hover{
+            background: #E74A3B;
+            color: #FFF;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .cancel:active{
+            background: #C41E3A;
+            color: #FFF;
+            border-radius: 10px;
+        }
+        .save-as-draft:hover, .next:hover, .previous-button:hover{
+            background: #6D7684;
+            cursor: pointer;
+        }
+        .save-as-draft:active, .next:active, .previous-button:active{
+            background: #000;
+            cursor: pointer;
+        }
+
+

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css"
+          integrity="sha512-34s5cpvaNG3BknEWSuOncX28vz97bRI59UnVtEEpFX536A7BtZSJHsDyFoCl8S7Dt2TPzcrCEoHBGeM4SUBDBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <link rel="stylesheet" href="/css/component.css">
+    <link rel="stylesheet" href="/css/trainingProgram.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    <script src="/js/JQuery/jquery-3.7.1.js"></script>
+    <link href="/css/select2/select2.css" rel="stylesheet"/>
+    <script src="/js/select2/select2.min.js"></script>
+    <link href="/css/DataTable/jquery.dataTables.css" rel="stylesheet">
+    <script src="/js/DataTable/jquery.dataTables.js"></script>
+    <script src="/js/menu.js"></script>
+
+    <title>Training Program</title>
+</head>
+
+<body>
+<script th:if="${successMessage}">
+    swal({
+        title: "Duplicate training program successfully",
+        text: "",
+        icon: "success"
+    });
+</script>
+<script th:if="${errorMessage}">
+    swal({
+        title: "Duplicate training program failed",
+        text: "",
+        icon: "error"
+    });
+</script>
+<script th:if="${successupdate}">
+    swal({
+        title: "Update training program successfully",
+        text: "",
+        icon: "success"
+    });
+</script>
+<div class="d-flex flex-column" style="height: 100vh;">
+    <div id="header"></div>
+    <div class="d-flex flex-grow-1 flex-row">
+        <div th:include="fragments/navbar" style="background-color: #edf2f7;"></div>
+        <!-- '.............................................................................................................................................           -->
+        <div id="trainingprogram" class="flex-grow-1">
+            <!-- content -->
+            <h1 id="title">Training Program</h1>
+            <div th:text="${resultMessage}" style="color: red;"></div>
+            <div class="row w-100">
+                <div class="col-6" style="padding-left: 20px;">
+                    <div class="d-inline-block position-relative" style="width: 49%;">
+                        <i class="icon bi bi-search"></i>
+                        <input id="search-input" type="text" class="form-control d-inline-block ps-4"
+                               placeholder="Search by name">
+                    </div>
+                    <div class="d-inline-block position-relative">
+                        <button class="btn text-white" id="open-filter-dialog-button">
+                            <img src="img/filter-list.svg">
+                            Filter
+                        </button>
+                    </div>
+                </div>
+                <div class="col-6 d-flex justify-content-end gap-1">
+                    <button id="open-import-training-program-dialog-button" class="btn text-white"
+                            sec:authorize="hasAnyAuthority('TRAINING_PROGRAM_FULL_ACCESS') or hasAnyAuthority('TRAINING_PROGRAM_CREATE')">
+                        <img src="img/publish.svg">
+                        Import file
+                    </button>
+                    <a th:href="@{'/trainingprogram/create-training-program'}" class="btn btn-dark"
+                       id="open-add-user-dialog-button"
+                       sec:authorize="hasAnyAuthority('TRAINING_PROGRAM_FULL_ACCESS') or hasAnyAuthority('TRAINING_PROGRAM_CREATE')">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_487_2486)">
+                                <path
+                                        d="M13 7H11V11H7V13H11V17H13V13H17V11H13V7ZM12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
+                                        fill="#DFDEDE"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_487_2486">
+                                    <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        Add New
+                    </a>
+                </div>
+            </div>
+            <div id="search-keyword" class="search-keyword d-flex p-2 flex-wrap"></div>
+            <div class="container">
+                <table id="training-program-table">
+                    <thead>
+                    <td>ID</td>
+                    <td>Program Name</td>
+                    <td>Created Date</td>
+                    <td>Created By</td>
+                    <td>Duration</td>
+                    <td>Status</td>
+                    <td></td>
+                    </thead>
+                    <tbody>
+                    <tr th:each="trainingProgram : ${trainingProgramList}">
+                        <td th:text="${trainingProgram.trainingProgramCode}"></td>
+                        <td th:text="${trainingProgram.name}"></td>
+                        <td th:text="${trainingProgram.createDate}"></td>
+                        <td th:text="${trainingProgram.createBy}"></td>
+                        <td th:text="${trainingProgram.duration + ' days'}"></td>
+                        <td th:text="${trainingProgram.status}"></td>
+                        <td>
+                            <div class="dropdown">
+                                <a onclick="myFunction(this)" class="dropbtn">
+                                    <img src="img/more_horizontal.svg" style="pointer-events: none;">
+                                </a>
+                                <div class="dropdown-content">
+                                    <h6>Manage</h6>
+                                    <a th:href="@{/trainingprogram/detail(trainingProgramCode=${trainingProgram.trainingProgramCode})}">
+                                        <img src="img/folder.svg">
+                                        Training material
+                                    </a>
+                                    <a th:href="@{/trainingprogram/update(code=${trainingProgram.trainingProgramCode})}"
+                                       sec:authorize="hasAnyAuthority('TRAINING_PROGRAM_FULL_ACCESS') or hasAnyAuthority('TRAINING_PROGRAM_CREATE')">
+                                        <img src="img/create-1.svg">
+                                        Update program
+                                    </a>
+                                    <a href="#" th:if="${trainingProgram.status != 'DRAFT'}"
+                                       th:onclick="duplicateProgram([[${trainingProgram.trainingProgramCode}]])"
+                                       sec:authorize="hasAnyAuthority('TRAINING_PROGRAM_FULL_ACCESS') or hasAnyAuthority('TRAINING_PROGRAM_CREATE')">
+                                        <img src="img/duplicate.svg">
+                                        Duplicate program
+                                    </a>
+                                    <a href="#"
+                                       th:onclick="deactivateProgram([[${trainingProgram.trainingProgramCode}]], [[${trainingProgram.status}]])"
+                                       sec:authorize="hasAnyAuthority('TRAINING_PROGRAM_FULL_ACCESS') or hasAnyAuthority('TRAINING_PROGRAM_CREATE')">
+                                        <img th:if="${trainingProgram.status == 'ACTIVE'}"
+                                             src="img/visibility-off-1.svg">
+                                        <span th:if="${trainingProgram.status == 'ACTIVE'}">De-activate Program</span>
+
+                                        <img th:if="${trainingProgram.status != 'ACTIVE'}" src="img/visibility.svg">
+                                        <span th:if="${trainingProgram.status != 'ACTIVE'}">Activate Program</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <dialog id="filter-option-dialog">
+                <form id="filter-form">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <fieldset>
+                                <legend>
+                                    <h5>
+                                        Created by
+                                    </h5>
+                                </legend>
+                                <div class="d-flex flex-row">
+                                    <select style="width: 100%;" name="createdByList" id="filter-created-by"
+                                            multiple="multiple">
+                                    </select>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <fieldset>
+                                <legend>
+                                    <h5>
+                                        Created date
+                                    </h5>
+                                </legend>
+                                <div class="d-flex flex-row align-middle">
+                                    <label for="filter-start-date" class="form-label fs-5 m-auto px-1">From</label>
+                                    <input type="date" id="filter-start-date" class="form-control" name="startDate">
+                                    <label for="filter-end-date" class="form-label fs-5 m-auto px-1">to</label>
+                                    <input type="date" name="endDate" id="filter-end-date" class="form-control">
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-xl-6 col-md-6 mb-3 d-flex flex-row">
+                            <div class="me-4 my-3">
+                                <h5>Status</h5>
+                            </div>
+                            <div>
+                                <div class="form-check checkbox-lg">
+                                    <input class="form-check-input" type="checkbox" value="Active"
+                                           id="check-status-active" name="statusList">
+                                    <label class="form-check-label fs-5" for="check-status-active">
+                                        Active
+                                    </label>
+                                </div>
+                                <div class="form-check checkbox-lg">
+                                    <input class="form-check-input" type="checkbox" value="Inactive"
+                                           id="check-status-inactive" name="statusList">
+                                    <label class="form-check-label fs-5" for="check-status-inactive">
+                                        Inactive
+                                    </label>
+                                </div>
+                                <div class="form-check checkbox-lg">
+                                    <input class="form-check-input" type="checkbox" value="Draft"
+                                           id="check-status-draft" name="statusList">
+                                    <label class="form-check-label fs-5" for="check-status-draft">
+                                        Draft
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6 mb-3 d-flex flex-row">
+                            <div class="me-4 my-3">
+                                <h5>Duration</h5>
+                            </div>
+                            <div class="d-inline-block position-relative" style="width: 49%;">
+                                <input id="filter-duration" type="text" name="duration"
+                                       class="form-control d-inline-block ps-4" oninput="validateDurationInput(this)">
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex justify-content-end">
+                            <input class="btn btn-danger mx-1 me-auto" type="button"
+                                   id="cancel-filter-option-dialog-button" value="Cancel">
+                            <input class="btn btn-secondary mx-1" type="reset"
+                                   id="reset-filter-option-dialog-button">
+                            <input class="btn btn-primary mx-1" type="submit" name="btAction"
+                                   id="submit-filter-option-dialog-button">
+                        </div>
+                    </div>
+                </form>
+            </dialog>
+            <dialog id="import-training-program-dialog">
+                <div class="popup-training-program">
+                    <div class="frame">
+                        <div class="text-wrapper">Import Training Program</div>
+                    </div>
+                    <form id="import-training-program-form" enctype="multipart/form-data">
+                        <div class="div">
+                            <div class="text-wrapper-2">Import Settings</div>
+                            <div class="frame-2">
+                                <div class="frame-3">
+                                    <div class="div-wrapper">
+                                        <p class="file-csv"><span class="span">File (csv)</span><span
+                                                class="text-wrapper-3">*</span></p>
+                                    </div>
+                                    <button class="frame-4" id="choose-file">
+                                        <div class="text-wrapper-4" id="select-file">Select</div>
+                                    </button>
+                                    <div id="file-info" style="display: none;">
+                                        <span id="selected-filename"></span>
+                                        <span id="change-file" class="close-button" style="color: red;">X</span>
+                                    </div>
+                                    <input type="file" id="programFileImport" style="display: none;" name="file"
+                                           accept=".csv, .xlsx">
+                                </div>
+                                <div class="frame-5">
+                                    <div class="div-wrapper">
+                                        <div class="text-wrapper-5">Encoding type</div>
+                                    </div>
+                                    <select class="frame-6" id="encoding-select">
+                                        <option class="text-wrapper-6" value="auto-detect">Auto detect</option>
+                                        <option class="text-wrapper-6" value="utf-8">UTF-8</option>
+                                        <div class="menu-icon-ant-menu"><img class="union" src="img/union.svg"/></div>
+                                    </select>
+                                </div>
+                                <div class="frame-3">
+                                    <div class="div-wrapper">
+                                        <div class="text-wrapper-7">Column Separator</div>
+                                    </div>
+                                    <select class="frame-6" id="separator-select">
+                                        <option class="text-wrapper-8" value=",">Comma (,)</option>
+                                        <option class="text-wrapper-8" value=".">Dot (.)</option>
+                                        <option class="text-wrapper-8" value=";">Semicolon (;)</option>
+                                        <div class="menu-icon-ant-menu"><img class="union" src="img/union.svg"/></div>
+                                    </select>
+                                </div>
+                                <div class="frame-3">
+                                    <div class="div-wrapper">
+                                        <div class="text-wrapper-7">Import template</div>
+                                    </div>
+                                    <a href="/TrainingProgramTest.xlsx" download="Import_template.xlsx"
+                                       class="frame-7">
+                                        <div class="text-wrapper-9">Download</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="line" src="img/line-69.svg"/>
+                        <div class="frame-8">
+                            <div class="text-wrapper-10">Duplicate Control</div>
+                            <div class="frame-2">
+                                <div class="frame-9">
+                                    <div class="frame-10">
+                                        <div class="text-wrapper-7">Scanning</div>
+                                    </div>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox">
+                                            <input class="rectangle" type="checkbox" id="program-name-checkbox"/>
+                                            <label for="program-name-checkbox">
+                                                <span class="text-wrapper-11">Program name</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="frame-9">
+                                    <div class="frame-10">
+                                        <div class="text-wrapper-7">Duplicate handle</div>
+                                    </div>
+                                    <div class="radio-group">
+                                        <label class="element">
+                                            <input class="radio-2" type="radio" name="choice" value="allow" id="allowRadio" checked disabled/>
+                                            <span class="text-wrapper-11">Allow</span>
+                                        </label>
+                                        <label class="element">
+                                            <input class="radio-2" type="radio" name="choice" value="replace" id="replaceRadio" disabled/>
+                                            <span class="text-wrapper-11">Replace</span>
+                                        </label>
+                                        <label class="element">
+                                            <input class="radio-2" type="radio" name="choice" value="skip" id="skipRadio" disabled/>
+                                            <span class="text-wrapper-11">Skip</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="line" src="img/line-69.svg"/>
+                        <div class="frame-11">
+                            <div class="add-day-button">
+                                <input type="reset" class="text-wrapper-12 close-import-training-program-dialog-button"
+                                       value="Cancel"/>
+                            </div>
+                            <div>
+                                <input type="submit" name="btAction" class="frame-12" value="Import"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </dialog>
+            <div class="modal fade" id="importMessageModal" role="dialog" aria-labelledby="messageModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="messageModalLabel">Message</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p id="importMessage"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</div>
+
+<script src="/component/header.js"></script>
+<script src="/component/navbar.js"></script>
+<script src="/component/footer.js"></script>
+<script src="/js/component.js"></script>
+<script type="text/javascript" th:src="@{/js/TrainingProgram/trainingprogram.js}"></script>
+
+<!-- Ract -->
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+
+</body>
+
+</html>

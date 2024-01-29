@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .modal,
+.modal * {
+  box-sizing: border-box;
+}
+.modal {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 0px 0px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 542px;
+  position: relative;
+  box-shadow: var(
+    --m-3-elevation-light-2-box-shadow,
+    0px 2px 6px 2px rgba(0, 0, 0, 0.15),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.3)
+  );
+}
+.frame-49 {
+  background: #2d3748;
+  border-radius: 20px 20px 0px 0px;
+  padding: 10px 16px 10px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-54 {
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.cancel {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.frame-51 {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.day-3 {
+  color: #ffffff;
+  text-align: left;
+  font: var(--subtitle-1-bold, 700 16px/24px "Inter-Bold", sans-serif);
+  position: relative;
+}
+.frame-53 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.cancel2 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.frame-106 {
+  padding: 0px 32px 0px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-8764 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.req-text-box {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 478px;
+  position: relative;
+}
+.text {
+  color: #000000;
+  text-align: left;
+  font: var(--subtitle-1-bold, 700 16px/24px "Inter-Bold", sans-serif);
+  position: relative;
+  width: 149px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.line-70 {
+  border-style: solid;
+  border-color: var(--un-modified, #8b8b8b);
+  border-width: 1px 0 0 0;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 0px;
+  position: relative;
+}
+.req-text-box2 {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 480px;
+  position: relative;
+}
+.text2 {
+  color: #000000;
+  text-align: left;
+  font: var(--body-1, 400 16px/24px "Inter-Regular", sans-serif);
+  position: relative;
+  width: 149px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.button {
+  background: var(--main, #2d3748);
+  border-radius: 8px;
+  padding: 2px 25px 2px 25px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 32px;
+  position: relative;
+  box-shadow: var(
+    --m-3-elevation-light-1-box-shadow,
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.3)
+  );
+}
+.filter {
+  color: #ffffff;
+  text-align: left;
+  font: var(--button-md, 700 14px/24px "Inter-Bold", sans-serif);
+  position: relative;
+}
+.req-text-box3 {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 478px;
+  position: relative;
+}
+.frame-5116 {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.dropdown-box {
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 0px 10px 0px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 315px;
+  height: 36px;
+  position: relative;
+  box-shadow: var(
+    --m-3-elevation-light-3-box-shadow,
+    0px 1px 3px 0px rgba(0, 0, 0, 0.3),
+    0px 4px 8px 3px rgba(0, 0, 0, 0.15)
+  );
+}
+.auto-detect {
+  color: var(--subinfo, #474747);
+  text-align: left;
+  font: var(--caption-2, 400 italic 12px/18px "Inter-Italic", sans-serif);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.arrow-back-ios {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  transform: translate(0px, -24px);
+  overflow: visible;
+}
+.arrow-back-ios2 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  transform: translate(0px, -24px);
+  overflow: visible;
+}
+.button2 {
+  border-radius: 8px;
+  padding: 2px 0px 2px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 32px;
+  position: relative;
+}
+.filter2 {
+  color: var(--main, #2d3748);
+  text-align: left;
+  font: 700 14px/24px "Inter-Bold", sans-serif;
+  text-decoration: underline;
+  position: relative;
+}
+.frame-8768 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.req-text-box4 {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 478px;
+  position: relative;
+}
+.frame-8765 {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.check-box {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.text3 {
+  color: #000000;
+  text-align: left;
+  font: var(--body-1, 400 16px/24px "Inter-Regular", sans-serif);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-8766 {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.check-box-outline-blank {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.radio-button-checked {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.radio-button-unchecked {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.frame-8767 {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.radio-button-unchecked2 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.frame-5117 {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: 32px;
+  position: relative;
+}
+.filter3 {
+  color: var(--alert, #e74a3b);
+  text-align: left;
+  font: 700 14px/24px "Inter-Bold", sans-serif;
+  text-decoration: underline;
+  position: relative;
+}
+.frame-107 {
+  background: var(--main, #2d3748);
+  border-radius: 8px;
+  padding: 2px 25px 2px 25px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 32px;
+  position: relative;
+  box-shadow: var(
+    --m-3-elevation-light-1-box-shadow,
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.3)
+  );
+}
+
+    </style>
+
+</head>
+<body>
+<div class="modal">
+    <div class="frame-49">
+        <div class="frame-54">
+            <svg class="cancel" width="24" height="24"></svg>
+        </div>
+        <div class="frame-51">
+            <div class="day-3">Import Training Programs</div>
+        </div>
+        <div class="frame-53">
+            <svg
+                    class="cancel2"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+            >
+                <g clip-path="url(#clip0_252_21654)">
+                    <path
+                            d="M12 2C6.47 2 2 6.47 2 12C2 17.53 6.47 22 12 22C17.53 22 22 17.53 22 12C22 6.47 17.53 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM15.59 7L12 10.59L8.41 7L7 8.41L10.59 12L7 15.59L8.41 17L12 13.41L15.59 17L17 15.59L13.41 12L17 8.41L15.59 7Z"
+                            fill="white"
+                    />
+                </g>
+                <defs>
+                    <clipPath id="clip0_252_21654">
+                        <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+    </div>
+    <div class="frame-106">
+        <div class="frame-8764">
+            <div class="req-text-box">
+                <div class="text">Import Setting</div>
+                <div class="line-70"></div>
+            </div>
+            <div class="req-text-box2">
+                <div class="text2">File (csv)</div>
+                <div class="button">
+                    <div class="filter">Select</div>
+                </div>
+            </div>
+            <div class="req-text-box3">
+                <div class="text2">Encoding type</div>
+                <div class="frame-5116">
+                    <div class="dropdown-box">
+                        <div class="auto-detect">Auto detect</div>
+                        <svg
+                                class="arrow-back-ios"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g clip-path="url(#clip0_4269_2042)">
+                                <path
+                                        d="M7.16212 8L6 9.0677L12.5 15L19 9.0617L17.8379 8L12.5 12.8766L7.16212 8Z"
+                                        fill="#2D3748"
+                                />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_4269_2042">
+                                    <rect
+                                            width="24"
+                                            height="24"
+                                            fill="white"
+                                            transform="matrix(0 -1 1 0 0 24)"
+                                    />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="req-text-box3">
+                <div class="text2">Column seperator</div>
+                <div class="frame-5116">
+                    <div class="dropdown-box">
+                        <div class="auto-detect">Comma</div>
+                        <svg
+                                class="arrow-back-ios2"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g clip-path="url(#clip0_4269_1746)">
+                                <path
+                                        d="M7.16212 8L6 9.0677L12.5 15L19 9.0617L17.8379 8L12.5 12.8766L7.16212 8Z"
+                                        fill="#2D3748"
+                                />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_4269_1746">
+                                    <rect
+                                            width="24"
+                                            height="24"
+                                            fill="white"
+                                            transform="matrix(0 -1 1 0 0 24)"
+                                    />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="req-text-box2">
+                <div class="text2">Import Template</div>
+                <div class="button2">
+                    <div class="filter2">Download</div>
+                </div>
+            </div>
+        </div>
+        <div class="frame-8768">
+            <div class="req-text-box">
+                <div class="text">Duplicate Control</div>
+                <div class="line-70"></div>
+            </div>
+            <div class="req-text-box4">
+                <div class="text2">Scanning</div>
+                <div class="frame-8765">
+                    <svg
+                            class="check-box"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g clip-path="url(#clip0_252_21682)">
+                            <path
+                                    d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM17.99 9L16.58 7.58L9.99 14.17L7.41 11.6L5.99 13.01L9.99 17L17.99 9Z"
+                                    fill="#2D3748"
+                            />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_252_21682">
+                                <rect width="24" height="24" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                    <div class="text3">Program ID</div>
+                </div>
+                <div class="frame-8766">
+                    <svg
+                            class="check-box-outline-blank"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g clip-path="url(#clip0_252_21685)">
+                            <path
+                                    d="M19 5V19H5V5H19ZM19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3Z"
+                                    fill="#2D3748"
+                            />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_252_21685">
+                                <rect width="24" height="24" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                    <div class="text3">Program name</div>
+                </div>
+            </div>
+            <div class="req-text-box4">
+                <div class="text2">Duplicate handle</div>
+                <div class="frame-8765">
+                    <svg
+                            class="radio-button-checked"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g clip-path="url(#clip0_252_21690)">
+                            <path
+                                    d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z"
+                                    fill="#2D3748"
+                            />
+                            <path
+                                    d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"
+                                    fill="#2D3748"
+                            />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_252_21690">
+                                <rect width="24" height="24" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                    <div class="text3">Allow</div>
+                </div>
+                <div class="frame-8766">
+                    <svg
+                            class="radio-button-unchecked"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g clip-path="url(#clip0_252_21693)">
+                            <path
+                                    d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z"
+                                    fill="#2D3748"
+                            />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_252_21693">
+                                <rect width="24" height="24" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                    <div class="text3">Replace</div>
+                </div>
+                <div class="frame-8767">
+                    <svg
+                            class="radio-button-unchecked2"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g clip-path="url(#clip0_252_21696)">
+                            <path
+                                    d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z"
+                                    fill="#2D3748"
+                            />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_252_21696">
+                                <rect width="24" height="24" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                    <div class="text3">Skip</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="frame-5117">
+        <div class="button2">
+            <div class="filter3">Cancel</div>
+        </div>
+        <div class="frame-107">
+            <div class="filter">Import</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

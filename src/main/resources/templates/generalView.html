@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/create-general-syllabus-style-body.css">
+    <link rel="stylesheet" href="css/create-syllabus-style-footer.css">
+    <link rel="stylesheet" href="css/create-syllabus-style-header.css">
+    <link rel="stylesheet" href="css/general-view.css">
+    <link rel="stylesheet" href="css/create-general-first-form-style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="syllabus-create-container" id="syllabus-general-body">
+        <div class="syllabus-creation-header">
+            <div class="progress-frame-0">
+                <div class="progress-frame-name">
+                    Syllabus
+                </div>
+                <div id="progress-frame-name-1">
+                    <div id="progress-frame-name-1-part-1">
+                        <div id="progress-frame-name-1-name">C# Programming Language</div>
+                        <div id="progress-frame-name-1-status">Active</div>
+                    </div>
+                    <div id="progress-frame-name-1-part-2">
+                        <button id="progress-frame-name-1-part-2-btn"><img id="progress-frame-name-1-part-2-img" src="./more_horizontal.svg" alt=""></button>
+                    </div>
+                </div>
+                <div id="progress-frame-name-2">
+                    <div id="progress-frame-name-2-name">NLP v4.0</div>
+                </div>
+            </div>
+        </div>
+        <div id="program-meta-data">
+            <div id="program-meta-data-line-1">
+                <div id="program-meta-data-line-1-text-1">8</div>
+                <div id="program-meta-data-line-1-text-2">days</div>
+                <div id="program-meta-data-line-1-text-3">(68 hours)</div>
+            </div>
+            <div id="program-meta-data-line-2">
+                Modified on 23/07/2022 by Warrior Tran
+            </div>
+        </div>
+        <div class="syllabus-tab">
+            <div class="syllabus-sub-tab" id="syllabus-current-tab">
+                <div class="sub-tab-text">General</div>
+            </div>
+            <div class="syllabus-sub-tab added-tab" id="syllabus-sub-tab-outline" onclick="loadOutlineBody()">
+                <div class="sub-tab-text">Outline</div>
+            </div>
+            <div class="syllabus-sub-tab added-tab" id="syllabus-sub-tab-others" onclick="loadOthersBody()">
+                <div class="sub-tab-text">Others</div>
+            </div>
+        </div>
+        <div class="syllabus-creation-body" style="flex-direction: column; border-radius: 0px 0px 10px 10px;
+        border-top: 1px solid var(--Box, #F1F1F1);gap:20px;
+        background: #FFF;">
+            <div id="syllabus-creation-body-top">
+                <div id="syllabus-creation-body-top-1">
+                    <div id="syllabus-creation-body-top-1-level">
+                        <div id="syllabus-creation-body-top-1-level-left">
+                            <img src="" alt="">
+                            Level
+                        </div>
+                        <div id="syllabus-creation-body-top-1-level-right">
+                            All Levels
+                        </div>
+                    </div>
+
+                    <div id="syllabus-creation-body-top-1-attendee-number">
+                        <div id="syllabus-creation-body-top-1-attendee-number-left">
+                            <img src="" alt="">
+                            Attendee number
+                        </div>
+                        <div id="syllabus-creation-body-top-1-attendee-number-right">
+                            20
+                        </div>
+                    </div>
+
+                    <div id="syllabus-creation-body-top-1-output-standard">
+                        <div id="syllabus-creation-body-top-1-output-standard-left">
+                            <img src="" alt="">
+                            Output standard
+                        </div>
+                        <div id="syllabus-creation-body-top-1-output-standard-right">
+                            H4SD
+                        </div>
+                    </div>
+                </div>
+                <div id="syllabus-creation-body-top-2">
+                    <div id="syllabus-creation-body-top-2-top">
+                        <img src="" alt="">
+                        Technical Requirement(s)
+                    </div>
+                    <div id="syllabus-creation-body-top-2-bottom">
+                        <ul>Trainees’ PCs need to have following software installed & run without any issues:
+                            <li>Microsoft SQL Server 2005 Express</li>
+                            <li>Microsoft Visual Studio 2017</li>
+                            <li>Microsoft Office 2007 (Visio, Word, PowerPoint)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="syllabus-creation-body-bottom">
+                <div id="syllabus-creation-body-bottom-top">
+                    <img src="" alt="">
+                    Course objectives
+                </div>
+                <div id="syllabus-creation-body-bottom-bottom">
+                    This topic is to introduce about C# programming language knowledge; adapt trainees with skills, lessons and practices which is specifically used in the Fsoft projects. 
+In details, after completing the topic, trainees will:
+- Understand basic concepts of high-level programming languages (keyword, statement, operator, control-of-flow)
+- Understand and distinguish two concepts: class (Class) and object (Object)
+- Understand and apply object-oriented programming knowledge to resolve simple problems (Inheritance, Encapsulation, Abstraction, Polymorphism)
+- Working with some of the existing data structures in C# (List, ArrayList, HashTable, Dictionary)
+- Know how to control program errors (use try ... catch..finally, throw, throws)
+- Be able to working with concurrency and multi-thread in C#
+- Be able to working with common classes in ADO.net: SqlConnection, SqlCommand, SqlParameter, SqlDataAdapter, SqlDataReader 
+- Be able to manipulate SQL data from Window Form Application via 4 basic commands: Add, Update, Delete, Select
+- Know how to design UI screen in Window Form Application
+- Know how to use approciate controls for each field/data type: Textbox, Label, Combobox, Radio, DateTimePicker,  NumericUpDown, RichTextBox
+                </div>
+            </div>
+    </div>
+    </div>
+</body>
+</html>

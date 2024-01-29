@@ -1,0 +1,196 @@
+.white-title-typo{
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFF;
+}
+.black-title-typo{
+    font-size: 16px;
+    font-weight: 700;
+}
+.training-unit-form-custom-indentation{
+    width: 40%;
+}
+.training-unit-form-custom-text-box{
+    height: 27px;
+
+    border-radius: 5px;
+                
+    border: 2px solid gray;
+
+    width: 50%;
+
+    padding-left: 10px;
+}
+.training-unit-form-custom-selection-box{}
+.training-unit-form-custom-title{
+    display: flex;
+    align-self: center;
+}
+::placeholder{
+    font-style: italic;
+}
+.custom-multiple-select-box{
+    width: 115%;
+    border: 2px inset;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+
+
+.training-unit-form{
+    display: flex;
+    flex-direction: column;
+
+    width: 500px;
+    height: auto;
+}   
+
+    .training-unit-form-header{
+        display: flex;
+        flex-direction: row;
+
+        width: 100%;
+
+        border-radius: 20px 20px 0px 0px;
+
+        background-color: #2D3748;
+    }
+        .training-unit-form-title{
+            display: flex;
+
+            width: 100%;
+            height: 30px;
+
+            align-items: center;
+            justify-content: center;
+
+            padding-left: 30px;
+            
+        }
+        .custom-close-icon{
+            display: flex;
+            
+            width: 20px;
+            height: 100%;
+
+            margin-top: 7px;
+
+            border-radius: 100%;
+
+            margin-right: 10px;
+        }
+            .custom-close-icon:hover{
+                background:  #F05D40;
+                cursor: pointer;
+            }
+            .custom-close-icon:active{
+                background: #E2492B;
+            }
+    .training-unit-form-body{
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        height: auto;
+
+        gap: 30px;
+
+        padding-left: 20px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+
+        border: 1px inset black;
+    }
+        .training-unit-form-body-name{
+            display: flex;
+            flex-direction: row;
+
+            width: 100%;
+        }
+        .training-unit-form-body-output-standard{
+            display: flex;
+            flex-direction: row;
+
+            width: 100%;
+        }
+        .training-unit-form-body-training-time{
+            display: flex;
+            flex-direction: row;
+
+            width: 100%;
+        }
+        .training-unit-form-body-delivery-type{
+            display: flex;
+            flex-direction: row;
+
+            width: 100%;
+        }
+        .training-unit-form-body-method{
+            display: flex;
+            flex-direction: row;
+
+            width: 100%;
+        }
+        .training-unit-form-body-objectives{
+            display: flex;
+            flex-direction: row;
+
+            width: 100%;
+        }
+        .training-unit-form-body-cancel-create{
+            display: flex;
+            flex-direction: row;
+
+            width: 100%;
+            
+            align-items: center;
+            justify-content: center;
+            
+            gap: 35px;
+        }
+            .training-unit-form-body-create{
+                display: flex;
+
+                height: 30px;
+                width: 70px;
+
+                align-items: center;
+                justify-content: center;
+
+                border-radius: 10px;
+
+                background-color: #2D3748;
+            }
+                .training-unit-form-body-create:hover{
+                    background: #6D7684;
+                    cursor: pointer;
+                }
+                .training-unit-form-body-create:active{
+                    background: #000;
+                }
+            .training-unit-form-body-cancel{
+                display: flex;
+
+                font-size: 16px;
+                font-weight: 700;
+
+                height: 30px;
+                width: 70px;
+
+                align-items: center;
+                justify-content: center;
+
+                color: var(--alert, #E74A3B);
+                text-decoration-line: underline;
+            }
+                .training-unit-form-body-cancel:hover{
+                    background: #F05D40;
+                    color: #FFF;
+                    border-radius: 10px;
+
+                    cursor: pointer;
+                }
+                .training-unit-form-body-cancel:active{
+                    background: #E2492B;
+                }

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create class</title>
+    <link rel="stylesheet" href="/css/component.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/icon_gam.png">
+    <!-- included script -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <!-- --- -->
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/Bootstrap%205/bootstrap.min.css" >
+    <script src="/js/Bootstrap%205/bootstrap.bundle.min.js"></script>
+    <script src="/js/JQuery/jquery-3.7.1.js"></script>
+    <link href="/css/CreateClass/training-program.css" rel="stylesheet">
+    <script src="/js/create-class.js"></script>
+    <script src="/js/menu.js"></script>
+    <script src="/js/CreateClass/valid.js"></script>
+
+</head>
+<body>
+<div class="d-flex flex-column" style="height: 100vh;">
+    <div id="header"></div>
+        <div class="d-flex flex-grow-1 flex-row">
+            <div th:include="fragments/navbar" style="background-color: #edf2f7;"></div>
+            <form th:action="@{/class/createClass/view-program}" method="post" th:object="${class}">
+                <div id="syllabus" class="flex-grow-1" style="max-width: 100%; margin-bottom: 10px">
+                    <!-- content -->
+                    <div class="component">
+                        <div class="program-header">
+                            <p class="training-program" style="background-color: white;color: #2D3748">
+                                <span class="text-wrapper" style="color: #2D3748">Training program of </span> <span th:text="${class.className}" class="span"></span>
+                                <input type="hidden" th:field="*{className}">
+                            </p>
+                            <div class="program-name">
+                                <div class="frame">
+                                    <div class="div"><span th:text="${class.trainingProgram.name}"></span></div>
+                                    <input type="hidden" th:field="*{trainingProgram.name}">
+                                    <div class="inactive"><div class="in-active"><span th:text="${class.trainingProgram.status}"></span></div></div>
+                                    <input type="hidden" th:field="*{trainingProgram.status}">
+                                </div>
+                                <button class="button-add" name="action" value="edit"><img class="more-horizontal" src="/img/more-horizontal.svg" /></button>
+
+                            </div>
+
+                        </div>
+                        <div class="program-meta-data">
+                            <div class="frame-2">
+                                <div class="element"><span th:text="${class.trainingProgram.duration}"></span></div>
+                                <input type="hidden" th:field="*{trainingProgram.duration}">
+                                <div class="days">days</div>
+                                <div class="hours">(<span th:text="${class.trainingProgram.duration*24}"></span> hours)</div>
+                            </div>
+                            <p class="modified-on">
+                                <span  class="text-wrapper-2">Modified on </span>
+                                <span th:text="${class.trainingProgram.modifiedDate}" class="text-wrapper-3"></span>
+                                <input type="hidden" th:field="*{trainingProgram.modifiedDate}">
+                                <span class="text-wrapper-2"> by </span>
+                                <span th:text="${class.trainingProgram.modifiedBy}" class="text-wrapper-4"></span>
+                                <input type="hidden" th:field="*{trainingProgram.modifiedBy}">
+                                <span class="text-wrapper-3">&nbsp;</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="frame">
+                            <div class="content-title"><div class="text-wrapper">Content</div></div>
+                        </div>
+                        <div th:each="s:${syllabus}" class="syllabus-content">
+                            <div class="group-wrapper">
+                                <div class="group">
+                                    <div class="overlap-group">
+                                        <img class="mask-group" src="https://c.animaapp.com/rxHNXq6C/img/mask-group@2x.png" />
+                                        <div class="ellipse"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="frame-wrapper">
+                                <div class="div">
+                                    <div class="program-name">
+                                        <div class="div-2">
+                                            <div class="div-2">
+                                                <div class="div-wrapper"><div class="text-wrapper"><span th:text="${s.topicName}"></span></div></div>
+                                                <div class="activate"><div class="text-wrapper-2"><span th:text="${s.publicStatus}"></span></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="navbar-child">
+                                        <div class="text-wrapper-3"><span th:text="${s.version}"></span></div>
+                                        <div class="text-wrapper-3">|</div>
+                                        <p class="p">
+                                            <span class="span">on </span>
+                                            <span th:text="${s.modifiedDate}" class="text-wrapper-4"></span>
+                                            <span  class="span"> by [[${s.modifiedBy}]]</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="hidden" th:field="*{duration}">
+                        <input type="hidden" th:field="*{status}">
+                        <input type="hidden" th:field="*{fsu}">
+                        <input type="hidden" th:field="*{startDate}">
+                        <input type="hidden" th:field="*{endDate}">
+                        <input type="hidden" th:field="*{location}">
+                        <input type="hidden" th:field="*{timeFrom}">
+                        <input type="hidden" th:field="*{timeTo}">
+                        <input type="hidden" th:field="*{attendee.actual}">
+                        <input type="hidden" th:field="*{attendee.accepted}">
+                        <input type="hidden" th:field="*{attendee.planned}">
+                        <input type="hidden" th:field="*{attendee.attendeeType.attendeeType}">
+                        <input type="hidden" name="admin" th:value="${adminChoice}">
+                        <input type="hidden" id="trainer" name="trainer" th:value="${trainer}">
+                        <input type="hidden" th:field="*{dateLearning}">
+                    </div>
+
+                    <div class="saving-button">
+                        <input type="submit" class="div-wrapper" style="color: white;padding: 1px 20px" value="Back" name="action">
+                        <div class="frame">
+                            <a th:href="@{'/class'}" class="add-day-button" style="position: relative;top: 10px"><div class="div">Cancel</div></a>
+                            <input id="save-class" type="submit" class="div-wrapper" style="color: white;padding: 1px 20px" value="Save" name="action">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    <div id="footer"></div>
+</div>
+<script src="/component/header.js"></script>
+<script src="/component/footer.js"></script>
+<script src="/component/navbar.js"></script>
+<script src="/js/component.js"></script>
+</body>
+</html>

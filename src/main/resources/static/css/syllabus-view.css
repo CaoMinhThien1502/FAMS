@@ -1,0 +1,698 @@
+:root {
+    --sub-info: rgba(71, 71, 71, 1);
+    --main: rgba(45, 55, 72, 1);
+    --alert: rgba(231, 74, 59, 1);
+    --un-modified: rgba(139, 139, 139, 1);
+    --orange-main: rgba(212, 91, 19, 1);
+    --female: rgba(255, 117, 104, 1);
+    --green-main: rgba(47, 144, 63, 1);
+    --blue-main: rgba(40, 93, 154, 1);
+    --box: rgba(241, 241, 241, 1);
+    --sub-text-font-family: "Inter-Italic", Helvetica;
+    --sub-text-font-weight: 400;
+    --sub-text-font-size: 14px;
+    --sub-text-letter-spacing: 0px;
+    --sub-text-line-height: normal;
+    --sub-text-font-style: italic;
+    --header-font-family: "Inter-Bold", Helvetica;
+    --header-font-weight: 700;
+    --header-font-size: 16px;
+    --header-letter-spacing: 0px;
+    --header-line-height: normal;
+    --header-font-style: normal;
+    --paragraph-font-family: "Inter-Regular", Helvetica;
+    --paragraph-font-weight: 400;
+    --paragraph-font-size: 14px;
+    --paragraph-letter-spacing: 0px;
+    --paragraph-line-height: normal;
+    --paragraph-font-style: normal;
+    --section-font-family: "Inter-Medium", Helvetica;
+    --section-font-weight: 500;
+    --section-font-size: 24px;
+    --section-letter-spacing: 4.8px;
+    --section-line-height: normal;
+    --section-font-style: normal;
+    --title-font-family: "Inter-Bold", Helvetica;
+    --title-font-weight: 700;
+    --title-font-size: 36px;
+    --title-letter-spacing: 7.2px;
+    --title-line-height: normal;
+    --title-font-style: normal;
+    --sub-title-font-family: "Inter-Bold", Helvetica;
+    --sub-title-font-weight: 700;
+    --sub-title-font-size: 24px;
+    --sub-title-letter-spacing: 0px;
+    --sub-title-line-height: normal;
+    --sub-title-font-style: normal;
+}
+
+#title {
+            color: var(--Main, #2D3748);
+
+            /* Header/H4 */
+            font-family: 'Inter';
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 36px;
+            /* 150% */
+            letter-spacing: 4.8px;
+        }
+
+        .icon {
+            position: absolute;
+            top: 5px;
+            left: 2%;
+        }
+
+        #title {
+            padding: 20px;
+        }
+
+        #import-btn {
+            border-radius: 8px;
+            background: var(--orange, #D45B13);
+        }
+            #import-btn:hover{
+                background: #FF7F50;
+            }
+            #import-btn:active{
+                background: var(--orange, #D45B13);
+            }
+        #add-btn {
+            border-radius: 8px;
+            background: var(--Main, #2D3748);
+
+            /* M3/Elevation Light/1 */
+            box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+        }
+            #add-btn:hover{
+                background:#6D7684;
+            }
+            #add-btn:active{
+                background: var(--Main, #2D3748);
+            }
+        .search-item {
+            border-radius: 8px;
+            border: 1px solid #FFF;
+            background: var(--Sub-info, #474747);
+            color: white;
+            height: 45px;
+            padding: 7px;
+        }
+
+        #table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 10px 10px 0px 0px;
+            box-shadow: -4px 5px 9px 1px gray;
+        }
+
+        #table td {
+            padding: 5px 20px;
+        }
+
+        #table tr {
+            border-bottom: 0.5px solid #2D3748;
+        }
+
+        #table>thead {
+            background: #2D3748;
+            color: white;
+            height: 40px;
+        }
+
+        #table th{
+            padding: 5px 20px;
+        }
+
+        .search-item {
+            user-select: none;
+        }
+
+        .search-item>span {
+            cursor: pointer;
+        }
+
+        .pagination>li>a,
+        .pagination>li>span {
+            border-radius: 50% !important;
+            margin: 0 5px;
+        }
+
+        .dropbtn {
+            display: inline-block;
+            padding: 10px 30px 10px 30px;
+            border-radius: 25px;
+            white-space: normal;
+            text-align: center;
+            outline: none !important;
+            text-decoration: none !important;
+            color: #000 !important;
+            cursor: pointer;
+        }
+
+        .dropbtn:active,
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: #f1f1f1 !important;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            user-select: none;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            overflow: auto;
+            background: #FFF;
+            box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.16);
+            z-index: 1;
+            left: -412%;
+            border-radius: 10px;
+            width: 229px;
+        }
+
+        .dropdown-content a {
+            color: #2C5282;
+            font-size: 16px;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover,
+        .dropdown-content a:focus{
+            background: rgba(201, 203, 208, 0.37);
+        }
+
+        .show {
+            display: block;
+        }
+
+        .datepicker{
+            display: flex;
+            width: auto;
+        }
+        .table-condensed {
+          width: 261px;
+          font-size: 8;
+
+        }
+.page-shortcut{
+    padding-top:5px;
+}
+
+.page-shortcut:hover{
+    fill: #0d6efd;
+    cursor: pointer;
+}
+.text-decoration-1{
+    color: #2D3748;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-weight: 600px;
+    font-size: 17px;
+}
+
+.status-box{
+    border-radius: 15px ;
+    height: 100%;
+    width: 100%;
+    background-color: #285D9A;
+    justify-content: center;
+    display: flex;
+    border: 0.5px solid #2D3748;
+}
+
+.out-standard-box{
+    border-radius: 15px ;
+    height: 30px;
+    width: 65px;
+    justify-content: center;
+    display: flex;
+}
+
+.sort-btn{
+    width: 22px;
+    padding-bottom: 3px;
+}
+    .sort-btn:hover{
+        cursor:pointer;
+    }
+
+.popup-syllabus {
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    gap: 15px;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 2;
+    padding-bottom: 20px;
+}
+
+.popup-syllabus .frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 10px 10px 0px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    background: #2D3748;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.popup-syllabus .text-wrapper {
+    font-weight: var(--header-font-weight);
+    color: #ffffff;
+    font-size: var(--header-font-size);
+    line-height: var(--header-line-height);
+    white-space: nowrap;
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--header-font-family);
+    letter-spacing: var(--header-letter-spacing);
+    font-style: var(--header-font-style);
+}
+
+.popup-syllabus .text-wrapper-2 {
+    font-weight: 700;
+    color: #000000;
+    font-size: 14px;
+    line-height: normal;
+    position: relative;
+    width: fit-content;
+    margin-top: 2px;
+    font-family: "Inter", Helvetica;
+    letter-spacing: 0;
+}
+
+.popup-syllabus .text-wrapper-3 {
+    color: #fc5656;
+    font-family: var(--paragraph-font-family);
+    font-style: var(--paragraph-font-style);
+    font-weight: var(--paragraph-font-weight);
+    letter-spacing: var(--paragraph-letter-spacing);
+    line-height: var(--paragraph-line-height);
+    font-size: var(--paragraph-font-size);
+}
+
+.popup-syllabus .text-wrapper-4 {
+    position: relative;
+    width: fit-content;
+    margin-top: -5px;
+    margin-bottom: -3px;
+    font-family: var(--body-regular-font-family);
+    font-weight: var(--body-regular-font-weight);
+    color: #ffffff;
+    font-size: var(--body-regular-font-size);
+    letter-spacing: var(--body-regular-letter-spacing);
+    line-height: var(--body-regular-line-height);
+    white-space: nowrap;
+    font-style: var(--body-regular-font-style);
+}
+
+.popup-syllabus .text-wrapper-6 {
+    position: relative;
+    width: fit-content;
+    font-family: var(--paragraph-font-family);
+    font-weight: var(--paragraph-font-weight);
+    color: #000000;
+    font-size: var(--paragraph-font-size);
+    letter-spacing: var(--paragraph-letter-spacing);
+    line-height: var(--paragraph-line-height);
+    font-style: var(--paragraph-font-style);
+}
+
+.popup-syllabus .text-wrapper-7 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--body-regular-font-family);
+    font-weight: var(--body-regular-font-weight);
+    color: var(--textregular);
+    font-size: var(--body-regular-font-size);
+    letter-spacing: var(--body-regular-letter-spacing);
+    line-height: var(--body-regular-line-height);
+    white-space: nowrap;
+    font-style: var(--body-regular-font-style);
+}
+
+.popup-syllabus .text-wrapper-8 {
+    position: relative;
+    width: fit-content;
+    font-family: var(--body-regular-font-family);
+    font-weight: var(--body-regular-font-weight);
+    color: #000000;
+    font-size: var(--body-regular-font-size);
+    letter-spacing: var(--body-regular-letter-spacing);
+    line-height: var(--body-regular-line-height);
+    white-space: nowrap;
+    font-style: var(--body-regular-font-style);
+}
+
+.popup-syllabus .text-wrapper-9 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: var(--blue-main);
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+.popup-syllabus .text-wrapper-10 {
+    font-weight: 700;
+    color: #000000;
+    position: relative;
+    width: fit-content;
+    margin-top: 2px;
+    font-family: "Inter", Helvetica;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.popup-syllabus .text-wrapper-11 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--body-regular-font-family);
+    font-weight: 400;
+    color: var(--charactertitle-85);
+    font-size: var(--body-regular-font-size);
+    letter-spacing: var(--body-regular-letter-spacing);
+    line-height: var(--body-regular-line-height);
+    white-space: nowrap;
+    font-style: var(--body-regular-font-style);
+}
+
+.popup-syllabus .text-wrapper-12 {
+    position: relative;
+    width: fit-content;
+    font-family: "Inter", Helvetica, serif;
+    font-weight: 700;
+    color: #E74A3B;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    text-decoration: underline;
+    margin-top: 7px;
+    border: none;
+    background-color: white;
+}
+
+.popup-syllabus .frame-2 {
+    display: flex;
+    flex-direction: column;
+    width: 333px;
+    align-items: flex-start;
+    gap: 15px;
+    position: relative;
+}
+
+.popup-syllabus .frame-3 {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.popup-syllabus .frame-4 {
+    display: inline-flex;
+    height: 24px;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 20px;
+    position: relative;
+    flex: 0 0 auto;
+    background: #2D3748;
+    border-radius: 5px;
+    margin-top: 0px;
+}
+
+.popup-syllabus .frame-5 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.popup-syllabus .frame-6 {
+    display: flex;
+    width: 140px;
+    height: 24px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: var(--line);
+}
+
+.popup-syllabus .frame-7 {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    flex: 0 0 auto;
+    padding-top: 2px;
+}
+
+.popup-syllabus .frame-8 {
+    display: flex;
+    width: 500px;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px 20px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.popup-syllabus .frame-9 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.popup-syllabus .frame-10 {
+    display: flex;
+    width: 165px;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0px 10px;
+    padding-bottom: 10px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.popup-syllabus .frame-11 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 10px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    padding: 5px 20px 0px;
+}
+
+.popup-syllabus .frame-12 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 2px 30px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #2D3748;
+    border-radius: 10px;
+    color: white;
+}
+
+.popup-syllabus .add-day-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 7px 10px;
+    position: relative;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    all: unset;
+    box-sizing: border-box;
+}
+
+.popup-syllabus .checkbox-group {
+    gap: 16px;
+    padding: 0px 0px 0px 10px;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.popup-syllabus .checkbox{
+    gap: 8px;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.popup-syllabus .rectangle {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    background-color: var(--neutral-1);
+    border-radius: 2px;
+    border: 1px solid;
+    border-color: var(--neutral-5);
+    margin-left: 0px;
+    margin-bottom: 2px;
+}
+
+.popup-syllabus .line {
+    position: relative;
+    width: 460px;
+    height: 1px;
+    object-fit: cover;
+}
+
+.popup-syllabus .element {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: var(--hitbox);
+}
+
+.popup-syllabus .radio-2 {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    background-color: var(--neutral-1);
+    border-radius: 100px;
+    border: 1px solid;
+    border-color: var(--neutral-5);
+}
+
+.popup-syllabus .radio-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 5px 0px 5px 10px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.popup-syllabus .div-wrapper {
+    display: flex;
+    width: 165px;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0px 10px;
+    position: relative;
+}
+
+.popup-syllabus .file-csv {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--paragraph-font-family);
+    font-weight: var(--paragraph-font-weight);
+    color: transparent;
+    font-size: var(--paragraph-font-size);
+    letter-spacing: var(--paragraph-letter-spacing);
+    line-height: var(--paragraph-line-height);
+    font-style: var(--paragraph-font-style);
+}
+
+.popup-syllabus .span {
+    color: #1e1e1f;
+    font-family: var(--paragraph-font-family);
+    font-style: var(--paragraph-font-style);
+    font-weight: var(--paragraph-font-weight);
+    letter-spacing: var(--paragraph-letter-spacing);
+    line-height: var(--paragraph-line-height);
+    font-size: var(--paragraph-font-size);
+}
+
+#import-syllabus-form .div{
+    display: flex;
+    width: 504px;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px 20px;
+    position: relative;
+    flex: 0 0 auto;
+    margin-left: -2px;
+    margin-right: -2px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.output-standard-column{
+    display: flex;
+    min-width: 250px
+}
+
+.output-standard-wrapper{
+    background-color: #2D3748;
+    min-width: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.hyper-link-td:hover{
+    cursor: pointer;
+    color: #6D7684;
+}
+
+.page-link:hover{
+    cursor:pointer;
+    background: #E5E4E2;
+}
+
+.active>.page-link:hover{
+    background: #6495ED;
+}

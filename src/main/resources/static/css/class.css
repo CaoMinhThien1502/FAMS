@@ -1,0 +1,4046 @@
+p {
+    margin: 0;
+}
+
+.program-manage-Gkg {
+    box-sizing: border-box;
+    padding: 1rem 1rem 1.5rem 1rem;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1599999964);
+    background-color: #ffffff;
+    border-radius: 1rem;
+    position: absolute;
+    top: 100%;
+    right: 0;
+}
+
+.program-manage-Gkg .manage-CPS {
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.1725;
+    color: #2d3748;
+    font-family: Roboto, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.program-manage-Gkg .line-XAp {
+    margin-bottom: 0.9rem;
+    width: 18.4rem;
+    height: 0.1rem;
+    background-color: #e2e8f0;
+    flex-shrink: 0;
+}
+
+.program-manage-Gkg .frame-83-4Re {
+    margin: 0rem 8.9rem 0rem 0.5rem;
+    width: calc(100% - 9.4rem);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.program-manage-Gkg .frame-83-4Re .create-bRa {
+    margin-right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.program-manage-Gkg .frame-83-4Re .edit-class-jng {
+    margin-top: 0.1rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #2c5282;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.class-view-7xt {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.7599999905);
+}
+
+
+.frame-5105-75i {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+
+.frame-5018-zMn {
+    margin-right: 0.2rem;
+    width: 100%;
+    display: flex;
+    flex-shrink: 0;
+    overflow: auto;
+}
+
+
+.body-d3v {
+    height: 100%;
+    gap: 3rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    flex: 1;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+}
+
+.frame-5017-A3r {
+    padding-inline: 2rem;
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk {
+    margin-right: 2rem;
+    min-width: 37.3rem;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .frame-5116-dTE {
+    margin-bottom: 3rem;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .frame-5116-dTE .frame-5003-BDr {
+    box-sizing: border-box;
+    padding: 0.8rem 2rem;
+    width: 100%;
+    height: 4rem;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #2d3748;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .frame-5116-dTE .frame-5003-BDr .frame-5002-KL4 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.frame-5017-A3r .frame-5016-tEk .frame-5116-dTE .frame-5003-BDr .frame-5002-KL4 .frame-5001-UTr {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .frame-5116-dTE .frame-5003-BDr .frame-5002-KL4 .frame-5001-UTr .calendartoday-pnc {
+    margin-right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .frame-5116-dTE .frame-5003-BDr .frame-5002-KL4 .frame-5001-UTr .general-ZkC {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.arrowdropdowncircle-hbW {
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn {
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    border-radius: 1rem;
+    flex-shrink: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.general-bwn .frame-110-MAG {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.general-bwn .frame-110-MAG .frame-107-HJp {
+    margin-right: 2.4rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-110-MAG .frame-107-HJp .alarm-3Hz {
+    margin-right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-110-MAG .frame-107-HJp .class-time-nWU {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-110-MAG .item-09-00-12-00-KWQ {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5120-Sqv {
+    width: 100%;
+}
+
+.frame-119-ahE {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.frame-119-ahE .frame-107-Kui {
+    margin-right: 3.6rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-119-ahE .frame-107-Kui .homework-swE {
+    margin-right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    position: relative;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.frame-119-ahE .frame-107-Kui .location-DVJ {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-119-ahE .ftown2-kk8 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5109-JFr {
+    margin-right: 0.3rem;
+    width: calc(100% - 0.3rem);
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.frame-5109-JFr .frame-107-RrG {
+    margin-right: 3.6rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5109-JFr .frame-107-RrG .homework-BaY {
+    margin-right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    position: relative;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.frame-5109-JFr .frame-107-RrG .location-XPW {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5109-JFr .ftown1-sCU {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.general-bwn .frame-5106-CkY .frame-113-jEg {
+    width: 100%;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .frame-113-jEg .frame-107-HX6 {
+    margin-right: 4.7rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .frame-113-jEg .frame-107-HX6 .concept-lecture-okL {
+    margin-right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .frame-113-jEg .frame-107-HX6 .trainer-wLk {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .frame-113-jEg .frame-5010-Uba {
+    margin: 0.35rem 0;
+    height: calc(100% - 0.7rem);
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .frame-113-jEg .frame-5010-Uba .dinh-vu-quoc-trung-1rQ {
+    margin-right: 0.2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    text-decoration-line: underline;
+    color: #285d9a;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .frame-113-jEg .frame-5010-Uba .warning-logo-vTa {
+    width: 0.8rem;
+    height: 0.8rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG {
+    box-sizing: border-box;
+    width: 100%;
+    row-gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-b3v {
+    margin-right: 5.4rem;
+    width: calc(100% - 5.4rem);
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-b3v .frame-107-L1W {
+    margin-right: 4.7rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .trainer-17e {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-b3v .frame-5010-MBW {
+    margin: 0.35rem 0;
+    height: calc(100% - 0.7rem);
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-b3v .frame-5010-MBW .ba-chu-heo-tx8 {
+    margin-right: 0.2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    /*text-decoration-line: underline;*/
+    color: #285d9a;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-b3v .frame-5010-MBW .warning-logo-pat {
+    width: 0.8rem;
+    height: 0.8rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-ZoN {
+    margin-right: 5.4rem;
+    width: calc(100% - 5.4rem);
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-ZoN .frame-107-uMS {
+    margin-right: 4.7rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-ZoN .frame-107-uMS .concept-lecture-3yS {
+    margin-right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-ZoN .frame-107-uMS .trainer-ayN {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-ZoN .frame-5010-Xdi {
+    margin: 0.35rem 0;
+    height: calc(100% - 0.7rem);
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-ZoN .frame-5010-Xdi .hu-cheo-ba-fzp {
+    margin-right: 0.2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    text-decoration-line: underline;
+    color: #285d9a;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-ZoN .frame-5010-Xdi .warning-logo-Czk {
+    width: 0.8rem;
+    height: 0.8rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-8tQ {
+    margin-right: 5rem;
+    width: calc(100% - 5rem);
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-8tQ .frame-107-sqz {
+    margin-right: 4.7rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-8tQ .frame-107-sqz .concept-lecture-EgY {
+    margin-right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-8tQ .frame-107-sqz .trainer-aVW {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-8tQ .frame-5010-vZN {
+    margin: 0.35rem 0;
+    height: calc(100% - 0.7rem);
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-8tQ .frame-5010-vZN .tap-the-lop-GNL {
+    margin-right: 0.2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    text-decoration-line: underline;
+    color: #285d9a;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .auto-group-po7h-fAG .frame-113-8tQ .frame-5010-vZN .warning-logo-bQc {
+    width: 0.8rem;
+    height: 0.8rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5107-8QY {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.general-bwn .frame-5107-8QY .frame-113-rrL,
+.general-bwn .frame-5106-CkY .frame-113-rrL {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5107-8QY .frame-113-rrL .frame-107-cKi {
+    margin-right: 5.1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5106-CkY .frame-113-rrL .frame-107-cKi {
+    margin-right: 4.7rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5107-8QY .frame-113-rrL .frame-107-cKi .grade-mCc,
+.general-bwn .frame-5106-CkY .frame-113-rrL .frame-107-cKi .concept-lecture-sn8 {
+    margin-right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5107-8QY .frame-113-rrL .frame-107-cKi .admin-VuJ {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5107-8QY .frame-113-rrL .frame-5011-Ert,
+.general-bwn .frame-5106-CkY .frame-113-rrL .frame-5011-Ert {
+    margin: 0.35rem 0;
+    height: calc(100% - 0.7rem);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 0.5rem;
+
+    & button {
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.497;
+        color: #2d3748;
+        font-family: Inter, 'Source Sans Pro';
+        white-space: nowrap;
+        border: solid 0.05rem #8b8b8b;
+        border-radius: 0.5rem;
+        padding: 0.25rem 0.7rem;
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+            background-color: #e7e7e7;
+        }
+    }
+}
+
+.general-bwn .frame-5107-8QY .frame-113-rrL .frame-5011-Ert .ly-lien-lien-dung-zLG,
+.general-bwn .frame-5106-CkY .frame-113-rrL .frame-5011-Ert .ly-lien-lien-dung-zLG {
+    margin-right: 0.2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #285d9a;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5107-8QY .frame-113-rrL .frame-5011-Ert select.ly-lien-lien-dung-zLG,
+.general-bwn .frame-5106-CkY .frame-113-rrL .frame-5011-Ert select.ly-lien-lien-dung-zLG {
+    font-weight: 400;
+    line-height: 1.497;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    border: solid 0.05rem #8b8b8b;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.7rem;
+    width: 100%;
+
+    & option {
+        font-size: 1.4rem;
+        color: black;
+        background-color: #ffffff;
+    }
+}
+
+.general-bwn .frame-5107-8QY .frame-113-rrL .frame-5011-Ert .warning-logo-79z,
+.general-bwn .frame-5106-CkY .frame-113-rrL .frame-5011-Ert .warning-logo-79z {
+    width: 0.8rem;
+    height: 0.8rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5107-8QY .frame-113-rrL .frame-5011-Ert .delete-btn,
+.general-bwn .frame-5106-CkY .frame-113-rrL .frame-5011-Ert .delete-btn {
+    padding: 2px;
+    border-radius: 100%;
+
+    &:hover {
+        background-color: #e7e7e7;
+    }
+}
+
+.general-bwn .frame-5107-8QY .frame-113-rrL .frame-5011-Ert .delete-logo,
+.general-bwn .frame-5106-CkY .frame-113-rrL .frame-5011-Ert .delete-logo {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5107-8QY .frame-113-FX6 {
+    width: 100%;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5107-8QY .frame-113-FX6 .frame-107-QPz {
+    margin-right: 5.1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5107-8QY .frame-113-FX6 .frame-107-QPz .grade-APA {
+    margin-right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5107-8QY .frame-113-FX6 .frame-107-QPz .admin-WC8 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5107-8QY .frame-113-FX6 .frame-5011-rWt {
+    margin: 0.35rem 0;
+    height: calc(100% - 0.7rem);
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5107-8QY .frame-113-FX6 .frame-5011-rWt .dung-lien-lien-ly-bzG {
+    margin-right: 0.2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    text-decoration-line: underline;
+    color: #285d9a;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5107-8QY .frame-113-FX6 .frame-5011-rWt .warning-logo-vme {
+    width: 0.8rem;
+    height: 0.8rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5108-G4p {
+    width: 100%;
+}
+
+.general-bwn .frame-5108-G4p .frame-113-Pv8 {
+    display: flex;
+    align-items: center;
+}
+
+.general-bwn .frame-5108-G4p .frame-113-Pv8 .frame-107-Kon {
+    margin-right: 6.8rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5108-G4p .frame-113-Pv8 .frame-107-Kon .supplier-geL {
+    margin-right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5108-G4p .frame-113-Pv8 .frame-107-Kon .fsu-Rbv {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5108-G4p .frame-113-Pv8 .fhm-Zi8 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5108-G4p .frame-113-7Dr {
+    width: 100%;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.general-bwn .frame-5108-G4p .frame-113-7Dr .frame-107-fFN {
+    margin-right: 4.7rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5108-G4p .frame-113-7Dr .frame-107-fFN .concept-lecture-25v {
+    margin-right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5108-G4p .frame-113-7Dr .frame-107-fFN .trainer-mJQ {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-5108-G4p .frame-113-7Dr .bachfsoftcomvn-WWt {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .line-10-qp4 {
+    height: 0.05rem;
+    background-color: #000000;
+}
+
+.general-bwn .frame-108-ArL {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.general-bwn .frame-108-ArL .created-WfJ {
+    margin-right: 7.4rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-108-ArL .by-danpl-rDN {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-109-PUC {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.general-bwn .frame-109-PUC .review-XKW {
+    margin-right: 8rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-109-PUC .by-trungdvq-fRi {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-117-baG {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.general-bwn .frame-117-baG .approve-e2k {
+    margin-right: 7.1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.general-bwn .frame-117-baG .by-vongnt-NjS {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .training-info-4sA {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 2rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .training-info-4sA .frame-49-pLY {
+    box-sizing: border-box;
+    padding: 0.8rem 2rem;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: solid 0.1rem #f1f1f1;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #2d3748;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .training-info-4sA .frame-49-pLY .frame-118-9tc {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .training-info-4sA .frame-49-pLY .frame-118-9tc .frame-117-iB2 {
+    margin-right: 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .training-info-4sA .frame-49-pLY .frame-118-9tc .frame-117-iB2 .grade-TeQ {
+    margin-right: 0.5rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .training-info-4sA .frame-49-pLY .frame-118-9tc .frame-117-iB2 .attendee-oiG {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .training-info-4sA .frame-49-pLY .frame-118-9tc .fresher-wpU {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #f1f1f1;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.arrowdropdowncircle-5vg {
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.frame-119-Net {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #2d3748;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+
+.frame-111-X1z {
+    box-sizing: border-box;
+    padding: 1rem 2.867rem 1rem 2.867rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border: solid 0.1rem #f1f1f1;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.frame-111-X1z .planned-eMW {
+    margin-bottom: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #f1f1f1;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-111-X1z .item-10-akx {
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    letter-spacing: 0.48rem;
+    color: #f1f1f1;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.frame-5017-A3r .frame-5016-tEk .training-info-4sA .frame-119-Net .auto-group-yqvb-5xc {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .training-info-4sA .frame-119-Net .auto-group-yqvb-5xc .frame-112-SHN {
+    box-sizing: border-box;
+    padding: 1rem 2.867rem 1rem 2.867rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border: solid 0.1rem #f1f1f1;
+    background-color: #285d9a;
+}
+
+.frame-5017-A3r .frame-5016-tEk .training-info-4sA .frame-119-Net .auto-group-yqvb-5xc .frame-112-SHN .accepted-9Bn {
+    margin-bottom: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #f1f1f1;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .training-info-4sA .frame-119-Net .auto-group-yqvb-5xc .frame-112-SHN .item-9-Uzk {
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    letter-spacing: 0.48rem;
+    color: #f1f1f1;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.frame-5017-A3r .frame-5016-tEk .training-info-4sA .frame-119-Net .auto-group-yqvb-5xc .frame-113-mix {
+    padding: 1rem 2.867rem 1rem 2.867rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    border-radius: 0 1rem 1rem 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .training-info-4sA .frame-119-Net .auto-group-yqvb-5xc .frame-113-mix .actual-g5E {
+    margin-bottom: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5016-tEk .training-info-4sA .frame-119-Net .auto-group-yqvb-5xc .frame-113-mix .item-9-ofe {
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    letter-spacing: 0.48rem;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.frame-5017-A3r .frame-5009-eAU {
+    min-width: 74.6rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5003-Bw6 {
+    margin-bottom: 0.2rem;
+    box-sizing: border-box;
+    padding: 0.8rem 2rem;
+    width: 100%;
+    height: 4rem;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #2d3748;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5003-Bw6 .frame-5002-K1i {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5003-Bw6 .frame-5002-K1i .frame-5001-4zt {
+    height: 100%;
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5003-Bw6 .frame-5002-K1i .frame-5001-4zt .calendartoday-pDN {
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5003-Bw6 .frame-5002-K1i .frame-5001-4zt .time-frame-xaU {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5000-JPS {
+    margin: 0.35rem 0;
+    height: calc(100% - 0.7rem);
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5003-Bw6 .frame-5002-K1i .frame-5001-4zt .frame-5000-JPS .apr-22-EXz {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5003-Bw6 .frame-5002-K1i .frame-5001-4zt .frame-5000-JPS .to-mnp {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5003-Bw6 .frame-5002-K1i .frame-5001-4zt .frame-5000-JPS .july-22-K3e {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5117-EwJ {
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.frame-5009-92g {
+    box-sizing: border-box;
+    padding: 1.95rem 3.4rem 2rem 3.4rem;
+    width: 100%;
+    height: 31.3rem;
+    display: flex;
+    align-items: center;
+    border: solid 0.05rem #f1f1f1;
+    box-shadow: 0.5rem 2rem 2rem rgba(0, 0, 0, 0.1599999964);
+    background-color: #ffffff;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU {
+    margin-right: 6.8rem;
+    width: 30.5rem;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5004-p8p {
+    margin: 0rem 0.6rem 1.92rem 0.6rem;
+    width: calc(100% - 1.2rem);
+    height: 3.83rem;
+    border-bottom: solid 0.08rem #e4e5e7;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5004-p8p .month-8vC {
+    box-sizing: border-box;
+    padding: 0rem 0.582rem 0rem 0.4rem;
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5004-p8p .month-8vC .icons-Tha {
+    margin-right: 9.4317rem;
+    width: 0.6183rem;
+    height: 1rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5004-p8p .month-8vC .june-2022-Q72 {
+    margin-right: 9.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5004-p8p .month-8vC .icons-XBe {
+    width: 0.6183rem;
+    height: 1rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .week-zqv {
+    margin: 0rem 0.45rem 1.7rem 0.5rem;
+    width: calc(100% - 0.95rem);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .week-zqv .sen-uxt {
+    margin-right: 1.9333rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #7e818c;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .week-zqv .sen-qLk {
+    margin-right: 1.8333rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #7e818c;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .week-zqv .sen-vsz {
+    margin-right: 2.0833rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #7e818c;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .week-zqv .sen-fKn {
+    margin-right: 1.6833rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #7e818c;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .week-zqv .sen-bDS {
+    margin-right: 2.1333rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #7e818c;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .week-zqv .sen-7Sg {
+    margin-right: 2.3833rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #7e818c;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .week-zqv .sen-Sjr {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #7e818c;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 {
+    width: 100%;
+    row-gap: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4994-7LC {
+    width: 100%;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4994-7LC .days-3Dr {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #0e2551;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4994-7LC .days-7zQ {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4994-7LC .days-QCp {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4994-7LC .days-VVA {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4994-7LC .days-MGU {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4994-7LC .days-zaL {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4994-7LC .days-eet {
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4995-kT2 {
+    width: 100%;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4995-kT2 .days-5EQ {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4995-kT2 .days-NUQ {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4995-kT2 .days-rPa {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4995-kT2 .days-9Ng {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4995-kT2 .days-dHr {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4995-kT2 .days-X8L {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4995-kT2 .days-13W {
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4996-JYQ {
+    width: 100%;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4996-JYQ .days-Egx {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4996-JYQ .days-ic8 {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4996-JYQ .days-1LL {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4996-JYQ .days-7PN {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4996-JYQ .days-Q7a {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4996-JYQ .days-7Gt {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4996-JYQ .days-bSx {
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4997-uCk {
+    width: 100%;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4997-uCk .days-2oA {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4997-uCk .days-LYx {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4997-uCk .days-2gg {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4997-uCk .days-w2x {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4997-uCk .days-cun {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4997-uCk .days-87S {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4997-uCk .days-D8t {
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4998-irL {
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4998-irL .days-sDS {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4998-irL .days-Nfz {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4998-irL .days-sse {
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4998-irL .auto-group-61go-y9z {
+    box-sizing: border-box;
+    padding: 0.35rem 0rem 0.35rem 2.583rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4998-irL .auto-group-61go-y9z .item-1-5yi {
+    margin-right: 2.8833rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4998-irL .auto-group-61go-y9z .item-1-Qm6 {
+    margin-right: 2.9333rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4998-irL .auto-group-61go-y9z .item-1-wm2 {
+    margin-right: 2.9333rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5006-sUU .frame-5005-3Qt .frame-4999-mn8 .frame-4998-irL .auto-group-61go-y9z .item-1-TzG {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx {
+    width: 30.5rem;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5004-L2U {
+    margin: 0rem 0.6rem 1.92rem 0.6rem;
+    width: calc(100% - 1.2rem);
+    height: 3.83rem;
+    border-bottom: solid 0.08rem #e4e5e7;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5004-L2U .month-dnG {
+    box-sizing: border-box;
+    padding: 0 0.4rem;
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    column-gap: 9.7317rem;
+    align-items: center;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5004-L2U .month-dnG .icons-xpY {
+    width: 0.6183rem;
+    height: 1rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5004-L2U .month-dnG .july-2022-7SY {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5004-L2U .month-dnG .icons-3LC {
+    width: 0.6183rem;
+    height: 1rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .week-8Me {
+    margin: 0rem 0.45rem 1.7rem 0.5rem;
+    width: calc(100% - 0.95rem);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .week-8Me .sen-3Uc {
+    margin-right: 1.9333rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #7e818c;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .week-8Me .sen-mfW {
+    margin-right: 1.8333rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #7e818c;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .week-8Me .sen-JfS {
+    margin-right: 2.0833rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #7e818c;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .week-8Me .sen-dxc {
+    margin-right: 1.6833rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #7e818c;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .week-8Me .sen-ABr {
+    margin-right: 2.1333rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #7e818c;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .week-8Me .sen-tde {
+    margin-right: 2.3833rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #7e818c;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .week-8Me .sen-2E4 {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #7e818c;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU {
+    width: 100%;
+    row-gap: 1.6rem;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4994-VNY {
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4994-VNY .auto-group-ww75-2NU {
+    box-sizing: border-box;
+    padding: 0.35rem 2.983rem 0.35rem 0rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4994-VNY .auto-group-ww75-2NU .item-1-8wJ {
+    margin-right: 3.8833rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4994-VNY .auto-group-ww75-2NU .item-1-rsJ {
+    margin-right: 3.7333rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4994-VNY .auto-group-ww75-2NU .item-1-b4C {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4994-VNY .days-KVz {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4994-VNY .days-byJ {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4994-VNY .days-Jsi {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4994-VNY .days-Ncg {
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4995-spL {
+    width: 100%;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4995-spL .days-oCC {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4995-spL .days-hoN {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4995-spL .days-btk {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4995-spL .days-7MJ {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4995-spL .days-nyE {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4995-spL .days-u2G {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4995-spL .days-z3i {
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4996-J4Q {
+    width: 100%;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4996-J4Q .days-q4L {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4996-J4Q .days-jfW {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4996-J4Q .days-Dqa {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4996-J4Q .days-iXS {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4996-J4Q .days-DDJ {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4996-J4Q .days-7Za {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4996-J4Q .days-1Q4 {
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4997-KQk {
+    width: 100%;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4997-KQk .days-r9n {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4997-KQk .days-MsE {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4997-KQk .days-US4 {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #2d3748;
+    border-radius: 4rem;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4997-KQk .days-xc8 {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4997-KQk .days-Ton {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4997-KQk .days-NA4 {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4997-KQk .days-GFS {
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4998-NpG {
+    margin-right: 0.3rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4998-NpG .days-7Wx {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4998-NpG .days-RGk {
+    margin-right: 2.2833rem;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4998-NpG .days-LPi {
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4998-NpG .auto-group-dlr7-rcx {
+    box-sizing: border-box;
+    padding: 0.35rem 0rem 0.35rem 2.583rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4998-NpG .auto-group-dlr7-rcx .item-1-yxU {
+    margin-right: 2.8333rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4998-NpG .auto-group-dlr7-rcx .item-1-ubE {
+    margin-right: 2.8833rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4998-NpG .auto-group-dlr7-rcx .item-1-qUt {
+    margin-right: 2.9333rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5017-A3r .frame-5009-eAU .frame-5009-92g .frame-5007-mzx .frame-5005-mX6 .frame-4999-9pU .frame-4998-NpG .auto-group-dlr7-rcx .item-1-mNY {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    text-transform: uppercase;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.class-header-c8G {
+    box-sizing: border-box;
+    padding: 2rem 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: solid 0.1rem #ffffff;
+    background-color: #2d3748;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .class-8cQ {
+    margin-bottom: 0.9rem;
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    letter-spacing: 0.48rem;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .program-name-rYQ {
+    margin-bottom: 0.6rem;
+    box-sizing: border-box;
+    padding-right: 0.4rem;
+    width: 111rem;
+    height: 4.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .program-name-rYQ .frame-98-nBA {
+    margin-bottom: 0.4rem;
+    height: 4.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .program-name-rYQ .frame-98-nBA .fresher-develop-operation-7UL {
+    margin-right: 1.3rem;
+    font-size: 3.6rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    letter-spacing: 0.72rem;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+
+}
+
+.class-header-c8G .program-name-rYQ .frame-98-nBA input.fresher-develop-operation-7UL {
+    color: black;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.class-header-c8G .program-name-rYQ .frame-98-nBA .activate-DXN {
+    margin: 0.85rem 0;
+    padding-inline: 0.5rem;
+    height: calc(100% - 1.7rem);
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.1725;
+    color: #ffffff;
+    font-family: Roboto, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 0.15rem #ffffff;
+    box-sizing: border-box;
+    background-color: #b9b9b9;
+    border-radius: 5rem;
+    flex-shrink: 0;
+
+    & option {
+        font-size: 1.4rem;
+        color: black;
+        background-color: #ffffff;
+    }
+}
+
+.morehorizontal-Mmz {
+    margin-top: 0.4rem;
+    width: 3.6rem;
+    height: 3rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.class-header-c8G .hcm22frdevops01-H9r {
+    margin-bottom: 0.9rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.class-header-c8G input.hcm22frdevops01-H9r {
+    color: black;
+    border-radius: 5px;
+    padding: 0 10px;
+    width: 30rem;
+}
+
+.class-header-c8G .line-11-cC8 {
+    margin-bottom: 0.85rem;
+    width: 64.5rem;
+    height: 0.05rem;
+    background-color: #ffffff;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .frame-87-kJL {
+    margin-right: 75rem;
+    width: calc(100% - 75rem);
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .frame-87-kJL .frame-5022-gBz {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .frame-87-kJL .frame-5022-gBz .frame-77-RvG {
+    margin-right: 0.9rem;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .frame-87-kJL .frame-5022-gBz .frame-77-RvG .item-31-P6Q {
+    margin-right: 0.5rem;
+    display: flex;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .frame-87-kJL .frame-5022-gBz .frame-77-RvG .days-WB2 {
+    margin-bottom: 0.25rem;
+    display: flex;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .frame-87-kJL .frame-5022-gBz .hours-EMv {
+    margin-bottom: 0.2rem;
+    display: flex;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    font-style: italic;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .frame-87-kJL .auto-group-nsck-Z9J {
+    box-sizing: border-box;
+    padding: 0.35rem 0rem 0.25rem 2.6rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .frame-87-kJL .auto-group-nsck-Z9J .item--HLC {
+    margin-right: 1rem;
+    display: flex;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .frame-87-kJL .auto-group-nsck-Z9J .frame-122-Cxx {
+    height: 100%;
+    display: flex;
+    column-gap: 1.5rem;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .frame-87-kJL .auto-group-nsck-Z9J .frame-122-Cxx .asignment-lab-Ymv {
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .frame-87-kJL .auto-group-nsck-Z9J .frame-122-Cxx .concept-lecture-62k {
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .frame-87-kJL .auto-group-nsck-Z9J .frame-122-Cxx .exam-2SC {
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .frame-87-kJL .auto-group-nsck-Z9J .frame-122-Cxx .seminar-workshop-Zwv {
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.class-header-c8G .frame-87-kJL .auto-group-nsck-Z9J .frame-122-Cxx .guide-review-iK2 {
+    width: 2.3rem;
+    height: 2.3rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.frame-5022-2Ki {
+    box-sizing: border-box;
+    padding-inline: 2rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.frame-5022-2Ki .group-9-wxU {
+    width: 77.1rem;
+    height: 3rem;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.frame-5022-2Ki .group-9-wxU .tab-4-gfA {
+    width: 20.2rem;
+    height: 3rem;
+    position: absolute;
+    left: 56.9rem;
+    top: 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 0.1rem #ffffff;
+    box-sizing: border-box;
+    background-color: #6d7684;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.frame-5022-2Ki .group-9-wxU .tab-3-8n4 {
+    width: 20rem;
+    height: 3rem;
+    position: absolute;
+    left: 38rem;
+    top: 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 0.1rem #ffffff;
+    box-sizing: border-box;
+    background-color: #6d7684;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.frame-5022-2Ki .group-9-wxU .tab-2-bfe {
+    width: 20rem;
+    height: 3rem;
+    position: absolute;
+    left: 19rem;
+    top: 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 0.1rem #ffffff;
+    box-sizing: border-box;
+    background-color: #6d7583;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.frame-5022-2Ki .group-9-wxU .tab-1-Thr {
+    width: 20rem;
+    height: 3rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 0.1rem #ffffff;
+    box-sizing: border-box;
+    background-color: #2d3748;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.frame-5022-2Ki .frame-5019-jfN {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5022-2Ki .frame-5019-jfN .training-program-name-tHN {
+    width: 113.7rem;
+}
+
+.frame-5022-2Ki .frame-5019-jfN .training-program-name-tHN .training-program-detail-Pjv {
+    box-sizing: border-box;
+    padding: 1rem 3rem 2rem 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -0.4rem -0.4rem 0.4rem rgba(0, 0, 0, 0.1000000015), 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #2d3748;
+    border-radius: 0 2rem 0 0;
+    flex-shrink: 0;
+}
+
+.devops-foundation-inC {
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.2125;
+    letter-spacing: 0.48rem;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+select.devops-foundation-inC {
+    color: black;
+    border-radius: 5px;
+    padding: 0 10px;
+
+    & option {
+        font-size: 1.6rem;
+        color: black;
+        background-color: #ffffff;
+    }
+}
+
+.frame-5022-2Ki .frame-5019-jfN .training-program-name-tHN .training-program-detail-Pjv .syllabus-meta-pqE {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.frame-5022-2Ki .frame-5019-jfN .training-program-name-tHN .training-program-detail-Pjv .syllabus-meta-pqE .days-97-hours-mkU {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: baseline;
+    flex-shrink: 0;
+}
+
+.frame-5022-2Ki .frame-5019-jfN .training-program-name-tHN .training-program-detail-Pjv .syllabus-meta-pqE .days-97-hours-mkU .days-97-hours-mkU-sub-0 {
+    font-size: 1.4rem;
+}
+
+.frame-5022-2Ki .frame-5019-jfN .training-program-name-tHN .training-program-detail-Pjv .syllabus-meta-pqE .days-97-hours-mkU .days-97-hours-mkU-sub-1 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    font-style: italic;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+}
+
+.frame-5022-2Ki .frame-5019-jfN .training-program-name-tHN .training-program-detail-Pjv .syllabus-meta-pqE .item--Dkt {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.frame-5022-2Ki .frame-5019-jfN .training-program-name-tHN .training-program-detail-Pjv .syllabus-meta-pqE .modified-on-23-07-2022-by-warrior-tran-kkp {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2102272851;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: baseline;
+    flex-shrink: 0;
+}
+
+.frame-5022-2Ki .frame-5019-jfN .training-program-name-tHN .training-program-detail-Pjv .syllabus-meta-pqE .modified-on-23-07-2022-by-warrior-tran-kkp .modified-on-23-07-2022-by-warrior-tran-kkp-sub-0 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+}
+
+.frame-5022-2Ki .frame-5019-jfN .training-program-name-tHN .training-program-detail-Pjv .syllabus-meta-pqE .modified-on-23-07-2022-by-warrior-tran-kkp .modified-on-23-07-2022-by-warrior-tran-kkp-sub-1 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    font-style: italic;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+}
+
+.frame-5022-2Ki .frame-5019-jfN .training-program-name-tHN .training-program-detail-Pjv .syllabus-meta-pqE .modified-on-23-07-2022-by-warrior-tran-kkp .modified-on-23-07-2022-by-warrior-tran-kkp-sub-2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+}
+
+.frame-5022-2Ki .frame-5019-jfN .training-program-name-tHN .training-program-detail-Pjv .syllabus-meta-pqE .modified-on-23-07-2022-by-warrior-tran-kkp .modified-on-23-07-2022-by-warrior-tran-kkp-sub-3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+}
+
+.syllabus-container {
+    max-height: 90rem;
+    overflow-y: auto;
+    overflow-x: visible;
+    row-gap: 2rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-block: 2rem;
+    padding-right: 14px;
+}
+
+.syllabus-fui {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 4rem;
+    flex-shrink: 0;
+    box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+.syllabus-fui .frame-16-DwE {
+    box-sizing: border-box;
+    padding: 1.8rem 2.6rem 1.8rem 3rem;
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    align-items: center;
+    background-color: #2d3748;
+    border-radius: 2rem 0 0 2rem;
+    flex-shrink: 0;
+}
+
+.syllabus-fui .frame-16-DwE .group-8-9Zz {
+    width: 6rem;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.syllabus-fui .frame-16-DwE .group-8-9Zz .mask-group-uZA {
+    width: 5.8636rem;
+    height: 5.7273rem;
+    object-fit: contain;
+    vertical-align: top;
+}
+
+.syllabus-fui .frame-16-DwE .group-9-9Cc {
+    width: 6rem;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.syllabus-fui .frame-16-DwE .group-10-WxG {
+    width: 6rem;
+    height: 100%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.syllabus-fui .frame-5114-gVN {
+    box-sizing: border-box;
+    padding: 2rem;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 0 2rem 2rem 0;
+    flex: 1;
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N {
+    width: 41rem;
+    height: 100%;
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N .frame-98-Nsz {
+    margin: 0rem 23.5rem 0.9rem 0rem;
+    width: calc(100% - 23.5rem);
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N .frame-98-Nsz .linux-u7E {
+    margin-right: 1.5rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    letter-spacing: 0.48rem;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N .frame-98-Nsz .activate-Dtc {
+    margin: 0.1rem 0rem 0.2rem 0rem;
+    width: 7.2rem;
+    height: calc(100% - 0.3rem);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.1725;
+    color: #ffffff;
+    font-family: Roboto, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 0.15rem #ffffff;
+    box-sizing: border-box;
+    background-color: #2d3748;
+    border-radius: 5rem;
+    flex-shrink: 0;
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N .syllabus-meta-fEp {
+    width: 100%;
+    display: flex;
+    column-gap: 0.7rem;
+    align-items: center;
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N .syllabus-meta-fEp .lin-v20-o68 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #474747;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N .syllabus-meta-fEp .item--jVa {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #474747;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N .syllabus-meta-fEp .days-12-hours-5JY {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #474747;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: baseline;
+    flex-shrink: 0;
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N .syllabus-meta-fEp .days-12-hours-5JY .days-12-hours-5JY-sub-0 {
+    font-size: 1.4rem;
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N .syllabus-meta-fEp .days-12-hours-5JY .days-12-hours-5JY-sub-1 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    font-style: italic;
+    color: #474747;
+    font-family: Inter, 'Source Sans Pro';
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N .syllabus-meta-fEp .item--X44 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #474747;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N .syllabus-meta-fEp .on-23-07-2022-by-johny-deep-rc8 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #474747;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: baseline;
+    flex-shrink: 0;
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N .syllabus-meta-fEp .on-23-07-2022-by-johny-deep-rc8 .on-23-07-2022-by-johny-deep-rc8-sub-0 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #474747;
+    font-family: Inter, 'Source Sans Pro';
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N .syllabus-meta-fEp .on-23-07-2022-by-johny-deep-rc8 .on-23-07-2022-by-johny-deep-rc8-sub-1 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    font-style: italic;
+    color: #474747;
+    font-family: Inter, 'Source Sans Pro';
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N .syllabus-meta-fEp .on-23-07-2022-by-johny-deep-rc8 .on-23-07-2022-by-johny-deep-rc8-sub-2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #474747;
+    font-family: Inter, 'Source Sans Pro';
+}
+
+.syllabus-fui .frame-5114-gVN .frame-5113-q7N .syllabus-meta-fEp .on-23-07-2022-by-johny-deep-rc8 .on-23-07-2022-by-johny-deep-rc8-sub-3 {
+    font-size: 1.4rem;
+}
+
+.frame-5022-2Ki .frame-5019-jfN .training-program-name-tHN .rectangle-2487-pVN {
+    width: 100%;
+    height: 1.6rem;
+    background-color: #2d3748;
+    border-radius: 0 0 1rem 1rem;
+    flex-shrink: 0;
+}
+
+.saving-button-Lun {
+    margin-left: 2rem;
+    height: 3.1rem;
+    width: 114rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.saving-button-Lun .frame-92-1FE {
+    padding-inline: 1rem;
+    height: 100%;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2d3748;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+
+.saving-button-Lun .frame-5125-HCk {
+    height: 100%;
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.saving-button-Lun .frame-5125-HCk .add-day-button-QoA {
+    width: 6.8rem;
+    height: 100%;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    text-decoration-line: underline;
+    color: #e74a3b;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+
+.saving-button-Lun .frame-5125-HCk .frame-91-J7r {
+    width: 14rem;
+    height: 100%;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #474747;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+
+.saving-button-Lun .frame-5125-HCk .frame-91-b6x {
+    width: 8.3rem;
+    height: 100%;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #ffffff;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2d3748;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+
+.frame-5072-xFr {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.497;
+    color: #2d3748;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    border: solid 0.05rem #8b8b8b;
+    border-radius: 0.5rem;
+    appearance: none;
+    padding: 0.25rem 0.7rem;
+    width: 100%;
+
+    & option {
+        font-size: 1.4rem;
+    }
+}
+
+.frame-5072-xFr.time {
+    line-height: 1.2125;
+    width: unset;
+}
+
+.frame-5073-W8p {
+    font-size: 2.4rem;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+    height: 3rem;
+    width: 5.1rem;
+    font-weight: 400;
+    text-align: center;
+    border: solid 0.05rem #8b8b8b;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+}
+
+.frame-65-oXW {
+    width: 4.4rem;
+    height: 3rem;
+    object-fit: contain;
+    vertical-align: top;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.relative {
+    position: relative;
+}
+
+.flex {
+    display: flex;
+}
+
+.gap-12 {
+    gap: 1.2rem;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.select-none {
+    user-select: none;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.gap-12 {
+    gap: 3rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+#navbar *, #footer *, #header * {
+    font-size: 1.7rem;
+}
+
+#navbar ul {
+    padding: 20px !important;
+}
+
+#navbar button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#navbar .collapse button {
+    width: 172.75px;
+}
+
+.frame-5009-eAU #datepicker {
+    width: 100% !important;
+    font-size: 1.6rem !important;
+}
+
+.frame-5009-eAU #datepicker * {
+    font-size: 1.6rem !important;
+}
+
+.frame-5009-eAU .ui-datepicker {
+    padding: 1.95rem 3.4rem 2rem 3.4rem !important;
+    width: 100% !important;
+    border: solid 0.05rem #f1f1f1 !important;
+    box-shadow: 0.5rem 2rem 2rem rgba(0, 0, 0, 0.1599999964) !important;
+    background-color: #ffffff !important;
+    border-radius: 1rem !important;
+    flex-shrink: 0 !important;
+}
+
+#datepicker .ui-datepicker-group {
+    width: calc(50% - 3.4rem) !important;
+
+    &:first-child {
+        margin-right: 6.8rem !important;
+    }
+}
+
+#datepicker .ui-datepicker-header {
+    margin: 0 0.6rem 1.92rem 0.6rem !important;
+    width: calc(100% - 1.2rem) !important;
+    height: 3.83rem !important;
+    border: none !important;
+    border-bottom: solid 0.08rem #e4e5e7 !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    background: inherit !important;
+}
+
+#datepicker .ui-datepicker-calendar {
+    width: 100% !important;
+}
+
+#datepicker .ui-datepicker-calendar th {
+    padding: 0 !important;
+    padding-bottom: 1.7rem !important;
+    text-align: center !important;
+    font-weight: 500 !important;
+    line-height: 1.2125 !important;
+    text-transform: uppercase !important;
+    color: #7e818c !important;
+    font-family: Inter, 'Source Sans Pro' !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+
+    & span {
+        font-size: 1.2rem !important;
+    }
+}
+
+#datepicker .ui-datepicker-calendar td {
+    padding-bottom: 5px !important;
+}
+
+#datepicker .ui-datepicker-calendar .ui-state-default {
+    width: 3rem !important;
+    height: 3rem !important;
+    margin: auto !important;
+    border: none !important;
+    background-color: transparent !important;
+    cursor: pointer !important;
+    text-align: center !important;
+    font-size: 1.4rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    color: #0e2551 !important;
+    font-family: Inter, 'Source Sans Pro' !important;
+    white-space: nowrap !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+#datepicker .ui-datepicker-calendar .ui-state-highlight,
+#datepicker .ui-datepicker-calendar .ui-state-active,
+#datepicker .ui-datepicker-calendar .ui-state-hover {
+    background-color: #2d3748 !important;
+    border-radius: 4rem !important;
+    color: #fcfcfc !important;
+}
+
+#datepicker .ui-datepicker-prev span {
+    background-image: url(/assets/icons-blue.png) !important;
+    background-size: contain !important;
+    background-position: center !important;
+}
+
+#datepicker .ui-datepicker-next span {
+    background-image: url(/assets/icons.png) !important;
+    background-size: contain !important;
+    background-position: center !important;
+}

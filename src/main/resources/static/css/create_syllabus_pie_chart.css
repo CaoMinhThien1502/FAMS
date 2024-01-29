@@ -1,0 +1,9 @@
+.time-allocation-circle{
+    width: 300px;
+    height: 220px;
+}
+    .drawing-circle{
+        /* position: relative; */
+        width: auto;
+        height: auto;
+    }

@@ -1,0 +1,180 @@
+
+.btn-nav {
+  margin-right: auto;
+  padding: 0 10px;
+  overflow: hidden;
+}
+.btn-nav svg:first-child {
+  overflow: visible;
+}
+.btn-nav .nav-dropdown {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.card {
+  background-color: white;
+  padding: 5px 15px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Tăng độ mờ và đổ bóng */
+  border: 1px solid #ddd;
+  margin: 0 10px;
+  text-align: right; /* Căn phải nội dung */
+  max-height: 150px;
+}
+
+.card h5 {
+  margin-bottom: 10px;
+  color: whitesmoke ;
+}
+
+.card p {
+  font-size: 50px;
+  font-weight: bold;
+  color: whitesmoke;
+}
+.metrics {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 15px 40px 0;
+  gap: 20px;
+}
+.col-md-6 {
+  flex: 0 0 20%;
+  max-width: 30%;
+}
+
+
+#trainerCard {
+  background: linear-gradient(135deg, #6b8ddd 0%, #b0c6f1 100%);
+}
+
+#classCard {
+  background: linear-gradient(-20deg, #ff868e 0%, #f9c27c 100%);
+}
+
+#syllabusCard {
+  background: linear-gradient(to right, #84fab0 0%, #8fd3f4 100%);
+}
+
+#trainingProgramCard {
+  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+.card-content {
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.card-image {
+  margin-right: 20px; /* Khoảng cách giữa ảnh và nội dung văn bản */
+}
+
+.card-text {
+  flex: 1; /* Phần còn lại của không gian sẽ được dành cho văn bản */
+  text-align: right;
+  margin-top: 10px; /* Khoảng cách giữa số liệu và tiêu đề */
+}
+/*............................................................................................................................*/
+.infoClass {
+  margin-top: 30px;
+}
+/*bieu do status class*/
+.chart {
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#statusChart {
+  display: flex;
+}
+/*....................................................*/
+.classes-table {
+  max-height: 400px;
+  margin-left: auto;
+  width: 100%;
+  max-width: 700px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ddd #fff;
+}
+
+.classes-table::-webkit-scrollbar {
+  width: 5px;
+}
+
+.classes-table::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.classes-table::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+  border-radius: 10px;
+}
+/*...................................................................*/
+/* Bo tròn góc */
+table {
+  border-radius: 10px;
+}
+
+/* Viền ô */
+td, th {
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  text-align: center;
+}
+th {
+  font-size: 18px;
+}
+
+td {
+  font-size: 16px;
+}
+
+/* Style thead */
+thead {
+  background-color: #2D3748;
+  color: #fff;
+}
+
+/* Style tbody */
+tbody {
+  background-color: #fff;
+  color: #000;
+}
+tr {
+  height: 40px;
+  text-align: center;
+}
+.classes-table thead{
+  position: sticky;
+  top: 0;
+}
+tr td:first-child {
+  text-align: left;
+}
+.table-status {
+  color: white;
+  background-color: #2F903F;
+  display: flex;
+  height: 27px;
+  padding: 5px 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+}
+
+
+

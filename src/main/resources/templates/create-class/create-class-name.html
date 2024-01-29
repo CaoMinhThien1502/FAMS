@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/icon_gam.png">
+    <title>Create class</title>
+    <link rel="stylesheet" href="/css/component.css">
+    <!-- included script -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js}"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    <script src="@{https://code.jquery.com/jquery-3.7.1.js}"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- --- -->
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/Bootstrap%205/bootstrap.min.css" >
+    <script src="/js/Bootstrap%205/bootstrap.bundle.min.js"></script>
+    <script src="/js/JQuery/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="/css/DataTable/jquery.dataTables.css">
+    <script src="/js/DataTable/jquery.dataTables.js"></script>
+    <link href="/css/create-class.css" rel="stylesheet">
+    <link href="/css/CreateClass/calendar.css" rel="stylesheet">
+    <link href="/css/CreateClass/style.css" rel="stylesheet">
+    <script src="/js/create-class.js"></script>
+    <link rel="stylesheet" href="/css/select2/select2.css">
+    <script src="/js/select2/select2.min.js"></script>
+    <script src="/js/menu.js"></script>
+    <script src="/js/CreateClass/valid.js"></script>
+    <style>
+        #title {
+
+            /* Header/H4 */
+            font-family: 'Inter';
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 36px;
+            /* 150% */
+            letter-spacing: 4.8px;
+        }
+
+        .icon {
+            position: absolute;
+            top: 5px;
+            left: 2%;
+        }
+
+        #title {
+            padding: 20px;
+        }
+
+        #import-btn {
+            border-radius: 8px;
+        }
+
+        #add-btn {
+            border-radius: 8px;
+
+            /* M3/Elevation Light/1 */
+            box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+        }
+
+        .search-item {
+            border-radius: 8px;
+            border: 1px solid #FFF;
+            color: white;
+            height: 45px;
+            padding: 7px;
+        }
+
+        #table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        #table td {
+            padding: 5px 20px;
+        }
+
+        #table tr {
+            border-bottom: 0.5px solid #2D3748;
+        }
+
+        #table>thead {
+            background: #2D3748;
+            color: white;
+            height: 40px;
+        }
+
+        .search-item {
+            user-select: none;
+        }
+
+        .search-item>span {
+            cursor: pointer;
+        }
+
+        .pagination>li>a,
+        .pagination>li>span {
+            border-radius: 50% !important;
+            margin: 0 5px;
+        }
+
+        .dropbtn {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 25px;
+            white-space: normal;
+            text-align: center;
+            outline: none !important;
+            text-decoration: none !important;
+            color: #000 !important;
+            cursor: pointer;
+        }
+
+        .dropbtn:active,
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: #f1f1f1 !important;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            user-select: none;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            overflow: auto;
+            background: #FFF;
+            box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.16);
+            z-index: 1;
+            left: -412%;
+            border-radius: 10px;
+            width: 229px;
+        }
+
+        .dropdown-content a {
+            color: #2C5282;
+            font-size: 16px;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover,
+        .dropdown-content a:focus{
+            background: rgba(201, 203, 208, 0.37);
+        }
+
+        .show {
+            display: block;
+        }
+        #title{
+            background-color: #2d3748;
+            color: white;
+            margin-top: 1px;
+        }
+        #create{
+            background-color: #2d3748;
+            color: white;
+            border-radius: 5px;
+        }
+        #search-input, #create {
+            display: inline-block;
+            margin-right: 10px; /* Khoảng cách giữa hai input */
+        }
+    </style>
+</head>
+
+<body>
+<div class="d-flex flex-column" style="height: 100vh;">
+    <div id="header">
+    </div>
+    <div class="d-flex flex-grow-1 flex-row">
+        <div th:include="fragments/navbar" style="background-color: #edf2f7;"></div>
+        <div id="syllabus" class="flex-grow-1">
+            <!-- content -->
+            <h1 id="title">Create class</h1>
+            <div class="row w-100">
+                <div class="col-6" style="padding-left: 20px;">
+                    <div  style="width: 1272px; border-bottom: 1px solid black;">
+                        <form th:action="@{/class/createClass/add-training-program}" method="post">
+                            <h6>Class name</h6>
+                            <input  name="class-name" id="search-input" type="text" class="form-control d-inline-block ps-4"
+                                   placeholder="Type class name" style="width: 400px; margin-bottom: 10px;">
+
+                            <input disabled id="create" type="submit" class="form-control d-inline-block ps-3" style="width: 80px" value="Create">
+                        </form>
+                        <span id="result"></span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</div>
+<script src="/component/header.js"></script>
+<script src="/component/navbar.js"></script>
+<script src="/component/footer.js"></script>
+<script src="/js/component.js"></script>
+<script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction(el) {
+        if (el.nextElementSibling.classList.contains("show")) {
+            el.nextElementSibling.classList.toggle("show");
+        }
+        else {
+            let dropdown = document.querySelectorAll(".dropdown-content");
+            dropdown.forEach(o => o.classList.remove("show"));
+            el.nextElementSibling.classList.toggle("show");
+        }
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+    // Get the input field
+    var input = document.getElementById("search-input");
+
+    // Execute a function when the user presses a key on the keyboard
+    input.addEventListener("keypress", function (event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === "Enter" && input.value.trim() !== "") {
+            let search = document.getElementById("search-keyword");
+            let item = document.createElement("div");
+            item.className = "search-item";
+            item.innerHTML += `
+                    ${input.value}
+                    <span>&#10005;</span>
+                `
+            search.appendChild(item);
+            input.value = "";
+            let deleteButton = item.getElementsByTagName("span")[0];
+            deleteButton.addEventListener("click", () => {
+                item.remove();
+            });
+        }
+    });
+
+    document.querySelectorAll(".search-item").forEach(element => {
+        let deleteButton = element.getElementsByTagName("span")[0];
+        deleteButton.addEventListener("click", () => {
+            element.remove();
+        });
+    });
+    const { DatePicker, Calendar } = ReactMultiDatePicker;
+
+    ReactDOM.render(
+        React.createElement(DatePicker, {
+            plugins: [React.createElement(DatePickerHeader)],
+            range: true,
+            style: {
+                border: "none",
+                "box-shadow": "none"
+            }
+        }),
+        document.getElementById("datePickerWithPlugin")
+    );
+</script>
+<!-- Ract -->
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<!-- DatePicker and dependencies-->
+<script src="https://cdn.jsdelivr.net/npm/date-object@latest/dist/umd/date-object.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-element-popper@latest/build/browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-multi-date-picker@latest/build/browser.min.js"></script>
+<!-- Optional Plugin -->
+<script src="https://cdn.jsdelivr.net/npm/react-multi-date-picker@latest/build/date_picker_header.browser.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User List</title>
+  <link rel="stylesheet" href="/css/component.css">
+  <link rel="shortcut icon" type="image/x-icon" href="img/icon_gam.png">
+  <!-- included script -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js}"
+          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+          crossorigin="anonymous"></script>
+  <script src="@{https://code.jquery.com/jquery-3.7.1.js}"
+          integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+          crossorigin="anonymous"></script>
+<!--  ......-->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/limontesweetalert2/7.2.0/sweetalert2.min.css/>"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+<!--    ..........-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+  <!-- --- -->
+  <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+  <link rel="stylesheet" href="/css/Bootstrap%205/bootstrap.min.css">
+  <script src="/js/Bootstrap%205/bootstrap.bundle.min.js"></script>
+  <script src="/js/JQuery/jquery-3.7.1.js"></script>
+  <link rel="stylesheet" href="/css/DataTable/jquery.dataTables.css">
+  <script src="/js/DataTable/jquery.dataTables.js"></script>
+
+  <link rel="stylesheet" href="/css/select2/select2.css">
+  <script src="/js/select2/select2.min.js"></script>
+  <script src="/js/menu.js"></script>
+  <link href="/css/user.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+<div class="d-flex flex-column" style="height: 100vh;">
+  <div id="header"></div>
+  <div class="d-flex flex-grow-1 flex-row">
+    <div th:include="fragments/navbar" style="background-color: #edf2f7;"></div>
+    <!-- '.............................................................................................................................................           -->
+    <div id="userManager" class="flex-grow-1">
+      <!-- content -->
+      <h1 id="title" style="margin-left: 20px; margin-bottom: 20px">User management</h1>
+      <!--Start search-->
+      <div class="row mb-3">
+        <div class="d-inline-block position-relative" style="width: 49%; margin-left: 20px">
+          <i class="icon bi bi-search" style="padding-left: 5px"></i>
+          <input id="search-input" type="text" class="form-control d-inline-block ps-4"
+                 placeholder="    Enter name or email ...">
+        </div>
+        <!--End search-->
+
+        <div class="col text-end"  style="margin-right: 20px" sec:authorize="hasAnyAuthority('USER_MANAGEMENT_FULL_ACCESS') and hasRole('SUPER_ADMIN')">
+            <button class="btn btn-red" id="open-import-user-dialog-button">
+                <img class="img" src="/img/publish.svg" />
+                Import
+            </button>
+          <button class="btn btn-dark" id="open-add-user-dialog-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_487_2486)">
+                <path
+                    d="M13 7H11V11H7V13H11V17H13V13H17V11H13V7ZM12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
+                    fill="#DFDEDE"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_487_2486">
+                  <rect width="24" height="24" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+            Add user
+          </button>
+        </div>
+      </div>
+      <!--                Show search-->
+      <div id="search-keyword" class="search-keyword d-flex p-2 flex-wrap show-search">
+      </div>
+      <!--                End show search-->
+      <div class="table-container">
+        <table id="user-information-table" class="table table-responsive">
+          <thead class="table-dark">
+          <th>ID</th>
+          <th>Full name</th>
+          <th>Email</th>
+          <th>Date of birth</th>
+          <th>Gender</th>
+          <th>Status</th>
+          <th class="type-role-title">Type</th>
+          <th sec:authorize="hasAnyAuthority('USER_MANAGEMENT_FULL_ACCESS') and hasRole('SUPER_ADMIN')"></th>
+          </thead>
+          <tbody>
+          <tr></tr>
+          </tbody>
+        </table>
+      </div>
+      <!--form import user-->
+      <dialog id="import-user-dialog" class="p-0">
+          <div class="popup-user">
+              <div class="frame">
+                  <div class="text-wrapper">Import Users</div>
+              </div>
+              <form id="import-user-form" enctype="multipart/form-data">
+                  <div class="div">
+                      <div class="text-wrapper-2">Import setting</div>
+                      <div class="frame-2">
+                          <div class="frame-3">
+                              <div class="div-wrapper">
+                                  <p class="file-csv"><span class="span">File (csv)</span> <span class="text-wrapper-3">*</span></p>
+                              </div>
+                              <button class="frame-4" id="choose-file">
+                                  <div class="text-wrapper-4" id="select-file">Select</div>
+                              </button>
+                              <div id="file-info" style="display: none;">
+                                  <span id="selected-filename"></span>
+                                  <span id="change-file" class="close-button" style="color: red">X</span>
+                              </div>
+                              <input type="file" id="userFileInput" style="display: none;" name="file" accept=".csv, .xlsx">
+                          </div>
+                          <div class="frame-5">
+                              <div class="div-wrapper">
+                                  <div class="text-wrapper-5">Encoding type</div>
+                              </div>
+                              <select class="frame-6" id="encoding-select">
+                                  <option class="text-wrapper-6" value="auto-detect">Auto detect</option>
+                                  <option class="text-wrapper-6" value="utf-8">UTF-8</option>
+                                  <div class="menu-icon-ant-menu"><img class="union" src="img/union.svg" /></div>
+                              </select>
+                          </div>
+                          <div class="frame-3">
+                              <div class="div-wrapper">
+                                  <div class="text-wrapper-7">Column seperator</div>
+                              </div>
+                              <select class="frame-6" id="separator-select">
+                                  <option class="text-wrapper-8" value=",">Comma ,</option>
+                                  <option class="text-wrapper-8" value=".">Dot .</option>
+                                  <option class="text-wrapper-8" value=";">Semicolon ;</option>
+                                  <div class="menu-icon-ant-menu"><img class="union" src="img/union.svg" /></div>
+                              </select>
+                          </div>
+                          <div class="frame-3">
+                              <div class="div-wrapper">
+                                  <div class="text-wrapper-7">Import template</div>
+                              </div>
+                              <a href="/public/UserTest.xlsx" download="UserTest.xlsx" class="frame-7">
+                                  <div class="text-wrapper-9">Download</div>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <img class="line" src="img/line-69.svg" />
+                  <div class="frame-8">
+                      <div class="text-wrapper-10">Duplicate control</div>
+                      <div class="frame-2">
+                          <div class="frame-9">
+                              <div class="frame-10">
+                                  <div class="text-wrapper-7">Scanning</div>
+                              </div>
+                              <div class="checkbox-group">
+                                  <div class="checkbox">
+                                      <input class="rectangle" type="checkbox" id="email-checkbox">
+                                      <label for="email-checkbox">
+                                          <span class="text-wrapper-11">User email</span>
+                                      </label>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="frame-9">
+                              <div class="frame-10">
+                                  <div class="text-wrapper-7">Duplicate handle</div>
+                              </div>
+                              <div class="radio-group">
+                                  <label class="element">
+                                      <input class="radio-2" type="radio" name="choice" value="allow" id="allowRadio" checked disabled/>
+                                      <span class="text-wrapper-11">Allow</span>
+                                  </label>
+                                  <label class="element">
+                                      <input class="radio-2" type="radio" name="choice" value="replace" id="replaceRadio" disabled/>
+                                      <span class="text-wrapper-11">Replace</span>
+                                  </label>
+                                  <label class="element">
+                                      <input class="radio-2" type="radio" name="choice" value="skip" id="skipRadio" disabled/>
+                                      <span class="text-wrapper-11">Skip</span>
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <img class="line" src="img/line-69.svg" />
+                  <div class="frame-11">
+                      <div class="add-day-button">
+                          <input type="reset" class="text-wrapper-12 close-import-user-dialog-button" value="Cancel">
+                      </div>
+                      <div>
+                          <input type="submit" name="btAction" class="frame-12" value="Import">
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </dialog>
+      <!--form add user-->
+      <dialog id="add-user-dialog" class="p-0">
+        <table class="table m-0">
+          <thead class="table-dark">
+          <th class="text-center">
+            <div class="d-flex flex-row align-items-center">
+                                    <span class="flex-grow-1"  style="font-size: 1.2em;">
+                                        Add a new user
+                                    </span>
+              <button class="btn close-add-user-dialog-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_46_6114)">
+                    <path
+                        d="M12 2C6.47 2 2 6.47 2 12C2 17.53 6.47 22 12 22C17.53 22 22 17.53 22 12C22 6.47 17.53 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM15.59 7L12 10.59L8.41 7L7 8.41L10.59 12L7 15.59L8.41 17L12 13.41L15.59 17L17 15.59L13.41 12L17 8.41L15.59 7Z"
+                        fill="white"/>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_46_6114">
+                      <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+            </div>
+          </th>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <form id="add-user-form">
+                <div class="mb-3 mt-3 row align-items-center">
+                  <label for="select-user-type" class="form-label col-12 col-md-3 col-form-label">
+                    User type</label>
+                  <div class="col-12 col-md-9">
+                    <select name="roleId" class="form-control form-select" id="select-user-type"
+                            aria-placeholder="Select one">
+                      <option value="3">Trainer</option>
+                      <option value="2">Admin</option>
+<!--                      <option value="1">Super Admin</option>-->
+                    </select>
+                    <div class="invalid-feedback" id="invalid-user-type"></div>
+                  </div>
+                </div>
+                <div class="mb-3 row align-items-center">
+                  <label for="input-user-name"
+                         class="form-label col-12 col-md-3 col-form-label">Name</label>
+                  <div class="col-12 col-md-9">
+                    <input type="text" class="form-control form-text" id="input-user-name"
+                           name="name" placeholder="User name">
+                    <div class="invalid-feedback" id="invalid-user-name"></div>
+                  </div>
+                </div>
+                <div class="mb-3 row align-items-center">
+                  <label for="input-user-email-address"
+                         class="form-label col-12 col-md-3 col-form-label">Email
+                    address</label>
+                  <div class="col-12 col-md-9">
+                    <input type="text" class="form-control form-text" id="input-user-email-address"
+                           name="email" placeholder="Email address">
+                    <div class="invalid-feedback" id="invalid-email-address"></div>
+                  </div>
+                </div>
+                <div class="mb-3 row align-items-center">
+                  <label for="input-user-phone" class="form-label col-12 col-md-3 col-form-label">Phone
+                    number</label>
+                  <div class="col-12 col-md-9">
+                    <input type="text" class="form-control form-text" id="input-user-phone"
+                           name="phone" placeholder="Phone number (10)" maxlength="10" pattern="0[0-9]{9}">
+                    <div class="invalid-feedback" id="invalid-phone-number"></div>
+                  </div>
+                </div>
+                <div class="mb-3 row align-items-center">
+                  <label for="pick-date-of-birth" class="form-label col-12 col-md-3 col-form-label">Date
+                    of
+                    birth</label>
+                  <div class="col-12 col-md-9">
+                    <input type="date" class="form-control" id="pick-date-of-birth" name="dob"
+                           placeholder="">
+                    <div class="invalid-feedback" id="invalid-date-of-birth"></div>
+                  </div>
+                </div>
+                <fieldset class="row mb-3 align-items-baseline">
+                  <legend class="col-12 col-md-3 col-form-label">Gender</legend>
+                  <div class="col-12 col-md-9  d-flex">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender"
+                             id="gender-radio-male" value="Male" checked>
+                      <label for="gender-radio-male" class="form-check-label ms-2">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender"
+                             id="gender-radio-female" value="Female">
+                      <label for="gender-radio-female" class="form-check-label ms-2">Female</label>
+                    </div>
+                  </div>
+                </fieldset>
+                <div class="mb-3 row align-items-end">
+                  <p class="form-label col-12 col-md-3 col-form-label">Status</p>
+                  <div class="col-12 col-md-9 form-check form-switch ps-3 m-auto ">
+                    <input type="checkbox" name="status" id="toggle-user-status"
+                           class="form-check-input m-0 align-self-center" value="true"
+                           style="scale: 1.5;">
+                    <label for="toggle-user-status" id="user-status-label"
+                           class="form-check-label mx-3">Inactive</label>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <input type="reset" class="btn btn-danger close-add-user-dialog-button"
+                         value="Cancel">
+                  <input type="submit" name="btAction" id="submit-add-user-dialog-button"
+                         class="btn btn-dark" value="Save">
+                </div>
+              </form>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </dialog>
+<!--      edit user form-->
+      <dialog id="edit-user-dialog" class="p-0">
+        <table class="table m-0" style="border-radius: 20px;">
+          <thead class="table-dark">
+          <th class="text-center" style="background: #2D3748;">
+            <div class="d-flex flex-row align-items-center">
+                                    <span class="flex-grow-1 add_user" style="font-size: 1.2em;">
+                                        Update User
+                                    </span>
+              <button class="btn close-edit-user-dialog-button">
+                <img src="/img/cancel.svg">
+              </button>
+            </div>
+          </th>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <form id="edit-user-form">
+                <div class="mb-3 mt-3 row align-items-center">
+                  <label for="update-roleId" class="form-label col-12 col-md-4 col-form-label">User type</label>
+                  <div class="col-12 col-md-8">
+                    <select name="roleId" class="form-control form-select" id="update-roleId"
+                            aria-placeholder="Select one">
+                      <option value="3">Trainer</option>
+                      <option value="2">Admin</option>
+                      <option value="1" style="display: none">Super Admin</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mb-3 row align-items-center">
+                  <label for="name"
+                         class="form-label col-12 col-md-4 col-form-label">Name</label>
+                  <div class="col-12 col-md-8">
+                    <input type="text" class="form-control form-text" id="name"
+                           name="name" placeholder="User name">
+                    <div class="invalid-feedback" id="invalid-name"></div>
+                  </div>
+                </div>
+                <div class="mb-3 row align-items-center">
+                  <label for="email"
+                         class="form-label col-12 col-md-4 col-form-label">Email address</label>
+                  <div class="col-12 col-md-8">
+                    <input type="text" class="form-control form-text" id="email"
+                           name="email" placeholder="Email address" readonly style="border: none;">
+                    <div class="invalid-feedback" id="invalid-email"></div>
+                  </div>
+                </div>
+                <div class="mb-3 row align-items-center">
+                  <label for="phone" class="form-label col-12 col-md-4 col-form-label">Phone number</label>
+                  <div class="col-12 col-md-8">
+                    <input type="text" class="form-control form-text" id="phone"
+                           name="phone" placeholder="Phone number (10)" maxlength="10" pattern="0[0-9]{9}">
+                    <div class="invalid-feedback" id="invalid-phone"></div>
+                  </div>
+                </div>
+                <div class="mb-3 row align-items-center">
+                  <label for="dob" class="form-label col-12 col-md-4 col-form-label">Date of birth</label>
+                  <div class="col-12 col-md-8">
+                    <input type="date" class="form-control" id="dob" name="dob"
+                           placeholder="">
+                    <div class="invalid-feedback" id="invalid-dob"></div>
+                  </div>
+                </div>
+                <fieldset class="row mb-3 align-items-baseline">
+                  <legend class="col-12 col-md-4 col-form-label">Gender</legend>
+                  <div class="col-12 col-md-8 d-flex">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender"
+                             id="gender-male" value="Male">
+                      <label for="gender-male" class="form-check-label ms-2"> Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender"
+                             id="gender-female" value="Female">
+                      <label for="gender-female" class="form-check-label ms-2" > Female</label>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <div class="mb-3 row align-items-end">
+                  <p class="form-label col-12 col-md-4 col-form-label">Status</p>
+                  <div class="col-12 col-md-8 form-check form-switch ps-3 m-auto">
+                    <input type="checkbox" name="status" id="status-edit"
+                           class="form-check-input m-0 align-self-center" value="true"
+                           style="scale: 1.5;">
+                    <label for="status-edit" id="status-label"
+                           class="form-check-label mx-3">Inactive</label>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <input type="reset" class="btn btn-danger close-edit-user-dialog-button"
+                         value="Cancel">
+                  <input type="submit" name="btAction" id="submit-edit-user-dialog-button"
+                         class="btn btn-dark" value="Save">
+                </div>
+
+              </form>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </dialog>
+      <div class="overlay"></div>
+    </div>
+  </div>
+  <div id="footer"></div>
+</div>
+<div class="modal fade" id="importMessageModal" tabindex="-1" role="dialog" aria-labelledby="messageModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="messageModalLabel">Message</h5>
+            </div>
+            <div class="modal-body">
+                <p id="importMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="exportLogBtn" style="display:none">Export Log</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/component/header.js"></script>
+<script src="/component/navbar.js"></script>
+<script src="/component/footer.js"></script>
+<script src="/js/component.js"></script>
+
+<!-- Ract -->
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+<!-- DatePicker and dependencies-->
+<script src="https://cdn.jsdelivr.net/npm/date-object@latest/dist/umd/date-object.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-element-popper@latest/build/browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-multi-date-picker@latest/build/browser.min.js"></script>
+
+<!-- Optional Plugin -->
+<script src="https://cdn.jsdelivr.net/npm/react-multi-date-picker@latest/build/date_picker_header.browser.js"></script>
+
+<script src="/js/userList.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+{
+  "publicStatus": null,
+  "actionType": "Create",
+  "generalInfoFormDTODetails" : {
+    "topicCode" : "T000",
+    "topicName" : "Topic 0",
+    "version" : "1.0.0",
+    "priority" : "HIGH",
+    "trainingAudience" : 30,
+    "technicalGroup" : "Technical Group A",
+    "status" : "Active",
+    "learningObjectivesList" : [ {
+      "code" : "M9SD",
+      "name" : "Learning Objective M9SD",
+      "type" : "Type A",
+      "description" : "Description for M3SD"
+    }, {
+      "code" : "A9SD",
+      "name" : "Learning Objective A9SD",
+      "type" : "Type B",
+      "description" : "Description for A1SD"
+    }, {
+      "code" : "A8SD",
+      "name" : "Learning Objective A8SD",
+      "type" : "Type C",
+      "description" : "Description for A8SD"
+    } ]
+  },
+
+  "trainingUnitDTOListDetails" : [ {
+    "unitCode" : "U100",
+    "unitName" : "Unit 100",
+    "unitNumber" : 1,
+    "dayNumber" : 1,
+    "trainingContentDTOList" : [ {
+      "content" : "Content for Unit U100",
+      "learningObjective" : {"code": "A9SD", "name": "Learning Objective A9SD", "type": "Type A", "description": "Description for A9SD"},
+      "duration" : 25,
+      "trainingFormat" : "ONLINE",
+      "deliveryType" : "ASSIGNMENT_LAB"
+    } ]
+  }, {
+    "unitCode" : "U110",
+    "unitName" : "Unit 110",
+    "unitNumber" : 2,
+    "dayNumber" : 1,
+    "trainingContentDTOList" : [ {
+      "content" : "Content for Unit 110",
+      "learningObjective" : {"code": "M9SD", "name": "Description for M9SD", "type": "Type C", "description": "Description for M9SD"},
+      "duration" : 25,
+      "trainingFormat" : "ONLINE",
+      "deliveryType" : "SEMINAR_WORKSHOP"
+    } ]
+  }, {
+    "unitCode" : "U170",
+    "unitName" : "Unit 170",
+    "unitNumber" : 3,
+    "dayNumber" : 2,
+    "trainingContentDTOList" : [ {
+      "content" : "Content for Unit 170",
+      "learningObjective" : {"code": "A9SD", "name": "Learning Objective A9SD", "type": "Type B", "description": "Description for A9SD"},
+      "duration" : 25,
+      "trainingFormat" : "OFFLINE",
+      "deliveryType" : "GUIDES_REVIEW"
+    } ]
+  }, {
+    "unitCode" : "U180",
+    "unitName" : "Unit 180",
+    "unitNumber" : 4,
+    "dayNumber" : 2,
+    "trainingContentDTOList" : [ {
+      "content" : "Content for Unit 180",
+      "learningObjective" : {"code": "A8SD", "name": "Learning Objective A8SD", "type": "Type A", "description": "Description for A8SD"},
+      "duration" : 50,
+      "trainingFormat" : "OFFLINE",
+      "deliveryType" : "EXAM"
+    } ]
+  } ],
+  "syllabusOtherDTODetails" : {
+    "trainingPrinciplesTraining" : "PrinciplesTraining for Topic 0",
+    "trainingPrinciplesRetest" : "PrinciplesRetest for Topic 0",
+    "trainingPrinciplesMarking" : "PrinciplesMarking for Topic 0",
+    "trainingPrinciplesCriteria" : "PrinciplesCriteria for Topic 0",
+    "trainingPrinciplesOthers" : "PrinciplesOthers for Topic 0",
+    "assessmentSchemeList" : [ 15, 15, 70, 40, 60, 70 ]
+  }
+}

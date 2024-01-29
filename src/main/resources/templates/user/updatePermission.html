@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Permission</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/icon_gam.png">
+    <link rel="stylesheet" href="/css/component.css">
+    <link href="/css/Bootstrap%205/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/Bootstrap%205/bootstrap.bundle.min.js"></script>
+    <!-- included script -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+
+    <script src="/js/JQuery/jquery-3.7.1.js"></script>
+    <link href="/css/select2/select2.css" rel="stylesheet" />
+    <script src="/js/select2/select2.min.js"></script>
+    <link href="/css/DataTable/jquery.dataTables.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="/css/userPermission.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/user.css">
+    <script src="/js/DataTable/jquery.dataTables.js"></script>
+    <script src="/js/menu.js"></script>
+</head>
+<body>
+<div class="d-flex flex-column" style="height: 100vh;">
+    <div id="header"></div>
+    <div class="d-flex flex-grow-1 flex-row" id="updatedContent">
+        <div th:include="fragments/navbar" style="background-color: #edf2f7;"></div>
+        <div class="flex-grow-1">
+            <h1> User Permission</h1>
+            <div class="table-container">
+                <table id="user-information-table" class="table table-responsive updatedContent">
+                    <thead>
+                    <th style="border-top-left-radius: 10px">Role name</th>
+                    <th>Syllabus</th>
+                    <th>Training program</th>
+                    <th>Class</th>
+                    <th>Learning material</th>
+                    <th style="border-top-right-radius: 10px">User</th>
+
+                    </thead>
+                    <tbody>
+                    <script>
+                        function createOptions() {
+                            const options = [
+                                "FULL_ACCESS",
+                                "VIEW",
+                                "MODIFY",
+                                "ACCESS_DENIED",
+                                "CREATE"
+                            ];
+
+
+                            let optionsHTML = "";
+                            for (const option of options) {
+                                const formattedOption = permissionMappings[option] || option;
+                                optionsHTML += `<option value="${option}">${formattedOption}</option>`;
+                            }
+
+                            return optionsHTML;
+                        }
+
+
+                        let tableData = [];
+
+                        // Hàm để cập nhật dữ liệu trong mảng tableData khi thay đổi giá trị trong <select>
+                        function updateData(role, field, value) {
+                            const user = tableData.find(item => item.role === role);
+                            if (user) {
+                                user[field] = value;
+                            }
+                        }
+
+                        $(document).ready(function () {
+                            $.ajax({
+                                url: "/api/permissions",
+                                method: "GET",
+                                success: function (response) {
+                                    tableData = response;
+
+                                    for (let i = 0; i < tableData.length; i++) {
+                                        const row = document.createElement("tr");
+                                        const rowData = tableData[i];
+
+                                        const roleCell = document.createElement("td");
+                                        roleCell.textContent = rowData.role;
+                                        row.appendChild(roleCell);
+
+                                        const syllabusCell = document.createElement("td");
+                                        const syllabusSelect = document.createElement("select");
+                                        syllabusSelect.id = `syllabus_${rowData.role}`;
+                                        syllabusSelect.innerHTML = createOptions();
+                                        syllabusSelect.value = rowData.syllabus;
+                                        syllabusSelect.addEventListener("change", function () {
+                                            updateData(rowData.role, "syllabus", this.value);
+                                        });
+                                        syllabusCell.appendChild(syllabusSelect);
+                                        row.appendChild(syllabusCell);
+
+                                        const trainingProgramCell = document.createElement("td");
+                                        const trainingProgramSelect = document.createElement("select");
+                                        trainingProgramSelect.id = `trainingProgram_${rowData.role}`;
+                                        trainingProgramSelect.innerHTML = createOptions();
+                                        trainingProgramSelect.value = rowData.trainingProgram;
+                                        trainingProgramSelect.addEventListener("change", function () {
+                                            updateData(rowData.role, "trainingProgram", this.value);
+                                        });
+                                        trainingProgramCell.appendChild(trainingProgramSelect);
+                                        row.appendChild(trainingProgramCell);
+
+
+                                        const classCell = document.createElement("td");
+                                        const classSelect = document.createElement("select");
+
+                                        classSelect.id = `clazz_${rowData.role}`;
+
+                                        classSelect.innerHTML = createOptions();
+                                        classSelect.value = rowData.clazz;
+                                        classSelect.addEventListener("change", function () {
+                                            updateData(rowData.role, "clazz", this.value);
+                                        });
+                                        classCell.appendChild(classSelect);
+                                        row.appendChild(classCell);
+
+
+                                        const learningMaterialCell = document.createElement("td");
+                                        const learningMaterialSelect = document.createElement("select");
+                                        learningMaterialSelect.id = `learningMaterial_${rowData.role}`;
+                                        learningMaterialSelect.innerHTML = createOptions();
+                                        learningMaterialSelect.value = rowData.learningMaterial;
+                                        learningMaterialSelect.addEventListener("change", function () {
+                                            updateData(rowData.role, "learningMaterial", this.value);
+                                        });
+                                        learningMaterialCell.appendChild(learningMaterialSelect);
+                                        row.appendChild(learningMaterialCell);
+
+                                        let userCell = document.createElement("td");
+                                        userCell.textContent = permissionMappings[rowData.userManagement];
+                                        const permissionIcon = document.createElement("img");
+                                        permissionIcon.src = permissionIcons[rowData.userManagement];
+                                        userCell.insertBefore(permissionIcon, userCell.firstChild); // Thêm biểu tượng vào trước văn bản
+                                        row.appendChild(userCell);
+                                        document.querySelector(".updatedContent").appendChild(row);
+                                    }
+                                    $("select").select2({
+                                        templateResult: function (data) {
+                                            if (!data.id) {
+                                                return data.text;
+                                            }
+                                            const optionValue = data.id;
+                                            const optionText = data.text;
+                                            const optionImage = `<img src="${permissionIcons[optionValue]}" class="select2-option-image" />`;
+                                            const optionHTML = `<div>${optionImage} ${optionText}</div>`;
+                                            return $(optionHTML);
+                                        }
+                                    });
+                                },
+                                error: function (error) {
+                                    alert("Error: " + error);
+                                }
+                            });
+                        });
+                    </script>
+                    </tbody>
+
+                </table>
+                <div class="col text-end">
+                    <button class="button-text button" id="cancelButton"  style="position: relative;top:9px">
+                        <strong>Cancel</strong>
+                    </button>
+                    <button class="btn btn-dark" id="PermissionButton">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</div>
+<script>
+    const permissionMappings = {
+        "CREATE": "Create",
+        "ACCESS_DENIED": "Access denied",
+        "MODIFY": "Modify",
+        "VIEW": "View",
+        "FULL_ACCESS": "Full access"
+    };
+    const permissionIcons = {
+        FULL_ACCESS: 'img/grade.svg', // Thay 'done' bằng tên Material Icon tương ứng
+        VIEW: 'img/visibility2.svg',
+        MODIFY: 'img/create.svg',
+        ACCESS_DENIED: 'img/visibility_off.svg',
+        CREATE: 'img/add2.svg'
+    };
+
+    $("#open-filter-dialog-button").click(() => {
+        $("#filter-option-dialog")[0].showModal();
+    });
+    $(document).ready(function () {
+        // Xử lý sự kiện khi nút "Cancel" được click
+        $("#cancelButton").click(function () {
+            // Chuyển hướng đến trang khác (http://localhost:8081/permission)
+            window.location.href = "/userPermission";
+        });
+        $("#PermissionButton").click(function (e) {
+            const updatedData = [];
+            tableData.forEach(function (rowData) {
+                const role = rowData.role;
+                const syllabus = $(`#syllabus_${role}`).val();
+                const trainingProgram = $(`#trainingProgram_${role}`).val();
+                const clazz = $(`#clazz_${role}`).val();
+                const learningMaterial = $(`#learningMaterial_${role}`).val();
+
+                updatedData.push({
+                    role: role,
+                    syllabus: syllabus,
+                    trainingProgram: trainingProgram,
+                    clazz: clazz,
+                    learningMaterial: learningMaterial
+                });
+            });
+            $.ajax({
+                url: "/api/permissions",
+                type: "PATCH",
+                contentType: "application/json",
+                data: JSON.stringify(updatedData),
+                success: function (response) {
+
+                    window.location.href = "/userPermission";
+                },
+                error: function (error) {
+                    alert("Error: " + error);
+                }
+            });
+        });
+    });
+
+
+    var navWidth;
+    var closeNavWidth;
+    $(document).ready(function () {
+        var mainNavMenu = $("#main-navigation-menu");
+        navWidth = mainNavMenu.outerWidth(true);
+        $("#main-navigation-menu").css("width", navWidth);
+        closeNavWidth = $("#btn-nav-toggle").outerWidth(true) + navWidth - mainNavMenu.width();
+        $("#btn-nav-toggle-open-icon").css("opacity", "0.5");
+        $("#btn-nav-toggle-open-icon").css("transform", "rotate(-45deg)");
+    });
+    $("#btn-nav-toggle").click(function () {
+        $(this).prop("disabled",true);
+        if ($(".nav-collapsed").length === 0) {
+            collapseNavbar();
+        } else {
+            expandNavbar();
+        }
+        setTimeout(() => {
+            $(this).prop("disabled",false);
+        }, 150);
+    });
+    $(".btn-nav").click(function () {
+        $(this).prop("disabled",true);
+        if ($(".nav-collapsed").length !== 0) {
+            expandNavbar();
+        }
+        setTimeout(() => {
+            $(this).prop("disabled",false);
+        }, 150);
+    });
+    function expandNavbar() {
+        $(".nav-collapsed").removeClass("nav-collapsed");
+        $(".nav-text").removeClass("hide");
+        $(".nav-dropdown").removeClass("hide");
+        $("#main-navigation-menu").animate({ width: navWidth }, 150, function () {
+        });
+        $("#btn-nav-toggle-open-icon").animate(
+            {
+                opacity: 0.5,
+                angle: -45
+            },
+            {
+                duration: 75,
+                step: function (now, fx) {
+                    if (fx.prop === "angle") {
+                        $(this).css("transform", "rotate(" + now + "deg)");
+                    } else {
+                        $(this).css("opacity", now);
+                    }
+                },
+                complete: function () {
+                    $("#btn-nav-toggle-open-icon").addClass("hide");
+                    $("#btn-nav-toggle-close-icon").removeClass("hide");
+                    $("#btn-nav-toggle-close-icon").animate(
+                        {
+                            opacity: 1,
+                            angle: 0
+
+                        },
+                        {
+                            duration: 75,
+                            step: function (now, fx) {
+                                if (fx.prop === "angle") {
+                                    $(this).css("transform", "rotate(" + now + "deg)");
+                                } else {
+                                    $(this).css("opacity", now);
+                                }
+                            }
+                        }
+                    );
+                }
+            });
+    }
+    function collapseNavbar() {
+        $("#main-navigation-menu").addClass("nav-collapsed");
+        $(".collapse.show").removeClass("show");
+        $(".nav-dropdown-open").removeClass("nav-dropdown-open");
+        $("#main-navigation-menu").animate({ width: closeNavWidth }, 150, function () {
+            $(".nav-text").addClass("hide");
+            $(".nav-dropdown").addClass("hide");
+        });
+        $("#btn-nav-toggle-close-icon").animate(
+            {
+                opacity: 0.5,
+                angle: 45
+            },
+            {
+                duration: 75,
+                step: function (now, fx) {
+                    if (fx.prop === "angle") {
+                        $(this).css("transform", "rotate(" + now + "deg)");
+                    } else {
+                        $(this).css("opacity", now);
+                    }
+                },
+                complete: function () {
+                    $("#btn-nav-toggle-close-icon").addClass("hide");
+                    $("#btn-nav-toggle-open-icon").removeClass("hide");
+                    $("#btn-nav-toggle-open-icon").animate(
+                        {
+                            opacity: 1,
+                            angle: 0
+                        },
+                        {
+                            duration: 75,
+                            step: function (now, fx) {
+                                if (fx.prop === "angle") {
+                                    $(this).css("transform", "rotate(" + now + "deg)");
+                                } else {
+                                    $(this).css("opacity", now);
+                                }
+                            }
+                        }
+                    );
+                }
+            }
+        );
+    }
+    $(".btn-nav").click(function () {
+        $(this).prop("disabled",true);
+        let dropdown = $(this).find(".nav-dropdown");
+        $(".btn-active").removeClass("btn-active");
+        $(this).addClass("btn-active");
+        if (dropdown.length !== 0) {
+            dropdown.toggleClass("nav-dropdown-open");
+            $(this).next(".collapsing").children(".btn-nav-sub:first-child").addClass("btn-active");
+        }
+        setTimeout(() => {
+            $(this).prop("disabled",false);
+        }, 150);
+    });
+    $(".btn-nav-sub").click(function () {
+        $(this).prop("disabled",true);
+        $(".btn-active").removeClass("btn-active");
+        $(this).addClass("btn-active");
+        $(this).parent(".collapse").prev(".btn-nav").addClass("btn-active");
+        setTimeout(() => {
+            $(this).prop("disabled",false);
+        }, 150);
+    });
+</script>
+<script>
+
+
+    $("#open-filter-dialog-button").click(() => {
+        $("#filter-option-dialog")[0].showModal();
+    });
+    // $("#updateButton").click(function () {
+    //     window.location.href = "http://localhost:8081/updatePermission";
+    // });
+    $(document).ready(function () {
+        $("#updateButton").click(function () {
+
+            // Ẩn nội dung ban đầu và hiện nội dung đã cập nhật
+            $("#initialContent").hide()
+            $("#updatedContent").show();
+        });
+
+        $("#cancelButton").click(function () {
+            // Ẩn nội dung cập nhật và hiện nội dung ban đầu
+            $("#updatedContent").hide()
+            $("#updatedContent_body").hide()
+            $("#initialContent").show();
+            $("#initialContent_body").show();
+        });
+
+        $("#saveButton").click(function (e) {
+            const updatedData = [];
+            tableData.forEach(function (rowData) {
+                const role = rowData.role;
+                const syllabus = $(`#syllabus_${role}`).val();
+                const trainingProgram = $(`#trainingProgram_${role}`).val();
+                const clazz = $(`#clazz_${role}`).val();
+                const learningMaterial = $(`#learningMaterial_${role}`).val();
+
+                updatedData.push({
+                    role: role,
+                    syllabus: syllabus,
+                    trainingProgram: trainingProgram,
+                    clazz: clazz,
+                    learningMaterial: learningMaterial
+                });
+            });
+            $.ajax({
+                url: "/api/permissions",
+                type: "PATCH",
+                contentType: "application/json",
+                data: JSON.stringify(updatedData),
+                success: function (response) {
+                    if (response.status === "SUCCESS") {
+
+                        $("#updatedContent").hide()
+                        $("#updatedContent_body").hide()
+                        $("#initialContent").show();
+                        $("#initialContent_body").show();
+                        // if (response.status === "SUCCESS") {
+                        location.reload();
+                        //     alert(response.payload);
+                        // }
+                    }
+                },
+                error: function (error) {
+                    alert("Error: " + error);
+                }
+            });
+        });
+
+    });
+
+
+    $("#open-filter-dialog-button").click(() => {
+        $("#filter-option-dialog")[0].showModal();
+    });
+</script>
+
+<script src="/component/header.js"></script>
+<script src="/component/navbar.js"></script>
+<script src="/component/footer.js"></script>
+<script src="/js/component.js"></script>
+<!-- Ract -->
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+<!-- DatePicker and dependencies-->
+<script src="https://cdn.jsdelivr.net/npm/date-object@latest/dist/umd/date-object.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-element-popper@latest/build/browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-multi-date-picker@latest/build/browser.min.js"></script>
+
+<!-- Optional Plugin -->
+<script src="https://cdn.jsdelivr.net/npm/react-multi-date-picker@latest/build/date_picker_header.browser.js"></script>
+</body>
+</html>
+
+

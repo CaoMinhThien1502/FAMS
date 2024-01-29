@@ -1,0 +1,4 @@
+Name,Duration,GeneralInf,Status,UserId,CreateBy,ModifiedBy,StarTime,CreateDate,ModifiedDate
+Training Program 1,60,Java,ACTIVE,1,Admin User,Admin User,10/1/2023,9/15/2023,10/10/2023
+Training Program 2,90,React,INACTIVE,1,Admin User,Admin User,11/1/2023,10/5/2023,10/12/2023
+Training Program 3,120,Python,ACTIVE,1,Admin User,Admin User,12/1/2023,10/10/2023,10/15/2023

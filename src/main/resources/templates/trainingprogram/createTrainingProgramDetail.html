@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Training Program</title>
+    <link rel="stylesheet" href="/css/component.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/icon_gam.png">
+    <!-- included script -->
+    <!-- --- -->
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/Bootstrap%205/bootstrap.min.css">
+    <script src="/js/Bootstrap%205/bootstrap.bundle.min.js"></script>
+    <script src="/js/JQuery/jquery-3.7.1.js"></script>
+    <link href="/css/createTrainingProgram.css" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/js/menu.js"></script>
+    <script type="text/javascript" th:src="@{/js/TrainingProgram/create-training-program.js}"></script>
+
+</head>
+<body>
+<div class="d-flex flex-column" style="height: 100vh;">
+    <div id="header"></div>
+    <div class="d-flex flex-grow-1 flex-row">
+        <div id="navbar" class="" style="background-color: #edf2f7;"></div>
+        <div style="width: 100%">
+            <form id="create-training-program-form">
+                <div id="syllabus" class="flex-grow-1" style="max-width: 100%; margin-bottom: 10px">
+                    <!-- content -->
+                    <div class="create-container">
+                        <div class="program-header">
+                            <div class="training-program">Training program</div>
+                            <div class="program-name">
+                                <div class="frame-107">
+                                    <input type="hidden" name="code" id="trainingProgramCode"
+                                           th:value="${trainingprogram.trainingProgramCode}">
+                                    <div class="text-wrapper"><span id="trainingProgramName"
+                                                                    th:text="${trainingprogram.name}"></span></div>
+                                    <div class="inactive">
+                                        <div class="in-active" th:text="${trainingprogram.status}"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program-meta-data">
+                            <div class="frame-87">
+                                <div class="_7b" id="totalDurationDisplay"> ... days ... hours ... min </div>
+                            </div>
+                            <div class="modified-on-21-07-2022-by-warrior-tran">
+                    <span>
+                        <span class="modified-on-21-07-2022-by-warrior-tran-span">Modified on </span>
+                        <span class="modified-on-21-07-2022-by-warrior-tran-span2" id="currentDateSpan">  </span>
+                        <span class="modified-on-21-07-2022-by-warrior-tran-span3"> by </span>
+                        <span class="modified-on-21-07-2022-by-warrior-tran-span4" id="accountNameSpan"> </span>
+                        <span class="modified-on-21-07-2022-by-warrior-tran-span5"> </span>
+                    </span>
+                            </div>
+                        </div>
+                        <div class="program-information">
+                            <span class="content2">General Information</span>
+                            <label for="myText"></label>
+                            <textarea class="generalInformation" id="myText"
+                                      name="generalInf" rows="4"
+                                      cols="50" style="width: 700px"
+                                      th:field="${trainingprogram.generalInf}">
+                            </textarea>
+                        </div>
+                        <div class="content">
+                            <div class="frame-88">
+                                <div class="content-title">
+                                    <div class="content2">Content</div>
+                                </div>
+                            </div>
+                            <div class="syllabus-c">
+                                <div id="selectedSyllabus" name="selectedSyllabusList">
+                                    <!-- Danh sách đã chọn sẽ được hiển thị ở đây -->
+                                </div>
+                                <!-- Input ẩn để giữ danh sách topic-code từ selectedSyllabus -->
+                                <input type="hidden" id="selectedTopicCodesInput" name="selectedTopicCodes"/>
+                            </div>
+                        </div>
+                        <div class="frame-51">
+                            <div class="select-syllabus">Select syllabus</div>
+                            <div class="frame-65">
+                                <svg
+                                        class="search"
+                                        width="24"
+                                        height="25"
+                                        viewBox="0 0 24 25"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <g clip-path="url(#clip0_56_8794)">
+                                        <path
+                                                d="M15.5 14.5H14.71L14.43 14.23C15.41 13.09 16 11.61 16 10C16 6.41 13.09 3.5 9.5 3.5C5.91 3.5 3 6.41 3 10C3 13.59 5.91 16.5 9.5 16.5C11.11 16.5 12.59 15.91 13.73 14.93L14 15.21V16L19 20.99L20.49 19.5L15.5 14.5ZM9.5 14.5C7.01 14.5 5 12.49 5 10C5 7.51 7.01 5.5 9.5 5.5C11.99 5.5 14 7.51 14 10C14 12.49 11.99 14.5 9.5 14.5Z"
+                                                fill="#285D9A"
+                                        />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_56_8794">
+                                            <rect
+                                                    width="24"
+                                                    height="24"
+                                                    fill="white"
+                                                    transform="translate(0 0.5)"
+                                            />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+
+                                <div class="search-input">
+                                    <label for="keyword"></label>
+                                    <input type="text" id="keyword" name="keyword" oninput="searchSyllabus()"
+                                           placeholder="Search by syllabus name (topic ...) ">
+                                </div>
+
+                                <div id="searchResults"></div>
+                            </div>
+                        </div>
+
+                        <div class="saving-button">
+                            <div class="back-button">
+                                <div class="back">
+                                    <a class="save" th:href="@{'/trainingprogram/create-training-program'}"
+                                       style="text-decoration: none">
+                                        Back
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="frame-110">
+                                <div class="add-day-button">
+                                    <div class="cancel">
+                                        <a class="save" th:href="@{'/trainingprogram'}" style="color: red">
+                                            Cancel
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="frame-91">
+                                    <input style="border: none; background-color: rgba(45, 55, 72, 1)" class="save"
+                                           type="submit" value="Save">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+</div>
+<script src="/component/header.js"></script>
+<script src="/component/footer.js"></script>
+<script src="/component/navbar.js"></script>
+<script src="/js/component.js"></script>
+<script th:inline="javascript">
+    $(document).ready(function () {
+        /* Lấy danh sách SyllabusDetailOfListDTO từ model */
+        var syllabusList = /*[[${syllabuslist}]]*/ [];
+
+        /* Lặp qua danh sách và lấy topicCode từ mỗi đối tượng SyllabusDetailOfListDTO */
+        var topicCodes = syllabusList.map(function (syllabusDetailOfList) {
+            return syllabusDetailOfList.syllabusDetailDTO.topicCode;
+        });
+
+        // Hiển thị danh sách topicCode trong console (để kiểm tra)
+        console.log(topicCodes);
+
+        // Gọi hàm để thực hiện điều gì đó với danh sách topicCode
+        processTopicCodes(topicCodes);
+
+    });
+
+    function processTopicCodes(codes) {
+        // Thực hiện điều gì đó với danh sách topicCode, ví dụ: gọi hàm getSyllabusByCodeAndDisplay(code)
+        codes.forEach(function (code) {
+            getSyllabusByCodeAndDisplay(code);
+        });
+    }
+</script>
+<script>
+    // Get the current date
+    var currentDate = new Date();
+    // Format the date as needed for Vietnam (adjust the format as per your requirement)
+    var options = {year: 'numeric', month: 'numeric', day: 'numeric'};
+    var formattedDate = currentDate.toLocaleDateString('vi-VN', options);
+    // Set the formatted date as the content of the span
+    document.getElementById('currentDateSpan').textContent = formattedDate;
+    // You can also fetch the username and set it dynamically
+    $.ajax({
+        url: '/api/user/username',
+        method: 'GET',
+        success: function(response) {
+            document.getElementById('accountNameSpan').textContent = response;
+        },
+        error: function(error) {
+            console.error('Error fetching username:', error);
+        }
+    });
+</script>
+</body>
+</html>
